@@ -89,32 +89,13 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
             "units": units,
         })
 
-    # Build TOC from headings on body pages only
-    toc = []
-    for p in web_pages:
-        if p["page_kind"] != "body":
-            continue
-        for u in p["units"]:
-            if u["type"] == "heading":
-                t = re.sub(r"\*", "", u["text"])
-                tl = t.strip().lower().rstrip(".")
-                # Skip volume title lines and editor preface headers
-                if "sämmtliche werke" in tl:
-                    continue
-                if tl == "vorwort des herausgebers":
-                    continue
-                # Skip author name lines
-                if "fridericus guilielmus" in tl or "f. w. j. s" in tl:
-                    continue
-                # Skip lone abbreviations (PERS., etc.)
-                if re.fullmatch(r"[A-Z]{2,6}\.?", t.strip()):
-                    clean_text = re.sub(r"\*", "", t).strip()
-                    if len(clean_text) <= 6:
-                        continue
-                toc.append({
-                    "title": t,
-                    "page": p["page_book"],
-                })
+    # Load authoritative TOC from toc/<work_id>.json (parsed from original
+    # Inhaltsverzeichnis pages) instead of heuristic heading detection.
+    toc_file = Path(__file__).parent / "toc" / f"{work_id}.json"
+    if toc_file.exists():
+        toc = json.loads(toc_file.read_text(encoding="utf-8"))
+    else:
+        toc = []
 
     return {
         "metadata": {
