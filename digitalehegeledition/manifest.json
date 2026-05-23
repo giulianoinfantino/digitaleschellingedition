@@ -1,0 +1,16 @@
+{
+  "name": "Digitale Schelling-Edition",
+  "short_name": "Schelling",
+  "description": "Durchsuchbare Digitalausgabe der Sämmtlichen Werke Schellings",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1c1b20",
+  "theme_color": "#232229",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

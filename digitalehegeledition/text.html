@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lektüre — Schelling Digitale Edition</title>
+  <meta name="description" content="Lesen Sie Schellings Sämmtliche Werke in einer durchsuchbaren, strukturierten Digitalausgabe mit Inhaltsverzeichnis und Seitenkorrespondenzen.">
+  <link rel="canonical" href="https://digitaleschellingedition.vercel.app/text.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lektüre — Digitale Schelling-Edition">
+  <meta property="og:description" content="Schellings Sämmtliche Werke lesen — strukturiert, durchsuchbar, mit Inhaltsverzeichnis.">
+  <meta property="og:url" content="https://digitaleschellingedition.vercel.app/text.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#232229">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/style.css">
+  <style>html { scroll-behavior: auto !important; }</style>
+  <script>document.documentElement.dataset.theme=localStorage.getItem('schelling-theme')||''</script>
+</head>
+<body>
+<a href="#reader-pages" class="skip-link">Zum Text springen</a>
+
+<header class="site-header" role="banner">
+  <a href="index.html" class="site-title" aria-label="Digitale Schelling-Edition — Startseite">
+    <span class="site-title-eyebrow">Digitale Edition</span>
+    <span class="site-title-main">Schelling · Werke</span>
+  </a>
+  <nav class="sitenav" aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="index.html">Sammlung</a></li>
+      <li><a href="text.html" class="current" aria-current="page">Lektüre</a></li>
+      <li><a href="search.html">Recherche</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" title="Darstellung wechseln" aria-label="Farbschema wechseln"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="reading-progress" id="reading-progress"></div>
+<div class="page-position" id="page-position" aria-live="polite"></div>
+
+<div class="reader-layout" id="main-layout">
+
+  <div class="mobile-backdrop" id="mobile-backdrop" onclick="toggleMobileToc()"></div>
+  <button class="mobile-toc-toggle" id="mobile-toc-toggle" onclick="toggleMobileToc()" title="Inhaltsverzeichnis" aria-label="Inhaltsverzeichnis öffnen" aria-expanded="false" aria-controls="reader-sidebar">☰</button>
+  <aside class="reader-sidebar" id="reader-sidebar" role="navigation" aria-label="Inhaltsverzeichnis">
+    <span class="small-caps" style="color:var(--accent-gold); display:block; margin-bottom:1.2rem; font-size:0.68rem; letter-spacing:0.18em;">Inhaltsverzeichnis</span>
+    <ul id="toc-list" class="toc-list" role="list"></ul>
+  </aside>
+
+  <main class="text-content">
+    <div class="reader-sticky-bar" id="reader-sticky-bar">
+      <div id="reader-summary"></div>
+      <div class="reader-toolbar" role="toolbar" aria-label="Leseoptionen">
+      <div class="toolbar-group">
+        <label for="work-selector" class="small-caps">Band</label>
+        <select id="work-selector" onchange="switchWork(this.value)"></select>
+      </div>
+      <div class="toolbar-group">
+        <label for="jump-gw-page" class="small-caps">SW-Seite</label>
+        <div class="jump-input-group">
+          <input type="text" id="jump-gw-page" placeholder="Nr." aria-label="SW-Seitennummer eingeben">
+        </div>
+        <button class="btn-classic" onclick="handleJumpToPage()" aria-label="Zur Seite springen">→</button>
+      </div>
+      <div class="toolbar-group toolbar-search">
+        <label for="inline-search" class="small-caps">Suche</label>
+        <div class="inline-search-wrap">
+          <input type="text" id="inline-search" placeholder="Im Text suchen…" aria-label="Im Text suchen">
+          <span id="inline-search-count" class="inline-search-count" aria-live="polite"></span>
+        </div>
+        <button class="btn-classic" onclick="inlineSearchOrNav(1)" title="Suchen" aria-label="Nächsten Treffer anzeigen">→</button>
+      </div>
+      <div class="toolbar-group">
+        <button class="btn-classic btn-font" onclick="adjustFontSize(-1)" title="Kleiner" aria-label="Schrift verkleinern">A−</button>
+        <button class="btn-classic btn-font" onclick="adjustFontSize(1)" title="Größer" aria-label="Schrift vergrößern">A+</button>
+      </div>
+      <div class="toolbar-group toolbar-end">
+        <div class="view-toggle" id="view-toggle">
+          <button data-view="dipl" onclick="setView('dipl')">Druckbild</button>
+          <button data-view="normal" class="active" onclick="setView('normal')">Normal</button>
+          <button data-view="breit" onclick="setView('breit')">Breit</button>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div id="reader-pages"></div>
+  </main>
+
+
+</div>
+
+<footer class="site-footer">
+  <div>Digitale Schelling-Edition · Forschungsportal</div>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="urheberrecht.html">Urheberrecht</a>
+  </nav>
+</footer>
+
+<script src="assets/edition-data.js"></script>
+<script>
+  const state = { corpus: null, selectedWork: null };
+
+  function scrollToElement(el, smooth) {
+    const header = document.querySelector('.site-header');
+    const sticky = document.getElementById('reader-sticky-bar');
+    const offset = (header ? header.getBoundingClientRect().height : 56)
+                 + (sticky ? sticky.getBoundingClientRect().height : 0) + 16;
+    const y = el.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'instant' });
+  }
+
+  document.getElementById('toc-list').addEventListener('click', function(e) {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    e.preventDefault();
+    const hash = link.getAttribute('href');
+    ensureRendered(hash);
+    requestAnimationFrame(() => {
+      const target = document.querySelector(hash);
+      if (target) scrollAndSettle(target, hash);
+    });
+  });
+
+  // Start loading immediately — DOM is already parsed at this point
+  (function() {
+    const workId = new URLSearchParams(window.location.search).get('work') || 'sw-I-01';
+    const script = document.createElement('script');
+    script.src = `assets/work-${workId}.js`;
+    script.onload = () => {
+      if (window.SCHELLING_WORK_DATA) {
+        state.corpus = window.SCHELLING_WORK_DATA;
+        state.selectedWork = window.SCHELLING_EDITION?.works.find(w => w.work_id === workId) || null;
+        renderAll();
+        const hash = window.location.hash;
+        const searchQ = new URLSearchParams(window.location.search).get('q');
+        if (hash) ensureRendered(hash);
+        if (searchQ) {
+          requestAnimationFrame(() => setTimeout(() => highlightSearchQuery(searchQ, hash), 100));
+        } else if (hash) {
+          const tryScroll = () => {
+            const target = document.querySelector(hash);
+            if (target) scrollToElement(target, false);
+          };
+          requestAnimationFrame(() => setTimeout(tryScroll, 80));
+        } else if (window._restoreReadingPosition) {
+          requestAnimationFrame(() => setTimeout(window._restoreReadingPosition, 120));
+        }
+      }
+    };
+    document.head.appendChild(script);
+  })();
+
+  function renderAll() {
+    const corpus = state.corpus;
+
+    // Summary header
+    const title = state.selectedWork?.title || corpus.metadata.title;
+    document.title = title + ' — Schelling Digitale Edition';
+    document.getElementById('reader-summary').innerHTML = `
+      <h2>${title}</h2>
+      <span class="small-caps" style="color:var(--accent-gold); font-size:0.72rem; letter-spacing:0.18em;">
+        Sämmtliche Werke · Band ${corpus.metadata?.band ?? corpus.band ?? ''}
+      </span>
+    `;
+
+    // TOC — map book page → PDF page (article IDs use page_pdf)
+    const bookToPdf = {};
+    (corpus.pages || []).forEach(p => { if (p.page_book != null) bookToPdf[p.page_book] = p.page_pdf; });
+
+    const cleanTocTitle = (raw) => {
+      if (!raw) return '';
+      let t = String(raw).trim();
+      t = t.replace(/\*[^*]*\*/g, ' ');
+      t = t.replace(/\s+/g, ' ').trim();
+      return t;
+    };
+
+    const isJunkTocEntry = (title) => {
+      if (!title) return true;
+      const t = title.trim();
+      if (t.length < 4) return true;
+      return false;
+    };
+
+    const tocLevel = (title) => {
+      const t = title.trim();
+      // ERSTER THEIL / ZWEITER THEIL — Enzyklopädie top-level parts
+      if (/^(ERSTER|ZWEITER|ZWEY?TER|DRITTER)\s+THEIL\b/i.test(t)) return 1;
+      // ERSTES BUCH, ZWEYTES BUCH — top-level book divisions
+      if (/^(ERSTES|ZWEY?TES|ZWEITES|DRITTES|VIERTES)\s+BUCH\b/i.test(t)) return 1;
+      // Abschnitt / Abteilung / Kapitel
+      if (/\bAbtheilung\b/i.test(t)) return 2;
+      if (/\bAbschnitt\b/i.test(t)) return 2;
+      if (/\bKapitel\b/i.test(t)) return 2;
+      // ALL-CAPS super-section
+      if (/^[A-ZÄÖÜ][A-ZÄÖÜ\s\.\-\(\)]+$/.test(t) && t.length >= 5) return 1;
+      if (/^Vom\b|^Von\b/.test(t)) return 2;
+      // Vorrede / Einleitung / Vorbegriff
+      if (/^(Vorrede|Vorwort|Einleitung|Vorbegriff)\b/i.test(t)) return 2;
+      // Capital-letter sections: "A. Das Urtheil ..."
+      if (/^[A-ZÄÖÜ]\.\s/.test(t)) return 3;
+      // Anmerkung / Eintheilung
+      if (/^(Anm\.|Anmerkung|Eintheilung)\b/i.test(t)) return 3;
+      // Double-uppercase: AA., BB., CC. (e.g. under Die Sittlichkeit)
+      if (/^[A-Z]{2}\.\s/.test(t)) return 4;
+      // Lowercase letter sub-sub-sections: "a. das positive"
+      if (/^[a-zäöüß]\.\s/.test(t)) return 4;
+      // Numeric sub-sub-sections: "1. ..."
+      if (/^\d{1,2}\.\s/.test(t)) return 4;
+      // Double-Greek letters: αα, ββ, γγ
+      if (/^[αβγδεζηθ]{2}[)\s]/.test(t)) return 6;
+      // Greek letter sub-sections: α, β, γ, δ
+      if (/^[αβγδεζηθ][)\s.]/.test(t)) return 5;
+      // Roman numeral sub-sections: "I. Empirismus", "II. Kritische Philosophie"
+      if (/^[IVX]+\.\s/.test(t)) return 4;
+      // Default
+      return 3;
+    };
+
+    const cleanedToc = (corpus.toc_printed || [])
+      .map(e => ({ ...e, title: cleanTocTitle(e.title) }))
+      .filter(e => !isJunkTocEntry(e.title));
+
+    // Merge structural dividers (Abschnitt, Buch) + following section name
+    const rawEntries = cleanedToc;
+    const tocEntries = [];
+    for (let i = 0; i < rawEntries.length; i++) {
+      const e = rawEntries[i];
+      if (/\b(Abschnitt|Buch|Kapitel)\b/i.test(e.title) && e.page == null && i + 1 < rawEntries.length) {
+        const next = rawEntries[i + 1];
+        const merged = e.title.toUpperCase() + ': ' + next.title.toUpperCase();
+        const lvlHint = /\bBuch\b/i.test(e.title) ? 1 : /\bAbschnitt\b/i.test(e.title) ? 2 : 2;
+        tocEntries.push({ title: merged, page: next.page, _merged: lvlHint });
+        i++;
+      } else {
+        tocEntries.push(e);
+      }
+    }
+
+    // Render pages first so heading anchor map is available for ToC links
+    renderPages();
+
+    // Build flat list of all headings for global search
+    const allHeadings = [];
+    Object.entries(state._pageHeadings || {}).forEach(([pb, hds]) => {
+      hds.forEach(h => allHeadings.push({ ...h, pageBook: Number(pb) }));
+    });
+
+    const titleMatch = (norm, hText) =>
+      norm === hText || norm.startsWith(hText) || hText.startsWith(norm);
+
+    const findBestAnchor = (title, pageBook) => {
+      const norm = title.toUpperCase().replace(/[.\s]+$/g, '').replace(/\s+/g, ' ');
+      const words = norm.split(/\s+/).filter(w => w.length > 2);
+      // 1. Exact/prefix match on target page
+      const hds = state._pageHeadings && state._pageHeadings[pageBook];
+      if (hds) {
+        for (const h of hds) { if (titleMatch(norm, h.text)) return h.hid; }
+        if (words.length) for (const h of hds) { if (words.every(w => h.text.includes(w))) return h.hid; }
+      }
+      // 2. Search nearby pages (±2) for a match
+      for (let delta = 1; delta <= 2; delta++) {
+        for (const off of [delta, -delta]) {
+          const nearby = state._pageHeadings && state._pageHeadings[pageBook + off];
+          if (!nearby) continue;
+          for (const h of nearby) { if (titleMatch(norm, h.text)) return h.hid; }
+          if (words.length) for (const h of nearby) { if (words.every(w => h.text.includes(w))) return h.hid; }
+        }
+      }
+      // 3. Fall back to first heading on target page or page divider
+      return state.headingAnchors[pageBook] || null;
+    };
+
+    document.getElementById('toc-list').innerHTML =
+      tocEntries.map((e, i) => {
+          let lvl = e._merged ? e._merged : tocLevel(e.title);
+          const displayTitle = e.title;
+          const ha = e.page != null ? findBestAnchor(e.title, e.page) : null;
+          const directPdf = bookToPdf[e.page];
+          if (ha) {
+            return `<li data-level="${lvl}"><a href="#${ha}">${displayTitle}</a></li>`;
+          }
+          if (directPdf != null) {
+            return `<li data-level="${lvl}"><a href="#page-${directPdf}">${displayTitle}</a></li>`;
+          }
+          if (e.page == null) {
+            let nextAnchor = null;
+            for (let j = i + 1; j < tocEntries.length; j++) {
+              const na = state.headingAnchors[tocEntries[j].page];
+              if (na) { nextAnchor = na; break; }
+              const np = bookToPdf[tocEntries[j].page];
+              if (np != null) { nextAnchor = `page-${np}`; break; }
+            }
+            if (nextAnchor != null) {
+              return `<li data-level="${lvl}"><a href="#${nextAnchor}" class="toc-divider">${displayTitle}</a></li>`;
+            }
+            return `<li data-level="${lvl}"><span class="toc-divider">${displayTitle}</span></li>`;
+          }
+          return `<li data-level="${lvl}" data-unlinked="1"><span class="toc-orphan" title="Verweis ausserhalb der extrahierten Edition (S. ${e.page})">${displayTitle}</span></li>`;
+        }).join('');
+
+    // Work selector
+    if (window.SCHELLING_EDITION) {
+      document.getElementById('work-selector').innerHTML =
+        window.SCHELLING_EDITION.works.map(w =>
+          `<option value="${w.work_id}" ${w.work_id === state.selectedWork?.work_id ? 'selected' : ''}>${w.siglum}</option>`
+        ).join('');
+    }
+  }
+
+  // ── Heading normalisation ────────────────────────────────────────────────
+  const H_NOISE    = new Set(['NUR','NICHT','GLEICH','ERSTLICH']);
+  const H_PREFIX   = new Set(['VOM','VON','DIE','DER','DAS']); // Sperrsatz split-prefix
+  const H_STRUCT   = /^(ERST|ZWEIT|ZWEY|DRITT|VIERT)[A-ZÜÖÄY]*\s+(KAPITEL|ABSCHNITT|BUCH)/i;
+  const SMALL_DE   = new Set(['der','die','das','des','dem','den','im','in','an',
+                               'von','zu','und','oder','als','wie','am','aus','auf',
+                               'bei','mit','zum','zur','für','bis','über','nach',
+                               'seit','beim','vom']);
+
+  function titleDe(raw) {
+    const t = (raw || '').replace(/[.\s]+$/, '').trim();
+    if (t !== t.toUpperCase()) return t; // already mixed-case → keep
+    return t.split(' ').map((w, i) => {
+      const lw = w.toLowerCase();
+      if (SMALL_DE.has(lw) && i > 0) return lw;
+      if (/^[IVX]+$/.test(w)) return w; // Roman numerals stay caps
+      if (/^([A-Z])\1+$/.test(w)) return w; // AA, BB, CC stay caps
+      return w[0].toUpperCase() + w.slice(1).toLowerCase();
+    }).join(' ');
+  }
+
+  // Merge split headings, drop noise, apply title-case, assign sensible levels.
+  function prepareUnits(raw) {
+    // Strip spacers between headings first so merge logic sees consecutive headings
+    const units = [];
+    for (let k = 0; k < raw.length; k++) {
+      const r = raw[k];
+      if (r.type === 'spacer' || (r.type === 'paragraph' && !(r.text || '').trim())) {
+        // Keep spacer only if not between two headings
+        const prev = units.length ? units[units.length - 1] : null;
+        let nextH = k + 1;
+        while (nextH < raw.length && (raw[nextH].type === 'spacer' || (raw[nextH].type === 'paragraph' && !(raw[nextH].text || '').trim()))) nextH++;
+        if (prev && prev.type === 'heading' && nextH < raw.length && raw[nextH].type === 'heading') continue;
+      }
+      units.push(r);
+    }
+
+    const out = [];
+    let i = 0;
+    let afterStructure = false;
+
+    while (i < units.length) {
+      const u = units[i];
+      if (u.type !== 'heading') { out.push(u); afterStructure = false; i++; continue; }
+
+      const word = (u.text || '').replace(/[.\s]+$/, '').trim().toUpperCase();
+      if (H_NOISE.has(word)) { i++; continue; }
+
+      if (H_STRUCT.test(word)) {
+        const parts = [u.text];
+        let j = i + 1;
+        while (j < units.length && units[j].type === 'heading') {
+          const nw = (units[j].text || '').replace(/[.\s]+$/, '').trim().toUpperCase();
+          if (H_NOISE.has(nw)) { j++; continue; }
+          if (H_STRUCT.test(nw)) break;
+          if (H_PREFIX.has(nw) && j + 1 < units.length && units[j+1].type === 'heading') {
+            parts.push(units[j].text); parts.push(units[j+1].text); j += 2;
+          } else {
+            parts.push(units[j].text); j++;
+          }
+          break;
+        }
+        const clean = s => (s || '').replace(/[.\s]+$/, '').trim().toUpperCase();
+        const structPart = clean(parts[0]);
+        const titlePart  = parts.slice(1).map(clean).join(' ');
+        const merged = titlePart ? `${structPart}: ${titlePart}` : structPart;
+        out.push({...u, text: merged, level: 1});
+        afterStructure = true;
+        i = j; continue;
+      }
+
+      if (H_PREFIX.has(word) && i + 1 < units.length && units[i+1].type === 'heading') {
+        const nw = (units[i+1].text || '').replace(/[.\s]+$/, '').trim().toUpperCase();
+        if (!H_NOISE.has(nw)) {
+          const merged = titleDe(u.text) + ' ' + titleDe(units[i+1].text);
+          out.push({...u, text: merged, level: 1});
+          afterStructure = false; i += 2; continue;
+        }
+      }
+
+      // Letter-prefix (A./B./C., a./b./c.) or number (1./2.) — merge with next heading
+      const letterMatch = word.match(/^([A-Za-zα-ωΑ-Ω][\).]?)$/);
+      const numMatch = word.match(/^(\d{1,2})[).]?$/);
+      if ((letterMatch || numMatch) && i + 1 < units.length && units[i+1].type === 'heading') {
+        const prefix = (u.text || '').replace(/[.\s]+$/, '').trim();
+        const nextText = titleDe(units[i+1].text);
+        const merged = prefix + '. ' + nextText;
+        const isUpper = /^[A-Z]$/.test(prefix.replace(/[.)]/g,''));
+        const lvl = isUpper ? 2 : numMatch ? 4 : 3;
+        out.push({...u, text: merged, level: lvl});
+        afterStructure = false; i += 2; continue;
+      }
+
+      out.push({...u, text: titleDe(u.text), level: afterStructure ? 2 : (u.level || 2)});
+      afterStructure = false; i++;
+    }
+    return out;
+  }
+
+  // Convert the extractor's *foo* Sperrsatz markers to <em> italic.
+  // Footnote markers like *), **, * (without a closing partner) are left alone.
+  function renderInline(text) {
+    if (!text) return '';
+    return String(text).replace(/\*([^*\n]+?)\*/g, '<em class="sperrsatz">$1</em>');
+  }
+
+  function renderPageContent(page) {
+    const units = prepareUnits(page.units || []);
+    if (!units.length) return '';
+    let lineNum = 0;
+    let hIdx = 0;
+    const isEnz = (state.selectedWork?.work_id || '') === '__none__';
+    const enzInit = isEnz && state._enzPageState ? state._enzPageState[page.page_pdf] : null;
+    let enzAfterPH = enzInit ? enzInit.afterPH : false;
+    let enzParaCount = enzInit ? enzInit.paraCount : 0;
+    return units.map(u => {
+      const type  = u.type || u.label || '';
+      const level = u.level || '';
+      const isParaH = isEnz && type === 'heading' && /^§/.test((u.text || '').trim());
+      if (isParaH) { enzAfterPH = true; enzParaCount = 0; }
+      let anmClass = '';
+      if (isEnz && enzAfterPH && type === 'paragraph') {
+        enzParaCount++;
+        if (enzParaCount > 1) anmClass = ' enz-anmerkung';
+      }
+      if (type === 'heading' && !isParaH) { enzAfterPH = false; enzParaCount = 0; }
+      let headingIdAttr = '';
+      if (type === 'heading') {
+        const hid = `hd-${page.page_pdf}-${hIdx}`;
+        headingIdAttr = ` id="${hid}"`;
+        if (hIdx === 0 && page.page_book != null && !(page.page_book in state.headingAnchors)) {
+          state.headingAnchors[page.page_book] = hid;
+        }
+        hIdx++;
+      }
+      const gwLines = u.metadata && u.metadata.gw_lines;
+      if (gwLines && gwLines.length > 0) {
+        var sperrOpen = false;
+        const linesHTML = gwLines.map(entry => {
+          var lineText = entry.text;
+          if (sperrOpen) lineText = '*' + lineText;
+          var stars = (lineText.match(/\*/g) || []).length;
+          sperrOpen = stars % 2 !== 0;
+          if (sperrOpen) lineText = lineText + '*';
+          const n = entry.gw_line;
+          const showNumber = (n === 1) || (n % 5 === 0);
+          const lineId = `line-${page.page_pdf}-${n}`;
+          const numEl = showNumber ? `<span class="dipl-line-no">${n}</span>` : '';
+          return `<span class="dipl-line" id="${lineId}" data-gw-line="${n}">${numEl}<span class="dipl-line-text">${renderInline(lineText)}</span></span>`;
+        }).join('');
+        const reflowText = renderInline(u.text);
+        return `<div class="text-unit type-${type}${anmClass} dipl-mode" data-level="${level}"${headingIdAttr}>
+                  <div class="dipl-content">${linesHTML}</div>
+                  <div class="reflow-content">${reflowText}</div>
+                </div>`;
+      }
+      if (u.lines && u.lines.length > 0) {
+        const linesHTML = u.lines.map(l => {
+          lineNum++;
+          const no = (lineNum % 5 === 0) ? ` data-lineno="${lineNum}"` : '';
+          return `<span class="dipl-line"${no}>${l}</span>`;
+        }).join('');
+        return `<div class="text-unit type-${type}${anmClass} dipl-mode" data-level="${level}"${headingIdAttr}>${linesHTML}</div>`;
+      }
+      lineNum++;
+      const startLine = u.metadata && u.metadata.gw_line_start;
+      const lineAttr = startLine ? ` data-gw-line="${startLine}"` : '';
+      return `<div class="text-unit type-${type}${anmClass}" data-level="${level}"${lineAttr}${headingIdAttr}>${renderInline(u.text)}</div>`;
+    }).join('');
+  }
+
+  function renderPages() {
+    state.headingAnchors = {};
+    state.bodyPages = (state.corpus.pages || [])
+      .filter(p => p.page_kind === 'body' && p.page_book != null);
+
+    // First pass: build heading anchors for TOC linking + pre-compute Anmerkung state
+    const isEnz = (state.selectedWork?.work_id || '') === '__none__';
+    let enzAfterPH = false, enzParaCount = 0;
+    state._enzPageState = {};
+    state._pageHeadings = {};
+    state.bodyPages.forEach(page => {
+      const units = prepareUnits(page.units || []);
+      let hIdx = 0;
+      if (isEnz) state._enzPageState[page.page_pdf] = { afterPH: enzAfterPH, paraCount: enzParaCount };
+      const pageHds = [];
+      units.forEach(u => {
+        const type = u.type || u.label || '';
+        if (type === 'heading') {
+          const hid = `hd-${page.page_pdf}-${hIdx}`;
+          if (hIdx === 0 && page.page_book != null && !(page.page_book in state.headingAnchors)) {
+            state.headingAnchors[page.page_book] = hid;
+          }
+          pageHds.push({ hid, text: (u.text || '').trim().toUpperCase().replace(/[.\s]+$/g, '') });
+          hIdx++;
+          const isParaH = isEnz && /^§/.test((u.text || '').trim());
+          if (isParaH) { enzAfterPH = true; enzParaCount = 0; }
+          else if (isEnz) { enzAfterPH = false; enzParaCount = 0; }
+        } else if (isEnz && enzAfterPH && type === 'paragraph') {
+          enzParaCount++;
+        }
+      });
+      if (page.page_book != null && pageHds.length) state._pageHeadings[page.page_book] = pageHds;
+    });
+
+    // Render lightweight placeholders — content filled lazily
+    const container = document.getElementById('reader-pages');
+    const frag = document.createDocumentFragment();
+    state.bodyPages.forEach(page => {
+      const divider = document.createElement('div');
+      divider.className = 'page-divider';
+      divider.id = `page-${page.page_pdf}`;
+      const sig = page.sigel || '';
+      const label = (page.page_book != null && sig) ? `${sig}, S. ${page.page_book}` : (sig || (page.page_book != null ? `S. ${page.page_book}` : ''));
+      divider.innerHTML = `<span class="page-sigel">${label}</span>`;
+      frag.appendChild(divider);
+
+      const card = document.createElement('article');
+      card.className = 'page-card';
+      card.dataset.pagePdf = page.page_pdf;
+      card.style.minHeight = '12rem';
+      card.innerHTML = '<div class="page-body"></div>';
+      frag.appendChild(card);
+    });
+    container.appendChild(frag);
+
+    // Lazy-render visible pages via IntersectionObserver
+    const pageMap = {};
+    state.bodyPages.forEach(p => { pageMap[p.page_pdf] = p; });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const card = entry.target;
+        if (card.dataset.rendered) return;
+        card.dataset.rendered = '1';
+        const page = pageMap[card.dataset.pagePdf];
+        if (page) {
+          state.headingAnchors = state.headingAnchors || {};
+          card.querySelector('.page-body').innerHTML = renderPageContent(page);
+          card.style.minHeight = '';
+        }
+        observer.unobserve(card);
+      });
+    }, { rootMargin: '600px 0px' });
+
+    container.querySelectorAll('.page-card').forEach(c => observer.observe(c));
+    state._pageObserver = observer;
+  }
+
+  function ensureRendered(hash) {
+    if (!hash) return;
+    const id = hash.replace(/^#/, '');
+    const m = id.match(/^(?:page|hd|line)-(\d+)/);
+    if (!m) return;
+    const pagePdf = m[1];
+    const pageMap = {};
+    (state.bodyPages || []).forEach(p => { pageMap[p.page_pdf] = p; });
+    const allCards = Array.from(document.querySelectorAll('.page-card'));
+    const idx = allCards.findIndex(c => c.dataset.pagePdf === pagePdf);
+    if (idx < 0) return;
+    const start = Math.max(0, idx - 3);
+    const end = Math.min(allCards.length, idx + 4);
+    for (let i = start; i < end; i++) {
+      const card = allCards[i];
+      if (card.dataset.rendered) continue;
+      const page = pageMap[card.dataset.pagePdf];
+      if (page) {
+        card.querySelector('.page-body').innerHTML = renderPageContent(page);
+        card.dataset.rendered = '1';
+        card.style.minHeight = '';
+        if (state._pageObserver) state._pageObserver.unobserve(card);
+      }
+    }
+  }
+
+  function scrollAndSettle(el, hash) {
+    scrollToElement(el, false);
+    if (hash) history.replaceState(null, '', hash);
+    var tries = 0;
+    var lastY = window.scrollY;
+    function recheck() {
+      scrollToElement(el, false);
+      var nowY = window.scrollY;
+      if (++tries < 5 && Math.abs(nowY - lastY) > 2) {
+        lastY = nowY;
+        requestAnimationFrame(recheck);
+      }
+    }
+    setTimeout(function() { requestAnimationFrame(recheck); }, 60);
+  }
+
+  function switchWork(id) { if (id) window.location.href = `text.html?work=${id}`; }
+
+  function handleJumpToPage() {
+    const gw = document.getElementById('jump-gw-page').value.trim();
+    const page = state.corpus?.pages.find(p => String(p.page_book) === gw);
+    if (page) {
+      ensureRendered(`#page-${page.page_pdf}`);
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`page-${page.page_pdf}`);
+        if (el) scrollAndSettle(el, `#page-${page.page_pdf}`);
+      });
+    } else {
+      document.getElementById('jump-gw-page').style.borderBottomColor = 'var(--accent)';
+      setTimeout(() => document.getElementById('jump-gw-page').style.borderBottomColor = '', 1500);
+    }
+  }
+
+  // ── Citation copy ────────────────────────────────────────────────
+  function siglumForCitation() {
+    const w = state.selectedWork;
+    if (w?.siglum) return w.siglum;
+    return state.corpus?.metadata?.siglum || 'SW';
+  }
+
+  function showToast(msg) {
+    let toast = document.getElementById('reader-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'reader-toast';
+      toast.className = 'reader-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.classList.remove('show'), 1800);
+  }
+
+  function copyCitation(pagePdf, gwPage, gwLine) {
+    const citation = `${siglumForCitation()}, ${gwPage}.${gwLine}`;
+    const fallback = () => {
+      const ta = document.createElement('textarea');
+      ta.value = citation; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); ta.remove();
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(citation).catch(fallback);
+    } else { fallback(); }
+    history.replaceState(null, '', `#line-${pagePdf}-${gwLine}`);
+    showToast(`Zitat kopiert: ${citation}`);
+  }
+
+
+  // ── Auto-citation on copy ────────────────────────────────────────
+  document.addEventListener('copy', (e) => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed) return;
+    const range = sel.getRangeAt(0);
+    const container = range.commonAncestorContainer.nodeType === 1
+      ? range.commonAncestorContainer
+      : range.commonAncestorContainer.parentElement;
+    if (!container || !container.closest('#reader-pages')) return;
+
+    const pages = new Map();
+    const dividers = document.querySelectorAll('.page-divider');
+    dividers.forEach(div => {
+      const card = div.nextElementSibling;
+      if (!card || !sel.containsNode(card, true)) return;
+      const pdfId = div.id.replace('page-', '');
+      const sigel = div.querySelector('.page-sigel')?.textContent?.trim();
+      const lines = card.querySelectorAll('.dipl-line');
+      let minLine = Infinity, maxLine = -Infinity;
+      lines.forEach(ln => {
+        if (!sel.containsNode(ln, true)) return;
+        const textEl = ln.querySelector('.dipl-line-text') || ln;
+        const r = document.createRange();
+        r.selectNodeContents(textEl);
+        if (range.compareBoundaryPoints(Range.END_TO_START, r) >= 0) return;
+        if (range.compareBoundaryPoints(Range.START_TO_END, r) <= 0) return;
+        const overlap = r.cloneContents().textContent.trim();
+        if (!overlap) return;
+        const n = parseInt(ln.dataset.gwLine);
+        if (!isNaN(n)) { minLine = Math.min(minLine, n); maxLine = Math.max(maxLine, n); }
+      });
+      if (sigel) pages.set(pdfId, { sigel, minLine, maxLine });
+    });
+
+    if (pages.size === 0) return;
+
+    const isDipl = document.body.classList.contains('dipl-mode');
+    const entries = Array.from(pages.values());
+    const band = entries[0].sigel.replace(/,\s*\d+$/, '');
+    const gwPages = entries.map(e => {
+      const m = e.sigel.match(/(\d+)\s*$/);
+      return { page: m ? m[1] : e.sigel, min: e.minLine, max: e.maxLine };
+    });
+
+    let cite, htmlCite;
+    if (gwPages.length === 1) {
+      const p = gwPages[0];
+      if (isDipl && p.min <= p.max) {
+        cite = `(${band}, ${p.page}.${p.min}–${p.max})`;
+        htmlCite = `(${band}, ${p.page}<sup>${p.min}–${p.max}</sup>)`;
+      } else {
+        cite = `(${band}, ${p.page})`;
+        htmlCite = cite;
+      }
+    } else {
+      const first = gwPages[0], last = gwPages[gwPages.length - 1];
+      if (isDipl && first.min <= first.max && last.min <= last.max) {
+        cite = `(${band}, ${first.page}.${first.min}–${last.page}.${last.max})`;
+        htmlCite = `(${band}, ${first.page}<sup>${first.min}</sup>–${last.page}<sup>${last.max}</sup>)`;
+      } else {
+        cite = `(${band}, ${first.page}–${last.page})`;
+        htmlCite = cite;
+      }
+    }
+
+    const frag = range.cloneContents();
+    const wrapper = document.createElement('div');
+    wrapper.appendChild(frag);
+    const hiddenView = isDipl ? '.reflow-content' : '.dipl-content';
+    wrapper.querySelectorAll(`.dipl-line-no, .page-sigel, .page-divider, ${hiddenView}`).forEach(el => el.remove());
+
+    const walk = (node) => {
+      if (node.nodeType === 3) return node.textContent;
+      if (node.nodeType !== 1) return '';
+      const tag = node.tagName;
+      const inner = Array.from(node.childNodes).map(walk).join('');
+      if (tag === 'EM') return '*' + inner + '*';
+      if (node.classList && node.classList.contains('dipl-line')) return inner + ' ';
+      return inner;
+    };
+    let plain = walk(wrapper);
+    plain = plain.replace(/\s+/g, ' ').trim();
+    plain += ' ' + cite;
+
+    const inlineHtml = walk(wrapper).replace(/\s+/g, ' ').trim()
+      .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+    e.clipboardData.setData('text/plain', plain);
+    e.clipboardData.setData('text/html', `${inlineHtml} ${htmlCite}`);
+    e.preventDefault();
+  });
+
+  // ── View toggle: Druckbild | Normal | Breit ─────────────────────
+  function setView(mode) {
+    const body = document.body;
+    const tc = document.querySelector('.text-content');
+    body.classList.remove('dipl-mode');
+    tc.classList.remove('wide-mode');
+    if (mode === 'dipl') body.classList.add('dipl-mode');
+    if (mode === 'breit') tc.classList.add('wide-mode');
+    document.querySelectorAll('#view-toggle button').forEach(b => {
+      b.classList.toggle('active', b.dataset.view === mode);
+    });
+    try { localStorage.setItem('schelling-reader-view', mode); } catch (_) {}
+  }
+
+  (function restoreView() {
+    try {
+      var v = localStorage.getItem('schelling-reader-view');
+      if (v === 'dipl' || v === 'breit') setView(v);
+    } catch (_) {}
+  })();
+
+
+
+  // ── Inline search (index-based, no renderAllPages) ────────────
+  var searchHitPages = [];
+  var searchHitIdx = -1;
+  var searchActiveQuery = '';
+  var searchTerms = [];
+
+  function extractHighlightTerms(q) {
+    var stripped = q.replace(/\bAND\b|\bOR\b|\bNOT\b|\bNEAR\/\d+\b/gi, ' ');
+    var terms = [];
+    var re = /"([^"]+)"|([^\s"]+)/g;
+    var m;
+    while ((m = re.exec(stripped)) !== null) {
+      var t = (m[1] || m[2] || '').trim().toLowerCase().replace(/\*$/, '');
+      if (t) terms.push(t);
+    }
+    var unique = [];
+    for (var i = 0; i < terms.length; i++) {
+      if (unique.indexOf(terms[i]) === -1) unique.push(terms[i]);
+    }
+    return unique;
+  }
+
+  function textMatchesTerms(text, terms) {
+    var lower = text.toLowerCase();
+    for (var i = 0; i < terms.length; i++) {
+      if (lower.indexOf(terms[i]) !== -1) return true;
+    }
+    return false;
+  }
+
+  function clearSearchMarks() {
+    document.querySelectorAll('mark.search-hit').forEach(function(m) {
+      var parent = m.parentNode;
+      if (!parent) return;
+      parent.replaceChild(document.createTextNode(m.textContent), m);
+      parent.normalize();
+    });
+  }
+
+  function highlightTermsInCard(card, terms) {
+    var body = card.querySelector('.page-body');
+    if (!body || !body.innerHTML.trim()) return;
+    terms.forEach(function(term) {
+      var walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null);
+      var hits = [];
+      var node;
+      while ((node = walker.nextNode())) {
+        var el = node.parentElement;
+        if (!el) continue;
+        if (el.closest('.dipl-content, .dipl-line-no, mark.search-hit')) continue;
+        var lower = node.textContent.toLowerCase();
+        var idx = 0;
+        while ((idx = lower.indexOf(term, idx)) !== -1) {
+          hits.push({ node: node, idx: idx, len: term.length });
+          idx += term.length;
+        }
+      }
+      for (var i = hits.length - 1; i >= 0; i--) {
+        var h = hits[i];
+        try {
+          var range = document.createRange();
+          range.setStart(h.node, h.idx);
+          range.setEnd(h.node, h.idx + h.len);
+          var mark = document.createElement('mark');
+          mark.className = 'search-hit';
+          range.surroundContents(mark);
+        } catch (_) {}
+      }
+    });
+  }
+
+  function runInlineSearch() {
+    clearSearchMarks();
+    searchHitPages = [];
+    searchHitIdx = -1;
+    var query = document.getElementById('inline-search').value.trim();
+    if (query.length < 2) {
+      searchActiveQuery = '';
+      document.getElementById('inline-search-count').textContent = '';
+      return;
+    }
+    searchActiveQuery = query;
+    searchTerms = extractHighlightTerms(query);
+
+    if (!state.bodyPages) return;
+    state.bodyPages.forEach(function(p) {
+      var fullText = (p.units || []).map(function(u) { return u.text || ''; }).join(' ');
+      if (textMatchesTerms(fullText, searchTerms)) {
+        searchHitPages.push(p.page_pdf);
+      }
+    });
+
+    var countEl = document.getElementById('inline-search-count');
+    if (searchHitPages.length) {
+      countEl.textContent = searchHitPages.length + (searchHitPages.length === 1 ? ' Seite' : ' Seiten');
+    } else {
+      countEl.textContent = 'Keine Treffer';
+    }
+  }
+
+  function inlineSearchGoTo(idx) {
+    if (!searchHitPages.length) return;
+    searchHitIdx = idx;
+    var pagePdf = searchHitPages[idx];
+    var hash = '#page-' + pagePdf;
+    ensureRendered(hash);
+    requestAnimationFrame(function() {
+      setTimeout(function() {
+        var card = document.querySelector('.page-card[data-page-pdf="' + pagePdf + '"]');
+        if (!card) return;
+        clearSearchMarks();
+        highlightTermsInCard(card, searchTerms);
+        var firstMark = card.querySelector('mark.search-hit');
+        if (firstMark) {
+          scrollToElement(firstMark, false);
+          firstMark.classList.add('search-hit-active');
+        } else {
+          scrollAndSettle(card, hash);
+        }
+        document.getElementById('inline-search-count').textContent =
+          (idx + 1) + ' / ' + searchHitPages.length + ' Seiten';
+      }, 120);
+    });
+  }
+
+  function inlineSearchNav(dir) {
+    if (!searchHitPages.length) return;
+    if (searchHitIdx < 0) {
+      inlineSearchGoTo(0);
+    } else {
+      var next = (searchHitIdx + dir + searchHitPages.length) % searchHitPages.length;
+      inlineSearchGoTo(next);
+    }
+  }
+
+  function inlineSearchOrNav(dir) {
+    var query = document.getElementById('inline-search').value.trim();
+    if (query !== searchActiveQuery || !searchHitPages.length) {
+      runInlineSearch();
+      if (searchHitPages.length) inlineSearchGoTo(0);
+    } else {
+      inlineSearchNav(dir);
+    }
+  }
+
+  (function() {
+    var input = document.getElementById('inline-search');
+    var timer;
+    input.addEventListener('input', function() {
+      clearTimeout(timer);
+      timer = setTimeout(function() {
+        if (input.value.trim() !== searchActiveQuery) runInlineSearch();
+      }, 400);
+    });
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        clearTimeout(timer);
+        inlineSearchOrNav(e.shiftKey ? -1 : 1);
+      }
+      if (e.key === 'Escape') {
+        input.value = '';
+        searchActiveQuery = '';
+        searchHitPages = [];
+        searchHitIdx = -1;
+        clearSearchMarks();
+        document.getElementById('inline-search-count').textContent = '';
+        input.blur();
+      }
+    });
+  })();
+
+  document.getElementById('jump-gw-page').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') { e.preventDefault(); handleJumpToPage(); }
+  });
+
+  function highlightSearchQuery(q, hash) {
+    var terms = extractHighlightTerms(q.toLowerCase());
+    if (!terms.length) return;
+    document.getElementById('inline-search').value = q;
+    searchActiveQuery = q;
+    searchTerms = terms;
+    runInlineSearch();
+    if (hash) {
+      ensureRendered(hash);
+      requestAnimationFrame(function() {
+        setTimeout(function() {
+          var target = document.querySelector(hash);
+          if (target) {
+            var card = target.closest('.page-card') || target.nextElementSibling;
+            if (!card || !card.classList.contains('page-card')) card = document.querySelector('.page-card[data-page-pdf="' + hash.replace(/\D/g, '') + '"]');
+            if (!card) return;
+            highlightTermsInCard(card, terms);
+            var firstMark = card.querySelector('mark.search-hit');
+            if (firstMark) {
+              scrollToElement(firstMark, false);
+              firstMark.classList.add('search-hit-active');
+            } else {
+              scrollAndSettle(target, hash);
+            }
+          }
+        }, 120);
+      });
+    } else if (searchHitPages.length) {
+      inlineSearchGoTo(0);
+    }
+  }
+
+  // ── Font size control ──────────────────────────────────────────
+  var fontStep = parseInt(localStorage.getItem('schelling-font-step') || '0');
+  function applyFontSize() {
+    document.getElementById('reader-pages').style.fontSize = (17 + fontStep * 2) + 'px';
+  }
+  function adjustFontSize(dir) {
+    fontStep = Math.max(-3, Math.min(5, fontStep + dir));
+    localStorage.setItem('schelling-font-step', fontStep);
+    applyFontSize();
+  }
+  applyFontSize();
+
+  // ── Reading progress bar + page position ───────────────────────
+  (function() {
+    var bar = document.getElementById('reading-progress');
+    var posEl = document.getElementById('page-position');
+    var ticking = false;
+    var hideTimer;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var h = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+          bar.style.width = pct + '%';
+
+          if (state.bodyPages && state.bodyPages.length) {
+            var cards = document.querySelectorAll('#reader-pages .page-card');
+            var current = null;
+            for (var i = 0; i < cards.length; i++) {
+              if (cards[i].getBoundingClientRect().top <= 120) current = cards[i];
+            }
+            if (current) {
+              var idx = 0;
+              for (var j = 0; j < cards.length; j++) { if (cards[j] === current) { idx = j; break; } }
+              var gwPage = '';
+              var p = state.bodyPages[idx];
+              if (p && p.page_book != null) gwPage = ' · S. ' + p.page_book;
+              posEl.textContent = (idx + 1) + ' / ' + state.bodyPages.length + gwPage;
+              posEl.classList.add('visible');
+              clearTimeout(hideTimer);
+              hideTimer = setTimeout(function() { posEl.classList.remove('visible'); }, 2000);
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, {passive: true});
+  })();
+
+  // ── Mobile ToC ────────────────────────────────────────────────
+  function toggleMobileToc() {
+    var sidebar = document.getElementById('reader-sidebar');
+    var backdrop = document.getElementById('mobile-backdrop');
+    var toggle = document.getElementById('mobile-toc-toggle');
+    var open = sidebar.classList.toggle('mobile-open');
+    backdrop.classList.toggle('visible', open);
+    toggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  document.getElementById('reader-sidebar').addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      this.classList.remove('mobile-open');
+      document.getElementById('mobile-backdrop').classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ── Keyboard navigation ───────────────────────────────────────
+  document.addEventListener('keydown', function(e) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') return;
+
+    var pages = document.querySelectorAll('#reader-pages .page-card');
+    if (!pages.length) return;
+
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      var threshold = window.scrollY + window.innerHeight * 0.15;
+      var current = 0;
+      for (var i = 0; i < pages.length; i++) {
+        if (pages[i].getBoundingClientRect().top <= 120) current = i;
+      }
+      var next = e.key === 'ArrowRight'
+        ? Math.min(current + 1, pages.length - 1)
+        : Math.max(current - 1, 0);
+      pages[next].scrollIntoView({behavior: 'instant', block: 'start'});
+    }
+
+    if (e.key === '/' && !e.ctrlKey && !e.metaKey) {
+      e.preventDefault();
+      document.getElementById('inline-search').focus();
+    }
+
+    if (e.key === 't' && !e.ctrlKey && !e.metaKey) {
+      toggleMobileToc();
+    }
+  });
+
+  // ── ScrollSpy: highlight active TOC entry ─────────────────────
+  (function() {
+    var tocLinks = [];
+    var activeLi = null;
+    var ticking = false;
+
+    function buildTocMap() {
+      tocLinks = [];
+      document.querySelectorAll('#toc-list a[href^="#"]').forEach(function(a) {
+        var id = a.getAttribute('href').slice(1);
+        tocLinks.push({ id: id, li: a.closest('li'), a: a });
+      });
+    }
+
+    function updateSpy() {
+      var header = document.querySelector('.site-header');
+      var sticky = document.getElementById('reader-sticky-bar');
+      var offset = (header ? header.getBoundingClientRect().height : 56)
+                 + (sticky ? sticky.getBoundingClientRect().height : 0) + 24;
+      var current = null;
+      for (var i = tocLinks.length - 1; i >= 0; i--) {
+        var el = document.getElementById(tocLinks[i].id);
+        if (el && el.getBoundingClientRect().top <= offset) {
+          current = tocLinks[i];
+          break;
+        }
+      }
+      if (activeLi) activeLi.classList.remove('toc-active');
+      if (current) {
+        current.li.classList.add('toc-active');
+        activeLi = current.li;
+        var sidebar = document.getElementById('reader-sidebar');
+        var liTop = current.li.offsetTop;
+        var sideH = sidebar.clientHeight;
+        if (liTop < sidebar.scrollTop || liTop > sidebar.scrollTop + sideH - 40) {
+          sidebar.scrollTop = liTop - sideH / 3;
+        }
+      }
+    }
+
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() { updateSpy(); ticking = false; });
+        ticking = true;
+      }
+    }, {passive: true});
+
+    var obs = new MutationObserver(function() {
+      if (document.querySelectorAll('#toc-list li').length > 0) { buildTocMap(); obs.disconnect(); }
+    });
+    obs.observe(document.getElementById('toc-list'), { childList: true });
+  })();
+
+  // ── Ctrl+F → focus inline search ─────────────────────────────
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'f') {
+      e.preventDefault();
+      document.getElementById('inline-search').focus();
+      document.getElementById('inline-search').select();
+    }
+  });
+
+
+  // ── Reading position persistence ──────────────────────────
+  (function() {
+    var STORAGE_KEY = 'schelling-reading-pos';
+    var saveTimer;
+    function savePosition() {
+      var cards = document.querySelectorAll('#reader-pages .page-card');
+      if (!cards.length) return;
+      var topCard = null;
+      for (var i = 0; i < cards.length; i++) {
+        if (cards[i].getBoundingClientRect().top > -100) { topCard = cards[i]; break; }
+      }
+      if (!topCard) topCard = cards[cards.length - 1];
+      var workId = new URLSearchParams(window.location.search).get('work') || 'sw-I-01';
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+          work: workId,
+          page: topCard.dataset.pagePdf,
+          ts: Date.now()
+        }));
+      } catch (_) {}
+    }
+
+    window.addEventListener('scroll', function() {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(savePosition, 800);
+    }, {passive: true});
+
+    window._restoreReadingPosition = function() {
+      if (window.location.hash) return;
+      if (new URLSearchParams(window.location.search).get('q')) return;
+      try {
+        var saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (!saved || !saved.page) return;
+        var workId = new URLSearchParams(window.location.search).get('work') || 'sw-I-01';
+        if (saved.work !== workId) return;
+        if (Date.now() - saved.ts > 7 * 24 * 60 * 60 * 1000) return;
+        var hash = '#page-' + saved.page;
+        ensureRendered(hash);
+        requestAnimationFrame(function() {
+          var target = document.querySelector(hash);
+          if (target) scrollToElement(target, false);
+        });
+      } catch (_) {}
+    };
+  })();
+
+  function toggleTheme() {
+    var t = document.documentElement.dataset.theme === 'light' ? '' : 'light';
+    document.documentElement.dataset.theme = t;
+    localStorage.setItem('schelling-theme', t);
+  }
+</script>
+
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js")</script>
+</body>
+</html>

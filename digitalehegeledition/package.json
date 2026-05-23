@@ -1,0 +1,9 @@
+{
+  "name": "schelling-edition",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Digitale Schelling-Edition (statische Lesefassung mit Basic-Auth via Vercel-Middleware)",
+  "dependencies": {
+    "@vercel/edge": "^1.2.1"
+  }
+}

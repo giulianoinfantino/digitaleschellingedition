@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recherche — Schelling Digitale Edition</title>
+  <meta name="description" content="Volltextsuche über Schellings Sämmtliche Werke — mit Phrasensuche, Operatoren und automatischer Orthographie-Normalisierung.">
+  <link rel="canonical" href="https://digitaleschellingedition.vercel.app/search.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Recherche — Digitale Schelling-Edition">
+  <meta property="og:description" content="Volltextsuche über Schellings Sämmtliche Werke mit Phrasensuche und Orthographie-Normalisierung.">
+  <meta property="og:url" content="https://digitaleschellingedition.vercel.app/search.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#232229">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('schelling-theme')||''</script>
+</head>
+<body class="search-page">
+<a href="#search-input" class="skip-link">Zur Suche springen</a>
+
+<header class="site-header" id="site-header" role="banner">
+  <a href="index.html" class="site-title" aria-label="Digitale Schelling-Edition — Startseite">
+    <span class="site-title-eyebrow">Digitale Edition</span>
+    <span class="site-title-main">Schelling · Werke</span>
+  </a>
+  <nav class="sitenav" aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="index.html">Sammlung</a></li>
+      <li><a href="text.html">Lektüre</a></li>
+      <li><a href="search.html" class="current" aria-current="page">Recherche</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" title="Darstellung wechseln" aria-label="Farbschema wechseln"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ═══ SEARCH ═══ -->
+<div class="search-main" id="search-main">
+
+  <div class="search-hero-area" id="search-hero-area">
+    <div class="search-hero-content">
+      <div class="search-hero-badge">Sämmtliche Werke · Volltextsuche</div>
+      <h1 class="search-hero-title">Volltext-Recherche</h1>
+      <div class="search-hero-rule"></div>
+
+      <div class="search-box-elegant">
+        <input type="text" id="search-input" placeholder="Suchanfrage formulieren …" autofocus
+               onkeydown="if(event.key==='Enter') handleSearch()" aria-label="Suchanfrage eingeben">
+        <button class="btn-search" onclick="handleSearch()" aria-label="Suche starten">Suchen</button>
+      </div>
+
+      <div class="search-controls">
+        <div class="search-filter-row">
+          <select id="filter-work" aria-label="Werk filtern"></select>
+          <select id="filter-type" aria-label="Texttyp filtern">
+            <option value="body">Haupttext</option>
+            <option value="all">Alle Einträge</option>
+            <option value="heading">Nur Überschriften</option>
+            <option value="paragraph">Nur Absätze</option>
+          </select>
+          <select id="filter-section" aria-label="Abschnitt filtern">
+            <option value="all">Alle Abschnitte</option>
+            <option value="vorrede">Vorrede / Vorbericht</option>
+            <option value="paragraph-section">§-Paragraphen</option>
+            <option value="anmerkung">Anmerkungen</option>
+            <option value="zusatz">Zusätze</option>
+            <option value="text">Fließtext</option>
+          </select>
+          <select id="filter-sort" aria-label="Sortierung">
+            <option value="score">Nach Relevanz</option>
+            <option value="page">Nach Seitenfolge</option>
+            <option value="section">Nach Abschnitt</option>
+          </select>
+        </div>
+        <div class="search-meta-row">
+          <div id="search-status" aria-live="polite">Lade Suchindex …</div>
+          <a href="#" class="syntax-link" id="syntax-toggle" onclick="event.preventDefault(); document.getElementById('search-guide').classList.toggle('open'); this.classList.toggle('active')">Syntax-Hilfe</a>
+        </div>
+      </div>
+
+      <div class="search-guide" id="search-guide">
+        <dl class="search-guide-list">
+          <div><dt><code>"…"</code></dt><dd>Exakte Phrase</dd></div>
+          <div><dt><code>AND</code></dt><dd>Beide Terme</dd></div>
+          <div><dt><code>OR</code></dt><dd>Mindestens einer</dd></div>
+          <div><dt><code>NOT</code></dt><dd>Term ausschließen</dd></div>
+          <div><dt><code>NEAR/<em>n</em></code></dt><dd>Innerhalb von <em>n</em> Wörtern</dd></div>
+          <div><dt><code>wort*</code></dt><dd>Präfix-Suche</dd></div>
+          <div><dt><code>Sein → Seyn</code></dt><dd>Alte Orthographie automatisch</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+  <div id="search-results"></div>
+
+</div>
+
+<footer class="site-footer" id="search-footer">
+  <div>Digitale Schelling-Edition · Forschungsportal</div>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="urheberrecht.html">Urheberrecht</a>
+  </nav>
+</footer>
+
+<script src="assets/edition-data.js"></script>
+<script src="assets/search-data.js" defer></script>
+<script>
+  // ── Orthographie-Normalisierung ────────────────────────────
+  var ORTHO_MAP = [
+    [/ey/g, 'ei'], [/ay/g, 'ai'],
+    [/ß/g, 'ss'],
+    [/th(?=[aeiouäöü])/g, 't'],
+    [/ct/g, 'kt'],
+    [/ph/g, 'f'],
+    [/ü(?=ck)/g, 'ü'],
+    [/iren\b/g, 'ieren'],
+  ];
+  function normalizeOrtho(s) {
+    var r = s;
+    for (var i = 0; i < ORTHO_MAP.length; i++) r = r.replace(ORTHO_MAP[i][0], ORTHO_MAP[i][1]);
+    return r;
+  }
+
+  // ── Section-type Klassifikation ───────────────────────────
+  function classifySection(entry) {
+    var t = (entry.text || '').slice(0, 120);
+    if (/^Vorrede\b|^VORREDE\b|^Vorbericht\b|^VORBERICHT\b/i.test(t)) return 'vorrede';
+    if (/^§\s*\d/.test(t)) return 'paragraph-section';
+    if (/^Anmerkung\b/i.test(t) || (entry._section && /Anmerkung/i.test(entry._section))) return 'anmerkung';
+    if (/^Zusatz\b/i.test(t) || (entry._section && /Zusatz/i.test(entry._section))) return 'zusatz';
+    return 'text';
+  }
+
+  // ── Such-Engine ────────────────────────────────────────────
+  function evaluateQuery(text, rawQuery) {
+    var q = rawQuery.trim();
+    if (!q) return false;
+    var orParts = splitOutsideQuotes(q, / OR /i);
+    if (orParts.length > 1) return orParts.some(function(p) { return evaluateQuery(text, p); });
+    var andParts = splitOutsideQuotes(q, / AND /i);
+    if (andParts.length > 1) return andParts.every(function(p) { return evaluateQuery(text, p); });
+    var nearM = q.match(/^(.+?)\s+NEAR\/(\d+)\s+(.+)$/i);
+    if (nearM) return checkNear(text, nearM[1].trim(), nearM[3].trim(), +nearM[2]);
+    if (/^NOT\s+/i.test(q)) return !evaluateQuery(text, q.replace(/^NOT\s+/i, ''));
+    if (q.startsWith('"') && q.endsWith('"')) {
+      var phrase = q.slice(1, -1).toLowerCase();
+      return text.includes(phrase) || normalizeOrtho(text).includes(normalizeOrtho(phrase));
+    }
+    if (q.endsWith('*')) {
+      var prefix = q.slice(0, -1);
+      var nPrefix = normalizeOrtho(prefix);
+      return text.split(/\s+/).some(function(w) { return w.startsWith(prefix) || normalizeOrtho(w).startsWith(nPrefix); });
+    }
+    var terms = q.split(/\s+/).filter(Boolean);
+    if (terms.length > 1) return terms.every(function(t) { return evaluateQuery(text, t); });
+    return text.includes(q) || normalizeOrtho(text).includes(normalizeOrtho(q));
+  }
+
+  function splitOutsideQuotes(s, sep) {
+    const parts = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] === '"') { inQ = !inQ; cur += s[i]; continue; }
+      if (!inQ) {
+        const m = s.slice(i).match(sep);
+        if (m && m.index === 0) { parts.push(cur); cur = ''; i += m[0].length - 1; continue; }
+      }
+      cur += s[i];
+    }
+    if (cur) parts.push(cur);
+    return parts;
+  }
+
+  function checkNear(text, t1, t2, dist) {
+    const words = text.split(/\s+/);
+    const clean = t => t.replace(/^"|"$/g, '').toLowerCase();
+    const c1 = clean(t1), c2 = clean(t2);
+    const pos1 = [], pos2 = [];
+    words.forEach((w, i) => { if (w.includes(c1)) pos1.push(i); if (w.includes(c2)) pos2.push(i); });
+    return pos1.some(a => pos2.some(b => Math.abs(a - b) <= dist));
+  }
+
+  function extractHighlightTerms(q) {
+    const stripped = q.replace(/\bAND\b|\bOR\b|\bNOT\b|\bNEAR\/\d+\b/gi, ' ');
+    const terms = [];
+    const re = /"([^"]+)"|([^\s"]+)/g;
+    let m;
+    while ((m = re.exec(stripped)) !== null) {
+      const t = (m[1] || m[2] || '').trim().toLowerCase();
+      if (t) terms.push(t);
+    }
+    return [...new Set(terms)];
+  }
+
+  function highlightText(text, terms) {
+    if (!terms.length) return text;
+    const cleaned = terms.map(t => t.replace(/\*$/, '').replace(/^"|"$/g, ''));
+    const pattern = cleaned.filter(Boolean).map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+    if (!pattern) return text;
+    return text.replace(new RegExp(`(${pattern})`, 'gi'), '<mark>$1</mark>');
+  }
+
+  function snapToWord(text, pos, dir) {
+    if (dir < 0) {
+      const before = text.slice(0, pos);
+      const m = before.match(/\s\S*$/);
+      return m ? pos - m[0].length + 1 : 0;
+    }
+    const after = text.slice(pos);
+    const m = after.match(/^\S*\s/);
+    return m ? pos + m[0].length - 1 : text.length;
+  }
+
+  function extractSnippet(text, terms, ctx) {
+    ctx = ctx || 80;
+    if (!terms.length) return text.length > 300 ? text.slice(0, 300) + '…' : text;
+    const lower = text.toLowerCase();
+    const cleaned = terms.map(t => t.replace(/\*$/, '').replace(/^"|"$/g, '').toLowerCase()).filter(Boolean);
+    if (!cleaned.length) return text.length > 300 ? text.slice(0, 300) + '…' : text;
+    const hits = [];
+    for (const t of cleaned) {
+      let idx = 0;
+      while ((idx = lower.indexOf(t, idx)) !== -1) {
+        hits.push({ start: idx, end: idx + t.length });
+        idx += t.length;
+      }
+    }
+    if (!hits.length) return text.length > 300 ? text.slice(0, 300) + '…' : text;
+    hits.sort((a, b) => a.start - b.start);
+    const windows = hits.map(h => [
+      snapToWord(text, Math.max(0, h.start - ctx), -1),
+      snapToWord(text, Math.min(text.length, h.end + ctx), 1)
+    ]);
+    const merged = [windows[0]];
+    for (let i = 1; i < windows.length; i++) {
+      const prev = merged[merged.length - 1];
+      if (windows[i][0] <= prev[1] + 10) {
+        prev[1] = Math.max(prev[1], windows[i][1]);
+      } else {
+        merged.push(windows[i]);
+      }
+    }
+    const parts = merged.map(([s, e], i) => {
+      let frag = text.slice(s, e).trim();
+      if (i === 0 && s > 0) frag = '[…] ' + frag;
+      if (i === merged.length - 1 && e < text.length) frag = frag + ' […]';
+      if (i > 0 && i <= merged.length - 1 && s > merged[i-1]?.[1]) frag = '[…] ' + frag;
+      return frag;
+    });
+    return parts.join(' ');
+  }
+
+  var pdfToBook = {};
+  var headingIndex = {};
+  function buildPageMap() {
+    if (!window.SCHELLING_EDITION) return;
+    window.SCHELLING_EDITION.works.forEach(w => {
+      const script = document.createElement('script');
+      script.src = `assets/work-${w.work_id}.js`;
+      script.onload = () => {
+        if (window.SCHELLING_WORK_DATA) {
+          const headings = [];
+          (window.SCHELLING_WORK_DATA.pages || []).forEach(p => {
+            if (p.page_book != null) pdfToBook[w.work_id + ':' + p.page_pdf] = p.page_book;
+            (p.units || []).forEach(u => {
+              if ((u.label === 'heading' || u.type === 'heading') && u.text && p.page_book != null) {
+                headings.push({ pdf: p.page_pdf, level: u.level || 1, text: u.text });
+              }
+            });
+          });
+          headingIndex[w.work_id] = headings;
+        }
+      };
+      document.head.appendChild(script);
+    });
+  }
+
+  function chapterForPage(workId, pagePdf) {
+    const hdgs = headingIndex[workId];
+    if (!hdgs || !hdgs.length) return '';
+    const active = {};
+    for (const h of hdgs) {
+      if (h.pdf > pagePdf) break;
+      active[h.level] = h.text;
+      for (const k of Object.keys(active)) {
+        if (Number(k) > h.level) delete active[k];
+      }
+    }
+    const levels = Object.keys(active).map(Number).sort((a, b) => a - b);
+    const parts = levels.map(l => active[l]);
+    return parts.join(' › ');
+  }
+
+  // ── UI ─────────────────────────────────────────────────────
+  function handleSearch() {
+    var main = document.getElementById('search-main');
+    document.getElementById('search-guide').classList.remove('open');
+    var syntaxToggle = document.getElementById('syntax-toggle');
+    if (syntaxToggle) syntaxToggle.classList.remove('active');
+    main.classList.add('has-results');
+
+    var raw = document.getElementById('search-input').value.trim();
+    var workFilter = document.getElementById('filter-work').value;
+    var typeFilter = document.getElementById('filter-type').value;
+    var sectionFilter = document.getElementById('filter-section').value;
+    var sort = document.getElementById('filter-sort').value;
+    var status = document.getElementById('search-status');
+    var container = document.getElementById('search-results');
+
+    if (!window.SCHELLING_SEARCH_INDEX) {
+      status.textContent = 'Suchindex nicht geladen.';
+      return;
+    }
+    if (!raw) {
+      container.innerHTML = '';
+      main.classList.remove('has-results');
+      var n = window.SCHELLING_SEARCH_INDEX.length;
+      status.textContent = n.toLocaleString('de') + ' indexierte Einträge · Bereit für Abfrage';
+      return;
+    }
+
+    var query = raw.toLowerCase();
+    var terms = extractHighlightTerms(query);
+
+    var results = window.SCHELLING_SEARCH_INDEX.filter(function(entry) {
+      var text = (entry.text || '').toLowerCase();
+      var matchWork = workFilter === 'all' || entry.work_id === workFilter;
+      var matchType = typeFilter === 'all'
+        ? true
+        : typeFilter === 'body'
+          ? (entry.label === 'paragraph' || entry.label === 'heading')
+          : entry.label === typeFilter;
+      if (!matchWork || !matchType) return false;
+      if (sectionFilter !== 'all') {
+        entry._section = entry._section || chapterForPage(entry.work_id, entry.page_pdf);
+        if (classifySection(entry) !== sectionFilter) return false;
+      }
+      return evaluateQuery(text, query);
+    });
+
+    if (sort === 'page') results.sort(function(a, b) { return (a.page_pdf || 0) - (b.page_pdf || 0); });
+
+    if (results.length) {
+      var pages = new Set(results.map(function(r) { return r.page_pdf; })).size;
+      status.textContent = results.length + ' Treffer auf ' + pages + (pages === 1 ? ' Seite' : ' Seiten');
+    } else {
+      status.textContent = 'Keine Treffer gefunden.';
+    }
+
+    var encQuery = encodeURIComponent(raw);
+
+    if (sort === 'section') {
+      renderGrouped(results, terms, encQuery, container);
+    } else {
+      container.innerHTML = results.map(function(res) {
+        return renderResult(res, terms, encQuery);
+      }).join('');
+    }
+  }
+
+  function renderResult(res, terms, encQuery) {
+    var snippet = extractSnippet(res.text, terms, 80);
+    var typeLabel = res.label === 'heading' ? ' · Überschrift' : '';
+    var bk = pdfToBook[res.work_id + ':' + res.page_pdf];
+    var pageLabel = bk != null ? ', ' + bk : '';
+    var workInfo = window.SCHELLING_EDITION && window.SCHELLING_EDITION.works.find(function(w) { return w.work_id === res.work_id; });
+    var workTitle = workInfo && workInfo.title ? ' · ' + workInfo.title : '';
+    var chapter = res._section || chapterForPage(res.work_id, res.page_pdf);
+    var chapterLabel = chapter ? '<div class="result-chapter">' + chapter + '</div>' : '';
+    return '<article class="result-biblio">' +
+      '<div class="sigle">' + (res.sigel || (res.work_id.split("-")[0].toUpperCase() + " " + res.work_id.split("-")[1])) + pageLabel + workTitle + typeLabel + '</div>' +
+      chapterLabel +
+      '<div class="snippet">' + highlightText(snippet, terms).replace(/\*([^*\n]+?)\*/g, '<em>$1</em>') + '</div>' +
+      '<a class="result-link" href="text.html?work=' + res.work_id + '&q=' + encQuery + '#page-' + res.page_pdf + '">' +
+        'In den Kontext springen →</a></article>';
+  }
+
+  function renderGrouped(results, terms, encQuery, container) {
+    var groups = {};
+    var order = [];
+    results.forEach(function(res) {
+      var key = res.work_id + '||' + (res._section || chapterForPage(res.work_id, res.page_pdf) || 'Ohne Abschnitt');
+      if (!groups[key]) { groups[key] = []; order.push(key); }
+      groups[key].push(res);
+    });
+    var html = '';
+    order.forEach(function(key) {
+      var parts = key.split('||');
+      var workId = parts[0];
+      var section = parts[1];
+      var workInfo = window.SCHELLING_EDITION && window.SCHELLING_EDITION.works.find(function(w) { return w.work_id === workId; });
+      var workLabel = workInfo ? workInfo.siglum + ' · ' + workInfo.title : workId;
+      html += '<div class="result-group">';
+      html += '<div class="result-group-header">';
+      html += '<span class="result-group-work">' + workLabel + '</span>';
+      html += '<span class="result-group-section">' + section + '</span>';
+      html += '<span class="result-group-count">' + groups[key].length + ' Treffer</span>';
+      html += '</div>';
+      groups[key].forEach(function(res) {
+        html += renderResult(res, terms, encQuery);
+      });
+      html += '</div>';
+    });
+    container.innerHTML = html;
+  }
+
+  // ── Init ───────────────────────────────────────────────────
+  window.onload = () => {
+    buildPageMap();
+    if (window.SCHELLING_EDITION) {
+      const sel = document.getElementById('filter-work');
+      sel.innerHTML = '<option value="all">Gesamte Edition</option>' +
+        window.SCHELLING_EDITION.works.map(w =>
+          `<option value="${w.work_id}">${w.siglum} — ${w.title}</option>`
+        ).join('');
+    }
+    if (window.SCHELLING_SEARCH_INDEX) {
+      const n = window.SCHELLING_SEARCH_INDEX.length;
+      document.getElementById('search-status').textContent =
+        `${n.toLocaleString('de')} indexierte Einträge · Bereit für Abfrage`;
+    }
+  };
+
+  function toggleTheme() {
+    var t = document.documentElement.dataset.theme === 'light' ? '' : 'light';
+    document.documentElement.dataset.theme = t;
+    localStorage.setItem('schelling-theme', t);
+  }
+</script>
+
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js")</script>
+</body>
+</html>

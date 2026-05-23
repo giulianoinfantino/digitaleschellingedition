@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutz — Schelling Edition</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#232229">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('schelling-theme')||''</script>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-title">
+    <span class="site-title-eyebrow">Digitale Edition</span>
+    <span class="site-title-main">Schelling · Werke</span>
+  </a>
+  <nav class="sitenav">
+    <ul>
+      <li><a href="index.html">Sammlung</a></li>
+      <li><a href="text.html">Lektüre</a></li>
+      <li><a href="search.html">Recherche</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" title="Darstellung wechseln"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="legal-container">
+  <div class="legal-kicker">Datenschutzhinweise</div>
+  <h1>Datenschutz</h1>
+  <p class="legal-lead">Diese Hinweise beschreiben in knapper Form, welche Daten beim Besuch dieses Webauftritts verarbeitet werden und an wen Sie sich bei Datenschutzfragen wenden können.</p>
+
+  <section class="legal-section">
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>
+      Giuliano Infantino<br>
+      Brüdergasse 29<br>
+      53111 Bonn<br>
+      E-Mail: giulianoinfantino[at]icloud.com
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>2. Zugriffsdaten</h2>
+    <p>Beim Aufruf der Website können durch den Hosting-Anbieter technisch notwendige Server-Log-Daten verarbeitet werden. Dazu können insbesondere IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp, Betriebssystem und angeforderte Datei gehören.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>3. Zweck der Verarbeitung</h2>
+    <p>Die Verarbeitung erfolgt zur Bereitstellung, Stabilität und Sicherheit des Webauftritts sowie zur technischen Fehleranalyse.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>4. Lokale Einstellungen</h2>
+    <p>Für die Leseansicht kann im Browser eine lokale Anzeigeeinstellung (Druckbild / Lesefassung) gespeichert werden. Diese Speicherung erfolgt ausschließlich lokal auf Ihrem Gerät und dient nur der Anzeigepräferenz.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>5. Ihre Rechte</h2>
+    <p>Sie haben im Rahmen der gesetzlichen Bestimmungen insbesondere das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie Beschwerde bei einer Datenschutzaufsichtsbehörde.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>6. Kontakt</h2>
+    <p>Bei Fragen zum Datenschutz wenden Sie sich bitte an giulianoinfantino[at]icloud.com.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>Digitale Schelling-Edition · Forschungsportal</div>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="urheberrecht.html">Urheberrecht</a>
+  </nav>
+</footer>
+
+<script>function toggleTheme(){var t=document.documentElement.dataset.theme==="light"?"":"light";document.documentElement.dataset.theme=t;localStorage.setItem("schelling-theme",t)}</script>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js")</script>
+</body>
+</html>

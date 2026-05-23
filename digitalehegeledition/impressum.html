@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Impressum — Schelling Edition</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#232229">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('schelling-theme')||''</script>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-title">
+    <span class="site-title-eyebrow">Digitale Edition</span>
+    <span class="site-title-main">Schelling · Werke</span>
+  </a>
+  <nav class="sitenav">
+    <ul>
+      <li><a href="index.html">Sammlung</a></li>
+      <li><a href="text.html">Lektüre</a></li>
+      <li><a href="search.html">Recherche</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" title="Darstellung wechseln"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="legal-container">
+  <div class="legal-kicker">Rechtliche Angaben</div>
+  <h1>Impressum</h1>
+  <p class="legal-lead">Die Digitale Schelling Edition ist ein editorisches Forschungsprojekt im Aufbau. Die folgenden Angaben betreffen den derzeitigen Webauftritt.</p>
+
+  <section class="legal-section">
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>
+      Giuliano Infantino<br>
+      Brüdergasse 29<br>
+      53111 Bonn
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: giulianoinfantino[at]icloud.com<br>
+      Website: <a href="https://giulianoinfantino.de">giulianoinfantino.de</a>
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>
+      Giuliano Infantino<br>
+      Brüdergasse 29<br>
+      53111 Bonn
+    </p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Haftung für Inhalte</h2>
+    <p>Die Inhalte dieser Website werden mit größtmöglicher Sorgfalt erstellt. Eine Gewähr für Richtigkeit, Vollständigkeit und Aktualität kann dennoch nicht übernommen werden.</p>
+  </section>
+
+  <section class="legal-section">
+    <h2>Urheberrecht und Edition</h2>
+    <p>Diese Edition veröffentlicht ausschließlich den gemeinfreien Primärtext Schellings (†&nbsp;1854, gemeinfrei seit 1925 gemäß § 64 UrhG). Der urheberrechtlich geschützte wissenschaftliche Apparat der Sämmtlichen Werke wird nicht reproduziert. Eine ausführliche Darlegung der urheberrechtlichen Grundlage findet sich auf der Seite <a href="urheberrecht.html">Urheberrecht und Werknutzung</a>.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>Digitale Schelling-Edition · Forschungsportal</div>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="urheberrecht.html">Urheberrecht</a>
+  </nav>
+</footer>
+
+<script>function toggleTheme(){var t=document.documentElement.dataset.theme==="light"?"":"light";document.documentElement.dataset.theme=t;localStorage.setItem("schelling-theme",t)}</script>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js")</script>
+</body>
+</html>

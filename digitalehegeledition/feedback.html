@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback — Schelling Digitale Edition</title>
+  <meta name="description" content="Feedback zur Digitalen Schelling-Edition — Textfehler, OCR-Artefakte oder Verbesserungsvorschläge melden.">
+  <link rel="canonical" href="https://digitaleschellingedition.vercel.app/feedback.html">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#232229">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('schelling-theme')||''</script>
+</head>
+<body>
+<a href="#feedback-form" class="skip-link">Zum Formular springen</a>
+<header class="site-header" role="banner">
+  <a href="index.html" class="site-title" aria-label="Digitale Schelling-Edition — Startseite">
+    <span class="site-title-eyebrow">Digitale Edition</span>
+    <span class="site-title-main">Schelling · Werke</span>
+  </a>
+  <nav class="sitenav" aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="index.html">Sammlung</a></li>
+      <li><a href="text.html">Lektüre</a></li>
+      <li><a href="search.html">Recherche</a></li>
+      <li><a href="feedback.html" class="current" aria-current="page">Feedback</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" title="Darstellung wechseln" aria-label="Farbschema wechseln"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="legal-container legal-container--wide">
+  <div class="legal-kicker">Alpha-Phase</div>
+  <h1>Feedback</h1>
+  <p class="legal-lead">
+    Die Digitale Schelling-Edition befindet sich in aktiver Entwicklung.
+    Hinweise auf Textfehler, OCR-Artefakte, fehlende Sperrsatz-Markierungen
+    oder sonstige Probleme helfen uns, die Editionsqualität zu verbessern.
+  </p>
+
+  <form id="feedback-form" action="https://formspree.io/f/maqvpbrj" method="POST">
+    <div class="fb-field">
+      <label for="fb-category">Kategorie</label>
+      <select id="fb-category" name="category" required>
+        <option value="">Bitte wählen</option>
+        <option value="textfehler">Textfehler / OCR-Artefakt</option>
+        <option value="sperrsatz">Fehlender oder falscher Sperrsatz</option>
+        <option value="struktur">Absatz- oder Überschriftenstruktur</option>
+        <option value="navigation">Navigation / Inhaltsverzeichnis</option>
+        <option value="darstellung">Darstellung / Layout</option>
+        <option value="sonstiges">Sonstiges</option>
+      </select>
+    </div>
+
+    <div class="fb-row">
+      <div class="fb-field">
+        <label for="fb-band">Band (optional)</label>
+        <select id="fb-band" name="band">
+          <option value="">—</option>
+          <option value="SW I,1">SW I,1</option>
+          <option value="SW I,2">SW I,2</option>
+          <option value="SW I,3">SW I,3</option>
+        </select>
+      </div>
+      <div class="fb-field">
+        <label for="fb-page">Seite (optional)</label>
+        <input type="text" id="fb-page" name="page" placeholder="z.B. 123">
+      </div>
+    </div>
+
+    <div class="fb-field">
+      <label for="fb-desc">Beschreibung</label>
+      <textarea id="fb-desc" name="description" rows="6" required
+        placeholder="Beschreiben Sie das Problem möglichst genau. Bei Textfehlern bitte den fehlerhaften Text und die korrekte Lesart angeben."></textarea>
+    </div>
+
+    <div class="fb-field">
+      <label for="fb-email">E-Mail (optional, für Rückfragen)</label>
+      <input type="email" id="fb-email" name="_replyto" placeholder="ihre@email.de">
+    </div>
+
+    <input type="hidden" name="_subject" value="Schelling Edition — Feedback">
+
+    <button type="submit" class="fb-submit" id="fb-submit">Absenden</button>
+  </form>
+
+  <div id="fb-success" class="fb-success" hidden>
+    <p>Vielen Dank für Ihre Rückmeldung. Wir werden den Hinweis prüfen.</p>
+    <a href="feedback.html" class="fb-another">Weiteres Feedback senden</a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div>Digitale Schelling-Edition · Forschungsportal</div>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="urheberrecht.html">Urheberrecht</a>
+  </nav>
+</footer>
+
+<script>
+function toggleTheme(){var t=document.documentElement.dataset.theme==="light"?"":"light";document.documentElement.dataset.theme=t;localStorage.setItem("schelling-theme",t)}
+
+document.getElementById('feedback-form').addEventListener('submit', function(ev) {
+  ev.preventDefault();
+  var form = this;
+  var btn = document.getElementById('fb-submit');
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet…';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(r) {
+    if (r.ok) {
+      form.hidden = true;
+      document.getElementById('fb-success').hidden = false;
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Absenden';
+      alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');
+    }
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'Absenden';
+    alert('Netzwerkfehler. Bitte prüfen Sie Ihre Verbindung.');
+  });
+});
+</script>
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js")</script>
+</body>
+</html>

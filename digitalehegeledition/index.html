@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Schelling · Digitale Edition</title>
+  <meta name="description" content="Frei zugängliche, durchsuchbare Digitalausgabe der Sämmtlichen Werke Friedrich Wilhelm Joseph von Schellings (1856–1861). 14 Bände, texttreu digitalisiert.">
+  <link rel="canonical" href="https://digitaleschellingedition.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Digitale Schelling-Edition">
+  <meta property="og:description" content="Durchsuchbare Digitalausgabe der Sämmtlichen Werke Schellings — 14 Bände, texttreu digitalisiert.">
+  <meta property="og:url" content="https://digitaleschellingedition.vercel.app/">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Digitale Schelling-Edition">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Digitale Schelling-Edition">
+  <meta name="twitter:description" content="Frei zugängliche Digitalausgabe der Sämmtlichen Werke Schellings.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#232229">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.dataset.theme=localStorage.getItem('schelling-theme')||''</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Digitale Schelling-Edition",
+    "url": "https://digitaleschellingedition.vercel.app/",
+    "description": "Frei zugängliche Digitalausgabe der Sämmtlichen Werke Friedrich Wilhelm Joseph von Schellings.",
+    "inLanguage": "de",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Digitale Schelling-Edition"
+    }
+  }
+  </script>
+</head>
+<body class="hero-page">
+<a href="#stats-bar" class="skip-link">Zum Inhalt springen</a>
+
+<header class="site-header" id="site-header" role="banner">
+  <a href="index.html" class="site-title" aria-label="Digitale Schelling-Edition — Startseite">
+    <span class="site-title-eyebrow">Digitale Edition</span>
+    <span class="site-title-main">Schelling · Werke</span>
+  </a>
+  <nav class="sitenav" aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="index.html" class="current" aria-current="page">Sammlung</a></li>
+      <li><a href="text.html">Lektüre</a></li>
+      <li><a href="search.html">Recherche</a></li>
+      <li><a href="feedback.html">Feedback</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" title="Darstellung wechseln" aria-label="Farbschema wechseln"></button></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">S&auml;mmtliche Werke · 14 B&auml;nde (1856&ndash;1861)</div>
+    <h1 class="hero-title">Digitale<br>Schelling-Edition</h1>
+    <div class="hero-version">v0.1</div>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">
+      Eine digitale Forschungsplattform f&uuml;r das Gesamtwerk
+      Friedrich Wilhelm Joseph von Schellings, basierend auf den
+      S&auml;mmtlichen Werken (SW).
+    </p>
+    <div class="hero-actions">
+      <a href="text.html" class="hero-btn-primary">Edition lesen</a>
+      <a href="search.html" class="hero-btn-secondary">Volltextsuche</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="window.scrollTo({top:window.innerHeight,behavior:'smooth'})">
+    <span>Entdecken</span>
+    <span class="hero-scroll-line"></span>
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ═══ -->
+<div class="stats-bar" id="stats-bar"></div>
+
+<!-- ═══ FEATURED WORKS ═══ -->
+<section class="lp-section featured-section">
+  <div class="reveal" data-reveal>
+    <div class="lp-section-label">Werkausgabe</div>
+    <div class="lp-section-title">Die B&auml;nde</div>
+  </div>
+  <div class="works-grid" id="works-grid"></div>
+</section>
+
+<!-- ═══ WARUM DIESES PROJEKT ═══ -->
+<section class="lp-section about-section">
+  <div class="reveal" data-reveal>
+    <div class="lp-section-label">Das Projekt</div>
+    <div class="lp-section-title">Schelling digital &mdash; 14 B&auml;nde, frei zug&auml;nglich</div>
+  </div>
+  <p class="about-lead reveal" data-reveal>
+    Schellings <em>S&auml;mmtliche Werke</em>, 1856&ndash;1861 von seinem Sohn
+    Karl Friedrich Schelling herausgegeben, umfassen 14&nbsp;B&auml;nde in zwei
+    Abtheilungen. Die Texte sind seit &uuml;ber 90&nbsp;Jahren gemeinfrei &mdash;
+    eine frei zug&auml;ngliche, durchsuchbare Digitalausgabe fehlte bislang.
+  </p>
+
+  <div class="about-cols reveal" data-reveal>
+    <div class="about-col">
+      <h3>Die Quelle</h3>
+      <p>
+        Grundlage ist die digitale Erfassung der <em>S&auml;mmtlichen Werke</em>
+        durch den Total Verlag (1997), die den vollst&auml;ndigen Text
+        aller 14&nbsp;B&auml;nde enth&auml;lt. Abtheilung&nbsp;I (B&auml;nde&nbsp;1&ndash;10)
+        umfasst Schellings Schriften von 1792 bis 1850, Abtheilung&nbsp;II
+        (B&auml;nde&nbsp;1&ndash;4) die <em>Philosophie der Mythologie</em> und
+        <em>Philosophie der Offenbarung</em>.
+      </p>
+      <p>
+        Der Text wird in Originalrechtschreibung wiedergegeben &mdash;
+        <em>Seyn</em>, <em>Verh&auml;ltni&szlig;</em>, <em>da&szlig;</em>,
+        <em>Nothwendigkeit</em>. Gesperrter Satz erscheint kursiv hervorgehoben.
+      </p>
+    </div>
+    <div class="about-col">
+      <h3>Urheberrecht</h3>
+      <p>
+        Schellings Prim&auml;rtext (gest. 1854) ist seit 1925 gemeinfrei.
+        Die Texterfassung des Total Verlags basiert auf der historischen
+        Werkausgabe. Diese Edition stellt den Text frei und durchsuchbar
+        zur Verf&uuml;gung.
+      </p>
+      <p>
+        Jede Seite ist strukturiert erfasst: Abs&auml;tze, &Uuml;berschriften,
+        Fu&szlig;noten und Sperrsatz. Das Ergebnis ist ein zitierf&auml;higer,
+        durchsuchbarer Text mit Seitenkorrespondenzen zur Werkausgabe.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CLOSED BETA & ROADMAP ═══ -->
+<section class="lp-section roadmap-section">
+  <div class="reveal" data-reveal>
+    <div class="lp-section-label">Status</div>
+    <div class="lp-section-title">Vollst&auml;ndige Ausgabe</div>
+  </div>
+  <p class="about-lead reveal" data-reveal>
+    Alle 14&nbsp;B&auml;nde der S&auml;mmtlichen Werke sind vollst&auml;ndig
+    digitalisiert und durchsuchbar. Die Edition umfasst &uuml;ber 4.500&nbsp;Seiten
+    in zwei Abtheilungen &mdash; von den Jugendschriften bis zur
+    Philosophie der Offenbarung.
+  </p>
+
+  <div class="roadmap-grid roadmap-grid--3 reveal" data-reveal>
+    <div class="roadmap-card">
+      <div class="roadmap-card-icon">I</div>
+      <h4>Abtheilung I</h4>
+      <p>
+        10&nbsp;B&auml;nde mit Schellings Schriften von 1792 bis 1850:
+        Jugendschriften, Naturphilosophie, Identit&auml;tsphilosophie,
+        Philosophie und Religion, Freiheitsschrift und Sp&auml;tphilosophie.
+      </p>
+    </div>
+    <div class="roadmap-card">
+      <div class="roadmap-card-icon">II</div>
+      <h4>Abtheilung II</h4>
+      <p>
+        4&nbsp;B&auml;nde mit der Philosophie der Mythologie und der
+        Philosophie der Offenbarung &mdash; Schellings Sp&auml;twerk,
+        postum herausgegeben aus Vorlesungsmanuskripten.
+      </p>
+    </div>
+    <div class="roadmap-card">
+      <div class="roadmap-card-icon">&infin;</div>
+      <h4>Volltextsuche</h4>
+      <p>
+        Alle 14&nbsp;B&auml;nde sind durchsuchbar &mdash; &uuml;ber
+        17.000&nbsp;Indexeintr&auml;ge erm&ouml;glichen gezielte Recherche
+        &uuml;ber das gesamte Werk in Originalrechtschreibung.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORKFLOW ═══ -->
+<section class="lp-section workflow-section-wrap">
+  <div class="reveal" data-reveal>
+    <div class="lp-section-label">Methodik</div>
+    <div class="lp-section-title">Von der Werkausgabe zum digitalen Text</div>
+  </div>
+  <div class="workflow-steps reveal" data-reveal>
+    <div class="workflow-step">
+      <span class="workflow-step-num">1</span>
+      <span class="workflow-step-name">Quelle</span>
+      <span class="workflow-step-detail">Total Verlag CD-ROM (1997): elektronische Erfassung aller 14&nbsp;B&auml;nde der S&auml;mmtlichen Werke</span>
+    </div>
+    <div class="workflow-step">
+      <span class="workflow-step-num">2</span>
+      <span class="workflow-step-name">Extraktion</span>
+      <span class="workflow-step-detail">Seitenweise Textextraktion mit Absatz-, &Uuml;berschriften- und Fu&szlig;notenerkennung</span>
+    </div>
+    <div class="workflow-step">
+      <span class="workflow-step-num">3</span>
+      <span class="workflow-step-name">Strukturierung</span>
+      <span class="workflow-step-detail">Sperrsatz als Hervorhebung, Originalrechtschreibung, Abt./Band/Seite-Zuordnung</span>
+    </div>
+    <div class="workflow-step">
+      <span class="workflow-step-num">4</span>
+      <span class="workflow-step-name">Index</span>
+      <span class="workflow-step-detail">&Uuml;ber 17.000 Eintr&auml;ge f&uuml;r die Volltextsuche &uuml;ber alle B&auml;nde</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="lp-footer">
+  <h3>Digitale Schelling-Edition</h3>
+  <p>Forschungsportal &middot; S&auml;mmtliche Werke</p>
+  <nav>
+    <a href="impressum.html">Impressum</a>
+    <a href="datenschutz.html">Datenschutz</a>
+    <a href="urheberrecht.html">Urheberrecht</a>
+  </nav>
+</footer>
+
+<script src="assets/edition-data.js"></script>
+<script>
+  function renderStats(ed) {
+    var s = ed.metadata && ed.metadata.stats;
+    if (!s) return;
+    var n = ed.works.length;
+    document.getElementById('stats-bar').innerHTML =
+      '<div class="stat-item reveal" data-reveal>' +
+        '<span class="stat-value">' + n + '</span>' +
+        '<span class="stat-label">' + (n === 1 ? 'Band' : 'Bände') + '</span>' +
+      '</div>' +
+      '<div class="stat-item reveal" data-reveal>' +
+        '<span class="stat-value">' + (s.pages_total || 0).toLocaleString('de') + '</span>' +
+        '<span class="stat-label">Seiten</span>' +
+      '</div>' +
+      '<div class="stat-item reveal" data-reveal>' +
+        '<span class="stat-value">' + (s.search_entries || 0).toLocaleString('de') + '</span>' +
+        '<span class="stat-label">Indexeinträge</span>' +
+      '</div>' +
+      '<div class="stat-item reveal" data-reveal>' +
+        '<span class="stat-value">' + (s.footnotes || 0).toLocaleString('de') + '</span>' +
+        '<span class="stat-label">Fußnoten</span>' +
+      '</div>';
+  }
+
+  function renderWorks(ed) {
+    var html = (ed.works || []).map(function(w) {
+      var pg = w.stats ? w.stats.pages_total : '';
+      var sec = w.stats ? w.stats.headings : '';
+      var meta = [];
+      if (pg) meta.push(pg + ' S.');
+      if (sec) meta.push(sec + ' Abschn.');
+      return '<a class="work-row" href="text.html?work=' + w.work_id + '">' +
+        '<span class="work-row-band">' + w.siglum + '</span>' +
+        '<span class="work-row-main">' +
+          '<span class="work-row-title">' + w.title + '</span>' +
+          '<span class="work-row-sig">SW ' + w.siglum + '</span>' +
+        '</span>' +
+        (meta.length ? '<span class="work-row-meta">' + meta.join(' · ') + '</span>' : '') +
+        '<span class="work-row-arrow">&rarr;</span>' +
+      '</a>';
+    }).join('');
+    document.getElementById('works-grid').innerHTML = html;
+  }
+
+  if (window.SCHELLING_EDITION) {
+    renderStats(window.SCHELLING_EDITION);
+    renderWorks(window.SCHELLING_EDITION);
+  }
+  function toggleTheme() {
+    var t = document.documentElement.dataset.theme === 'light' ? '' : 'light';
+    document.documentElement.dataset.theme = t;
+    localStorage.setItem('schelling-theme', t);
+  }
+</script>
+
+<script>if("serviceWorker"in navigator)navigator.serviceWorker.register("/sw.js")</script>
+</body>
+</html>
