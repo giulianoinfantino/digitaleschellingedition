@@ -49,16 +49,17 @@ def parse_dotted_leader_toc(text: str) -> list[dict]:
         if not line:
             continue
 
-        # Sub-entry listings without page numbers (a), b), etc.) — skip
-        if re.match(r"^[a-g]\)\s", line) and "..." not in line:
+        # Sub-entry listings without page numbers AND without continuation
+        # (bare "a) Title" / "b) Title" lines in sw-I-05 style)
+        # Only skip if the line ends with a period (complete sentence) and has no dots
+        if re.match(r"^[a-g]\)\s", line) and "..." not in line and line.endswith("."):
             current = ""
             continue
 
         m = re.match(r"^(.+?)\s*\.{3,}\s*(\d+)\s*$", line)
         if m:
             title_part = m.group(1).strip()
-            # Only prepend current if it's a genuine continuation (no sub-items)
-            if current and not re.search(r"[a-g]\)", current):
+            if current:
                 title_part = current + " " + title_part
             current = ""
             t = clean_title(title_part)
@@ -69,7 +70,7 @@ def parse_dotted_leader_toc(text: str) -> list[dict]:
         m2 = re.match(r"^(.+?)\s{3,}(\d+)\s*$", line)
         if m2:
             title_part = m2.group(1).strip()
-            if current and len(current) < 120 and not re.search(r"[a-g]\)", current):
+            if current:
                 title_part = current + " " + title_part
             current = ""
             t = clean_title(title_part)
