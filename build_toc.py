@@ -28,11 +28,12 @@ def get_toc_pdf_pages(vol_id: str) -> list[int]:
 
 
 def clean_title(t: str) -> str:
+    t = re.sub(r"\s+", " ", t).strip()
     for prefix in ["Inhaltsverzeichniß", "Inhaltsübersicht", "Inhalts-Uebersicht", "Inhalt"]:
         t = re.sub(rf"^{re.escape(prefix)}\.?\s*", "", t)
+    t = re.sub(r"^[\.\s,]+", "", t)
     t = re.sub(r"^Seite\s+", "", t)
-    t = re.sub(r"\s+", " ", t).strip()
-    t = re.sub(r"^[\.\s]+", "", t)
+    t = re.sub(r"^\d+[\.\)]\s+", "", t)
     t = re.sub(r"\[?I{1,2},\d+,\d+\]?\s*", "", t)
     t = t.strip(". ")
     return t

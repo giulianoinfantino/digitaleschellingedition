@@ -191,37 +191,9 @@
 
     const tocLevel = (title) => {
       const t = title.trim();
-      // ERSTER THEIL / ZWEITER THEIL — Enzyklopädie top-level parts
-      if (/^(ERSTER|ZWEITER|ZWEY?TER|DRITTER)\s+THEIL\b/i.test(t)) return 1;
-      // ERSTES BUCH, ZWEYTES BUCH — top-level book divisions
-      if (/^(ERSTES|ZWEY?TES|ZWEITES|DRITTES|VIERTES)\s+BUCH\b/i.test(t)) return 1;
-      // Abschnitt / Abteilung / Kapitel
-      if (/\bAbtheilung\b/i.test(t)) return 2;
-      if (/\bAbschnitt\b/i.test(t)) return 2;
-      if (/\bKapitel\b/i.test(t)) return 2;
-      // ALL-CAPS super-section
-      if (/^[A-ZÄÖÜ][A-ZÄÖÜ\s\.\-\(\)]+$/.test(t) && t.length >= 5) return 1;
-      if (/^Vom\b|^Von\b/.test(t)) return 2;
-      // Vorrede / Einleitung / Vorbegriff
-      if (/^(Vorrede|Vorwort|Einleitung|Vorbegriff)\b/i.test(t)) return 2;
-      // Capital-letter sections: "A. Das Urtheil ..."
-      if (/^[A-ZÄÖÜ]\.\s/.test(t)) return 3;
-      // Anmerkung / Eintheilung
-      if (/^(Anm\.|Anmerkung|Eintheilung)\b/i.test(t)) return 3;
-      // Double-uppercase: AA., BB., CC. (e.g. under Die Sittlichkeit)
-      if (/^[A-Z]{2}\.\s/.test(t)) return 4;
-      // Lowercase letter sub-sub-sections: "a. das positive"
-      if (/^[a-zäöüß]\.\s/.test(t)) return 4;
-      // Numeric sub-sub-sections: "1. ..."
-      if (/^\d{1,2}\.\s/.test(t)) return 4;
-      // Double-Greek letters: αα, ββ, γγ
-      if (/^[αβγδεζηθ]{2}[)\s]/.test(t)) return 6;
-      // Greek letter sub-sections: α, β, γ, δ
-      if (/^[αβγδεζηθ][)\s.]/.test(t)) return 5;
-      // Roman numeral sub-sections: "I. Empirismus", "II. Kritische Philosophie"
-      if (/^[IVX]+\.\s/.test(t)) return 4;
-      // Default
-      return 3;
+      if (/Vorlesung\./i.test(t)) return 2;
+      if (/^[a-g]\)\s/i.test(t)) return 3;
+      return 2;
     };
 
     const cleanedToc = (corpus.toc_printed || [])

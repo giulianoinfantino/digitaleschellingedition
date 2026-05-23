@@ -93,9 +93,25 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
     # Inhaltsverzeichnis pages) instead of heuristic heading detection.
     toc_file = Path(__file__).parent / "toc" / f"{work_id}.json"
     if toc_file.exists():
-        toc = json.loads(toc_file.read_text(encoding="utf-8"))
+        raw_toc = json.loads(toc_file.read_text(encoding="utf-8"))
     else:
-        toc = []
+        raw_toc = []
+
+    # Snap TOC page numbers to the nearest existing page_book value,
+    # since the PDF extraction has gaps in page numbering.
+    existing_pages = sorted(set(
+        p["page_book"] for p in web_pages
+        if p.get("page_book") is not None and p["page_kind"] == "body"
+    ))
+    toc = []
+    for entry in raw_toc:
+        target = entry.get("page")
+        if target is not None and existing_pages:
+            # Find nearest existing page (prefer >= target)
+            best = min(existing_pages, key=lambda p: (abs(p - target), p < target))
+            toc.append({"title": entry["title"], "page": best})
+        else:
+            toc.append(entry)
 
     return {
         "metadata": {
