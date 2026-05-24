@@ -345,23 +345,23 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
         r"^(.+?Vorlesung)\.\s+.+", re.DOTALL
     )
     for entry in raw_toc:
-        title = entry["title"]
+        toc_title = entry["title"]
         # Truncate Vorlesung entries to just "N-te Vorlesung"
-        vm = vorlesung_re.match(title)
+        vm = vorlesung_re.match(toc_title)
         if vm:
-            title = vm.group(1)
+            toc_title = vm.group(1)
         # Try to find actual heading position in text
-        norm_title = _norm(title)
+        norm_title = _norm(toc_title)
         actual_page = heading_positions.get(norm_title)
         if actual_page is not None:
-            toc.append({"title": title, "page": actual_page})
+            toc.append({"title": toc_title, "page": actual_page})
         else:
             target = entry.get("page")
             if target is not None and existing_pages:
                 best = min(existing_pages, key=lambda p: (abs(p - target), p < target))
-                toc.append({"title": title, "page": best})
+                toc.append({"title": toc_title, "page": best})
             else:
-                toc.append({"title": title, "page": entry.get("page")})
+                toc.append({"title": toc_title, "page": entry.get("page")})
 
     return {
         "metadata": {
@@ -398,7 +398,7 @@ def build_search_entry(work_id: str, page: dict, unit: dict) -> dict | None:
         "page_pdf": page["page_pdf"],
         "page_book": page.get("page_book"),
         "label": label,
-        "text": re.sub(r"\*", "", text),
+        "text": re.sub(r"\*", "", text)[:300],
     }
 
 
