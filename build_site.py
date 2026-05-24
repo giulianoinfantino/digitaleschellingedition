@@ -278,6 +278,18 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
         p["page_book"] for p in web_pages
         if p.get("page_book") is not None and p["page_kind"] == "body"
     ))
+
+    # Build index of actual heading positions for TOC snapping
+    heading_positions = {}
+    for p in web_pages:
+        pb = p.get("page_book")
+        if pb is None or p["page_kind"] != "body":
+            continue
+        for u in p["units"]:
+            if u["type"] == "heading":
+                norm_h = _norm(u["text"])
+                heading_positions[norm_h] = pb
+
     toc = []
     vorlesung_re = re.compile(
         r"^(.+?Vorlesung)\.\s+.+", re.DOTALL
@@ -288,12 +300,18 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
         vm = vorlesung_re.match(title)
         if vm:
             title = vm.group(1)
-        target = entry.get("page")
-        if target is not None and existing_pages:
-            best = min(existing_pages, key=lambda p: (abs(p - target), p < target))
-            toc.append({"title": title, "page": best})
+        # Try to find actual heading position in text
+        norm_title = _norm(title)
+        actual_page = heading_positions.get(norm_title)
+        if actual_page is not None:
+            toc.append({"title": title, "page": actual_page})
         else:
-            toc.append({"title": title, "page": entry.get("page")})
+            target = entry.get("page")
+            if target is not None and existing_pages:
+                best = min(existing_pages, key=lambda p: (abs(p - target), p < target))
+                toc.append({"title": title, "page": best})
+            else:
+                toc.append({"title": title, "page": entry.get("page")})
 
     return {
         "metadata": {
