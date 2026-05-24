@@ -2,13 +2,13 @@ window.SCHELLING_EDITION = {
   "metadata": {
     "title": "Digitale Schelling-Edition",
     "collection_title": "Friedrich Wilhelm Joseph von Schelling · Sämmtliche Werke",
-    "generated_at": "2026-05-24T17:18:44Z",
+    "generated_at": "2026-05-24T17:52:09Z",
     "works_count": 14,
     "default_work_id": "sw-I-01",
     "stats": {
       "pages_total": 4548,
       "search_entries": 17269,
-      "footnotes": 2939,
+      "footnotes": 2917,
       "headings": 1073
     }
   },
@@ -25,8 +25,8 @@ window.SCHELLING_EDITION = {
         "pages_total": 297,
         "pages_body": 293,
         "headings": 272,
-        "paragraphs": 944,
-        "footnotes": 294,
+        "paragraphs": 966,
+        "footnotes": 272,
         "search_entries": 1274
       }
     },
