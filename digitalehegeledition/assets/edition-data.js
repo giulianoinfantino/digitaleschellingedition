@@ -2,14 +2,14 @@ window.SCHELLING_EDITION = {
   "metadata": {
     "title": "Digitale Schelling-Edition",
     "collection_title": "Friedrich Wilhelm Joseph von Schelling · Sämmtliche Werke",
-    "generated_at": "2026-05-24T09:29:25Z",
+    "generated_at": "2026-05-24T11:02:36Z",
     "works_count": 14,
     "default_work_id": "sw-I-01",
     "stats": {
       "pages_total": 4548,
       "search_entries": 17290,
       "footnotes": 2943,
-      "headings": 984
+      "headings": 1084
     }
   },
   "works": [
@@ -24,8 +24,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 297,
         "pages_body": 294,
-        "headings": 270,
-        "paragraphs": 964,
+        "headings": 283,
+        "paragraphs": 951,
         "footnotes": 298,
         "search_entries": 1295
       }
@@ -41,8 +41,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 347,
         "pages_body": 339,
-        "headings": 35,
-        "paragraphs": 1146,
+        "headings": 42,
+        "paragraphs": 1139,
         "footnotes": 220,
         "search_entries": 1390
       }
@@ -58,8 +58,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 397,
         "pages_body": 390,
-        "headings": 96,
-        "paragraphs": 1170,
+        "headings": 100,
+        "paragraphs": 1166,
         "footnotes": 317,
         "search_entries": 1502
       }
@@ -75,8 +75,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 350,
         "pages_body": 341,
-        "headings": 277,
-        "paragraphs": 1259,
+        "headings": 285,
+        "paragraphs": 1251,
         "footnotes": 188,
         "search_entries": 1462
       }
@@ -92,8 +92,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 427,
         "pages_body": 412,
-        "headings": 36,
-        "paragraphs": 1319,
+        "headings": 38,
+        "paragraphs": 1317,
         "footnotes": 129,
         "search_entries": 1473
       }
@@ -109,8 +109,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 330,
         "pages_body": 322,
-        "headings": 23,
-        "paragraphs": 1240,
+        "headings": 34,
+        "paragraphs": 1229,
         "footnotes": 65,
         "search_entries": 1311
       }
@@ -126,8 +126,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 330,
         "pages_body": 323,
-        "headings": 21,
-        "paragraphs": 1422,
+        "headings": 32,
+        "paragraphs": 1411,
         "footnotes": 187,
         "search_entries": 1583
       }
@@ -143,8 +143,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 265,
         "pages_body": 258,
-        "headings": 29,
-        "paragraphs": 758,
+        "headings": 36,
+        "paragraphs": 751,
         "footnotes": 181,
         "search_entries": 957
       }
@@ -160,8 +160,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 287,
         "pages_body": 280,
-        "headings": 28,
-        "paragraphs": 830,
+        "headings": 37,
+        "paragraphs": 821,
         "footnotes": 197,
         "search_entries": 1036
       }
@@ -177,8 +177,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 258,
         "pages_body": 255,
-        "headings": 46,
-        "paragraphs": 860,
+        "headings": 75,
+        "paragraphs": 831,
         "footnotes": 81,
         "search_entries": 967
       }
@@ -194,8 +194,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 345,
         "pages_body": 342,
-        "headings": 32,
-        "paragraphs": 843,
+        "headings": 31,
+        "paragraphs": 844,
         "footnotes": 392,
         "search_entries": 1266
       }
@@ -211,8 +211,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 396,
         "pages_body": 390,
-        "headings": 36,
-        "paragraphs": 997,
+        "headings": 35,
+        "paragraphs": 998,
         "footnotes": 334,
         "search_entries": 1363
       }
@@ -245,8 +245,8 @@ window.SCHELLING_EDITION = {
       "stats": {
         "pages_total": 210,
         "pages_body": 207,
-        "headings": 20,
-        "paragraphs": 522,
+        "headings": 21,
+        "paragraphs": 521,
         "footnotes": 152,
         "search_entries": 688
       }

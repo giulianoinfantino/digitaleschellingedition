@@ -102,7 +102,7 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
             toc_words[target] = words
 
     for target, words in toc_words.items():
-        threshold = max(3, int(len(words) * 0.6 + 0.99))
+        threshold = len(words) if len(words) <= 3 else max(3, int(len(words) * 0.6 + 0.99))
         promoted = False
         for delta in range(-1, 6):
             if promoted:
@@ -118,7 +118,10 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
                 clean = re.sub(r"\*", "", text).strip()
                 if len(clean) > 120 or len(clean) < 3:
                     continue
-                if "Anmerkung" in clean or "Herausgeber" in clean:
+                if re.search(r"\[?Anmerkung des Herausgeber", clean):
+                    continue
+                # Never start matching from a lowercase paragraph (sentence continuation)
+                if clean[0].islower():
                     continue
                 normed = _norm(text)
                 matched = sum(1 for w in words if w in normed)
@@ -137,7 +140,7 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
                     nxt_clean = re.sub(r"\*", "", nxt["text"]).strip()
                     if len(nxt_clean) > 120:
                         break
-                    if "Anmerkung" in nxt_clean or "Herausgeber" in nxt_clean:
+                    if re.search(r"\[?Anmerkung des Herausgeber", nxt_clean):
                         break
                     combined += " " + _norm(nxt["text"])
                     run.append(j)
@@ -156,7 +159,7 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
     for entry in toc_entries:
         target = entry.get("page")
         if target is not None:
-            for delta in range(-1, 4):
+            for delta in range(-2, 6):
                 toc_target_pages.add(target + delta)
 
     for pb in toc_target_pages:
@@ -164,26 +167,73 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
         if not pg:
             continue
         paras = pg.get("paragraphs", [])
+        # Pass A: promote short paragraphs at the top (before first body text)
+        prev_was_heading = False
         for i, para in enumerate(paras):
             if para.get("kind") == "footnote":
                 continue
             if para.get("kind") in ("heading", "subheading"):
+                prev_was_heading = True
                 continue
             clean = re.sub(r"\*", "", para.get("text", "")).strip()
             if len(clean) > 80:
                 break
             if len(clean) < 2:
                 continue
-            if "Anmerkung" in clean or "Herausgeber" in clean:
+            if re.search(r"\[?Anmerkung des Herausgeber", clean):
                 continue
-            # Skip if next paragraph starts lowercase (= continuation, not heading)
-            if i + 1 < len(paras):
-                nxt = paras[i + 1]
-                if nxt.get("kind") == "paragraph":
-                    nxt_text = re.sub(r"\*", "", nxt.get("text", "")).strip()
-                    if nxt_text and nxt_text[0].islower():
-                        continue
+            if clean[0].islower():
+                if prev_was_heading:
+                    para["kind"] = "heading"
+                else:
+                    break
+                continue
             para["kind"] = "heading"
+            prev_was_heading = True
+        # Pass B: find title blocks mid-page (2+ consecutive short paragraphs
+        # starting with uppercase, after body text)
+        i = 0
+        while i < len(paras):
+            para = paras[i]
+            if para.get("kind") != "paragraph":
+                i += 1
+                continue
+            clean = re.sub(r"\*", "", para.get("text", "")).strip()
+            if len(clean) > 80 or len(clean) < 2 or not clean[0].isupper():
+                i += 1
+                continue
+            if re.search(r"\[?Anmerkung des Herausgeber", clean):
+                i += 1
+                continue
+            # Found a short uppercase paragraph — check if it starts a cluster
+            cluster = [i]
+            for j in range(i + 1, min(i + 6, len(paras))):
+                nxt = paras[j]
+                if nxt.get("kind") == "footnote":
+                    cluster.append(j)
+                    continue
+                if nxt.get("kind") in ("heading", "subheading"):
+                    break
+                nxt_clean = re.sub(r"\*", "", nxt.get("text", "")).strip()
+                if len(nxt_clean) > 80:
+                    break
+                if len(nxt_clean) < 2:
+                    cluster.append(j)
+                    continue
+                cluster.append(j)
+            # Only promote if cluster has 2+ short paragraphs (not footnotes)
+            para_indices = [k for k in cluster
+                           if paras[k].get("kind") == "paragraph"
+                           and len(re.sub(r"\*", "", paras[k].get("text", "")).strip()) <= 80
+                           and len(re.sub(r"\*", "", paras[k].get("text", "")).strip()) >= 2]
+            if len(para_indices) >= 2:
+                for k in para_indices:
+                    pk = paras[k]
+                    pk_clean = re.sub(r"\*", "", pk.get("text", "")).strip()
+                    if re.search(r"\[?Anmerkung des Herausgeber", pk_clean):
+                        continue
+                    pk["kind"] = "heading"
+            i = cluster[-1] + 1 if cluster else i + 1
 
     # First-body-page pass: promote short paragraphs at the very start of each
     # volume (band titles like "*Philosophie der Offenbarung*")
