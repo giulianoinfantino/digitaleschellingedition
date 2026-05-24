@@ -1,0 +1,6 @@
+ocr/
+toc/
+*.pdf
+*.py
+__pycache__/
+.git/

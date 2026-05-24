@@ -43,12 +43,23 @@ def load_volume_pages(work_id: str) -> list[dict]:
     return pages
 
 
+_ORDINALS = (
+    r"Erste[rs]?|Zweite[rs]?|Dritte[rs]?|Vierte[rs]?|Fünfte[rs]?|"
+    r"Sechste[rs]?|Siebente[rs]?|Achte[rs]?|Neunte[rs]?|Zehnte[rs]?|"
+    r"Eilfte[rs]?|Zwölfte[rs]?|Dreizehnte[rs]?|Vierzehnte[rs]?|"
+    r"Fünfzehnte[rs]?|Sechzehnte[rs]?|Siebzehnte[rs]?|"
+    r"Achtzehnte[rs]?|Neunzehnte[rs]?|Zwanzigste[rs]?|"
+    r"Einundzwanzigste[rs]?|Zweiundzwanzigste[rs]?|Dreiundzwanzigste[rs]?|"
+    r"Vierundzwanzigste[rs]?|Fünfundzwanzigste[rs]?|Sechsundzwanzigste[rs]?|"
+    r"Siebenundzwanzigste[rs]?|Achtundzwanzigste[rs]?|Neunundzwanzigste[rs]?|"
+    r"Dreißigste[rs]?|Einunddreißigste[rs]?|Zweiunddreißigste[rs]?|"
+    r"Dreiunddreißigste[rs]?|Vierunddreißigste[rs]?|Fünfunddreißigste[rs]?|"
+    r"Sechsunddreißigste[rs]?|Siebenunddreißigste[rs]?|"
+    r"Achtunddreißigste[rs]?|Neununddreißigste[rs]?|Vierzigste[rs]?"
+)
+
 HEADING_PATTERNS = [
-    re.compile(r"^(Erste[rs]?|Zweite[rs]?|Dritte[rs]?|Vierte[rs]?|Fünfte[rs]?|"
-               r"Sechste[rs]?|Siebente[rs]?|Achte[rs]?|Neunte[rs]?|Zehnte[rs]?|"
-               r"Eilfte[rs]?|Zwölfte[rs]?|Dreizehnte[rs]?|Vierzehnte[rs]?|"
-               r"Fünfzehnte[rs]?|Sechzehnte[rs]?|Siebzehnte[rs]?|"
-               r"Achtzehnte[rs]?|Neunzehnte[rs]?|Zwanzigste[rs]?)\s+"
+    re.compile(rf"^({_ORDINALS})\s+"
                r"(Buch|Kapitel|Abschnitt|Theil|Abtheilung|Vorlesung|Band)", re.I),
     re.compile(r"^Vorwort\b", re.I),
     re.compile(r"^Vorrede\b", re.I),
@@ -153,7 +164,7 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
         if not pg:
             continue
         paras = pg.get("paragraphs", [])
-        for para in paras:
+        for i, para in enumerate(paras):
             if para.get("kind") == "footnote":
                 continue
             if para.get("kind") in ("heading", "subheading"):
@@ -165,7 +176,31 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
                 continue
             if "Anmerkung" in clean or "Herausgeber" in clean:
                 continue
-            # Short text at the start of a TOC-targeted page → heading
+            # Skip if next paragraph starts lowercase (= continuation, not heading)
+            if i + 1 < len(paras):
+                nxt = paras[i + 1]
+                if nxt.get("kind") == "paragraph":
+                    nxt_text = re.sub(r"\*", "", nxt.get("text", "")).strip()
+                    if nxt_text and nxt_text[0].islower():
+                        continue
+            para["kind"] = "heading"
+
+    # First-body-page pass: promote short paragraphs at the very start of each
+    # volume (band titles like "*Philosophie der Offenbarung*")
+    body_pages = [p for p in pages if p.get("page_kind") == "body"
+                  and p.get("page_book") is not None]
+    first_body = min(body_pages, key=lambda p: p["page_book"]) if body_pages else None
+    if first_body and first_body.get("page_book") not in toc_target_pages:
+        for para in first_body.get("paragraphs", []):
+            if para.get("kind") == "footnote":
+                continue
+            if para.get("kind") in ("heading", "subheading"):
+                continue
+            clean = re.sub(r"\*", "", para.get("text", "")).strip()
+            if len(clean) > 80:
+                break
+            if len(clean) < 2:
+                continue
             para["kind"] = "heading"
 
     for p in pages:
@@ -244,14 +279,21 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
         if p.get("page_book") is not None and p["page_kind"] == "body"
     ))
     toc = []
+    vorlesung_re = re.compile(
+        r"^(.+?Vorlesung)\.\s+.+", re.DOTALL
+    )
     for entry in raw_toc:
+        title = entry["title"]
+        # Truncate Vorlesung entries to just "N-te Vorlesung"
+        vm = vorlesung_re.match(title)
+        if vm:
+            title = vm.group(1)
         target = entry.get("page")
         if target is not None and existing_pages:
-            # Find nearest existing page (prefer >= target)
             best = min(existing_pages, key=lambda p: (abs(p - target), p < target))
-            toc.append({"title": entry["title"], "page": best})
+            toc.append({"title": title, "page": best})
         else:
-            toc.append(entry)
+            toc.append({"title": title, "page": entry.get("page")})
 
     return {
         "metadata": {
