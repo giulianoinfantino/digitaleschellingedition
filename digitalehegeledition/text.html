@@ -445,8 +445,13 @@
 
     const fnMarkers = new Set();
     footnotes.forEach(fn => {
-      const m = (fn.text || '').match(/^(\d+|\*)\s*/);
+      const t = fn.text || '';
+      const m = t.match(/^(\d+|\*)\s*/);
       if (m) fnMarkers.add(m[1]);
+      // Also find markers embedded mid-text (e.g. "...) 1 Diese...")
+      for (const em of t.matchAll(/(?:^|[\s)\].])\s*(\d+)\s+[A-ZÄÖÜ]/g)) {
+        fnMarkers.add(em[1]);
+      }
     });
 
     const liftFnRefs = (html) => {

@@ -139,6 +139,35 @@ def promote_headings(pages: list[dict], toc_entries: list[dict]):
                     promoted = True
                     break
 
+    # Structural pass: on TOC target pages, short paragraphs at the top
+    # (before body text) are title-page headings even if words don't match
+    toc_target_pages = set()
+    for entry in toc_entries:
+        target = entry.get("page")
+        if target is not None:
+            for delta in range(-1, 4):
+                toc_target_pages.add(target + delta)
+
+    for pb in toc_target_pages:
+        pg = page_by_book.get(pb)
+        if not pg:
+            continue
+        paras = pg.get("paragraphs", [])
+        for para in paras:
+            if para.get("kind") == "footnote":
+                continue
+            if para.get("kind") in ("heading", "subheading"):
+                continue
+            clean = re.sub(r"\*", "", para.get("text", "")).strip()
+            if len(clean) > 80:
+                break
+            if len(clean) < 2:
+                continue
+            if "Anmerkung" in clean or "Herausgeber" in clean:
+                continue
+            # Short text at the start of a TOC-targeted page → heading
+            para["kind"] = "heading"
+
     for p in pages:
         for para in p.get("paragraphs", []):
             if para.get("kind") != "paragraph":
