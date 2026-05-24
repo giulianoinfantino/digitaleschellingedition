@@ -43,6 +43,116 @@ def load_volume_pages(work_id: str) -> list[dict]:
     return pages
 
 
+HEADING_PATTERNS = [
+    re.compile(r"^(Erste[rs]?|Zweite[rs]?|Dritte[rs]?|Vierte[rs]?|Fünfte[rs]?|"
+               r"Sechste[rs]?|Siebente[rs]?|Achte[rs]?|Neunte[rs]?|Zehnte[rs]?|"
+               r"Eilfte[rs]?|Zwölfte[rs]?|Dreizehnte[rs]?|Vierzehnte[rs]?|"
+               r"Fünfzehnte[rs]?|Sechzehnte[rs]?|Siebzehnte[rs]?|"
+               r"Achtzehnte[rs]?|Neunzehnte[rs]?|Zwanzigste[rs]?)\s+"
+               r"(Buch|Kapitel|Abschnitt|Theil|Abtheilung|Vorlesung|Band)", re.I),
+    re.compile(r"^Vorwort\b", re.I),
+    re.compile(r"^Vorrede\b", re.I),
+    re.compile(r"^Einleitung\b", re.I),
+    re.compile(r"^Vorbemerkung", re.I),
+    re.compile(r"^Anhang\b", re.I),
+    re.compile(r"^Nachwort\b", re.I),
+    re.compile(r"^Beschluß\b", re.I),
+    re.compile(r"^Zusätze?\b", re.I),
+    re.compile(r"^\*?Vorrede", re.I),
+    re.compile(r"^\*?Einleitung", re.I),
+]
+
+
+def _norm(s: str) -> str:
+    return re.sub(r"[*\s.]+", " ", s).strip().upper()
+
+
+def promote_headings(pages: list[dict], toc_entries: list[dict]):
+    """Promote paragraphs that match TOC titles or heading patterns to headings."""
+    page_by_book = {}
+    for p in pages:
+        pb = p.get("page_book")
+        if pb is not None:
+            page_by_book[pb] = p
+
+    SKIP_WORDS = {"DER", "DIE", "DAS", "DES", "DEM", "DEN", "UND", "ODER",
+                   "ALS", "WIE", "VON", "ZUR", "ZUM", "AUS", "AUF", "BEI",
+                   "MIT", "FÜR", "BIS", "ÜBER", "NACH", "SEIT", "VOM",
+                   "EINE", "EINEM", "EINEN", "EINER", "EINES"}
+
+    toc_words = {}
+    for entry in toc_entries:
+        target = entry.get("page")
+        if target is None:
+            continue
+        words = [w for w in _norm(entry["title"]).split()
+                 if len(w) > 2 and w not in SKIP_WORDS]
+        if len(words) >= 2:
+            toc_words[target] = words
+
+    for target, words in toc_words.items():
+        threshold = max(3, int(len(words) * 0.6 + 0.99))
+        promoted = False
+        for delta in range(-1, 6):
+            if promoted:
+                break
+            pg = page_by_book.get(target + delta)
+            if not pg:
+                continue
+            paras = pg.get("paragraphs", [])
+            for i, para in enumerate(paras):
+                if para.get("kind") != "paragraph":
+                    continue
+                text = para["text"]
+                clean = re.sub(r"\*", "", text).strip()
+                if len(clean) > 120 or len(clean) < 3:
+                    continue
+                if "Anmerkung" in clean or "Herausgeber" in clean:
+                    continue
+                normed = _norm(text)
+                matched = sum(1 for w in words if w in normed)
+                if matched >= threshold:
+                    para["kind"] = "heading"
+                    promoted = True
+                    break
+                # Try combining consecutive short paragraphs
+                combined = normed
+                run = [i]
+                found_run = False
+                for j in range(i + 1, min(i + 6, len(paras))):
+                    nxt = paras[j]
+                    if nxt.get("kind") != "paragraph":
+                        break
+                    nxt_clean = re.sub(r"\*", "", nxt["text"]).strip()
+                    if len(nxt_clean) > 120:
+                        break
+                    if "Anmerkung" in nxt_clean or "Herausgeber" in nxt_clean:
+                        break
+                    combined += " " + _norm(nxt["text"])
+                    run.append(j)
+                    m = sum(1 for w in words if w in combined)
+                    if m >= threshold and len(run) >= 2:
+                        found_run = True
+                if found_run:
+                    for idx in run:
+                        paras[idx]["kind"] = "heading"
+                    promoted = True
+                    break
+
+    for p in pages:
+        for para in p.get("paragraphs", []):
+            if para.get("kind") != "paragraph":
+                continue
+            text = para["text"].strip()
+            clean = re.sub(r"\*", "", text)
+            if len(clean) > 150:
+                continue
+            for pat in HEADING_PATTERNS:
+                if pat.search(clean):
+                    para["kind"] = "heading"
+                    break
+
+
 def paragraphs_to_units(paragraphs: list[dict]) -> list[dict]:
     units = []
     for p in paragraphs:
@@ -60,6 +170,15 @@ def paragraphs_to_units(paragraphs: list[dict]) -> list[dict]:
 def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
     _, abt, band, siglum, title = meta_tuple
     pages = load_volume_pages(work_id)
+
+    # Load authoritative TOC early so we can use it for heading promotion
+    toc_file = Path(__file__).parent / "toc" / f"{work_id}.json"
+    if toc_file.exists():
+        raw_toc = json.loads(toc_file.read_text(encoding="utf-8"))
+    else:
+        raw_toc = []
+
+    promote_headings(pages, raw_toc)
 
     web_pages = []
     headings_count = 0
@@ -88,14 +207,6 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
             "sigel": siglum,
             "units": units,
         })
-
-    # Load authoritative TOC from toc/<work_id>.json (parsed from original
-    # Inhaltsverzeichnis pages) instead of heuristic heading detection.
-    toc_file = Path(__file__).parent / "toc" / f"{work_id}.json"
-    if toc_file.exists():
-        raw_toc = json.loads(toc_file.read_text(encoding="utf-8"))
-    else:
-        raw_toc = []
 
     # Snap TOC page numbers to the nearest existing page_book value,
     # since the PDF extraction has gaps in page numbering.

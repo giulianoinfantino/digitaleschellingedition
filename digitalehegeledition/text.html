@@ -443,6 +443,20 @@
       else bodyUnits.push(u);
     });
 
+    const fnMarkers = new Set();
+    footnotes.forEach(fn => {
+      const m = (fn.text || '').match(/^(\d+|\*)\s*/);
+      if (m) fnMarkers.add(m[1]);
+    });
+
+    const liftFnRefs = (html) => {
+      if (!fnMarkers.size) return html;
+      return html.replace(/([a-zA-ZäöüßÄÖÜàáâãéèêëìíîïòóôõùúûýÿæœçα-ωΑ-Ω\)\]])(\d+)(?=[\s;,.:)\]"'»—–\?!]|<|$)/g, (full, pre, num) => {
+        if (fnMarkers.has(num)) return `${pre}<sup class="fn-ref">${num}</sup>`;
+        return full;
+      });
+    };
+
     const bodyHtml = bodyUnits.map(u => {
       const type  = u.type || u.label || '';
       const level = u.level || '';
@@ -495,7 +509,7 @@
       lineNum++;
       const startLine = u.metadata && u.metadata.gw_line_start;
       const lineAttr = startLine ? ` data-gw-line="${startLine}"` : '';
-      return `<div class="text-unit type-${type}${anmClass}" data-level="${level}"${lineAttr}${headingIdAttr}>${renderInline(u.text)}</div>`;
+      return `<div class="text-unit type-${type}${anmClass}" data-level="${level}"${lineAttr}${headingIdAttr}>${liftFnRefs(renderInline(u.text))}</div>`;
     }).join('');
 
     if (!footnotes.length) return bodyHtml;
