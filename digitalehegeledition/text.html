@@ -225,28 +225,50 @@
       hds.forEach(h => allHeadings.push({ ...h, pageBook: Number(pb) }));
     });
 
+    const STOP_DE = new Set(['DER','DIE','DAS','DES','DEM','DEN','UND','ODER',
+      'ALS','WIE','VON','ZUR','ZUM','AUS','AUF','BEI','MIT','FÜR','BIS',
+      'ÜBER','NACH','SEIT','VOM','EINE','EINEM','EINEN','EINER','EINES']);
+
     const titleMatch = (norm, hText) =>
       norm === hText || norm.startsWith(hText) || hText.startsWith(norm);
 
     const findBestAnchor = (title, pageBook) => {
       const norm = title.toUpperCase().replace(/[.\s]+$/g, '').replace(/\s+/g, ' ');
-      const words = norm.split(/\s+/).filter(w => w.length > 2);
-      // 1. Exact/prefix match on target page
-      const hds = state._pageHeadings && state._pageHeadings[pageBook];
-      if (hds) {
+      const words = norm.split(/\s+/).filter(w => w.length > 2 && !STOP_DE.has(w));
+      const threshold = Math.max(2, Math.ceil(words.length * 0.4));
+
+      const tryMatch = (hds) => {
+        if (!hds || !hds.length) return null;
         for (const h of hds) { if (titleMatch(norm, h.text)) return h.hid; }
-        if (words.length) for (const h of hds) { if (words.every(w => h.text.includes(w))) return h.hid; }
-      }
-      // 2. Search nearby pages (±2) for a match
-      for (let delta = 1; delta <= 2; delta++) {
+        if (words.length) {
+          for (const h of hds) {
+            if (words.every(w => h.text.includes(w))) return h.hid;
+          }
+        }
+        let best = null, bestCount = 0;
+        for (const h of hds) {
+          const cnt = words.filter(w => h.text.includes(w)).length;
+          if (cnt >= threshold && cnt > bestCount) { best = h.hid; bestCount = cnt; }
+        }
+        if (best) return best;
+        // Words spread across multiple headings on the same page
+        if (hds.length > 1 && words.length >= 3) {
+          const combined = hds.map(h => h.text).join(' ');
+          const cnt = words.filter(w => combined.includes(w)).length;
+          if (cnt >= threshold) return hds[0].hid;
+        }
+        return null;
+      };
+
+      const exact = tryMatch(state._pageHeadings && state._pageHeadings[pageBook]);
+      if (exact) return exact;
+
+      for (let delta = 1; delta <= 5; delta++) {
         for (const off of [delta, -delta]) {
-          const nearby = state._pageHeadings && state._pageHeadings[pageBook + off];
-          if (!nearby) continue;
-          for (const h of nearby) { if (titleMatch(norm, h.text)) return h.hid; }
-          if (words.length) for (const h of nearby) { if (words.every(w => h.text.includes(w))) return h.hid; }
+          const r = tryMatch(state._pageHeadings && state._pageHeadings[pageBook + off]);
+          if (r) return r;
         }
       }
-      // 3. Fall back to first heading on target page or page divider
       return state.headingAnchors[pageBook] || null;
     };
 
@@ -393,6 +415,17 @@
     return String(text).replace(/\*([^*\n]+?)\*/g, '<em class="sperrsatz">$1</em>');
   }
 
+  function renderFootnoteText(text, pdfPage, fnIdx) {
+    const m = text.match(/^(\d+|\*)\s*/);
+    if (m) {
+      const marker = m[1];
+      const rest = text.slice(m[0].length);
+      return `<sup class="fn-num" id="fn-${pdfPage}-${fnIdx}">${marker}</sup> ${renderInline(rest)}`;
+    }
+    return renderInline(text);
+  }
+
+
   function renderPageContent(page) {
     const units = prepareUnits(page.units || []);
     if (!units.length) return '';
@@ -402,7 +435,15 @@
     const enzInit = isEnz && state._enzPageState ? state._enzPageState[page.page_pdf] : null;
     let enzAfterPH = enzInit ? enzInit.afterPH : false;
     let enzParaCount = enzInit ? enzInit.paraCount : 0;
-    return units.map(u => {
+
+    const bodyUnits = [];
+    const footnotes = [];
+    units.forEach(u => {
+      if ((u.type || u.label || '') === 'footnote') footnotes.push(u);
+      else bodyUnits.push(u);
+    });
+
+    const bodyHtml = bodyUnits.map(u => {
       const type  = u.type || u.label || '';
       const level = u.level || '';
       const isParaH = isEnz && type === 'heading' && /^§/.test((u.text || '').trim());
@@ -456,6 +497,14 @@
       const lineAttr = startLine ? ` data-gw-line="${startLine}"` : '';
       return `<div class="text-unit type-${type}${anmClass}" data-level="${level}"${lineAttr}${headingIdAttr}>${renderInline(u.text)}</div>`;
     }).join('');
+
+    if (!footnotes.length) return bodyHtml;
+
+    const fnHtml = footnotes.map((fn, idx) =>
+      `<div class="footnote-item">${renderFootnoteText(fn.text || '', page.page_pdf, idx)}</div>`
+    ).join('');
+
+    return bodyHtml + `<div class="page-footnotes"><hr class="fn-rule">${fnHtml}</div>`;
   }
 
   function renderPages() {
