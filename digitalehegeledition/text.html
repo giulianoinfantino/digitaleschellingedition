@@ -568,7 +568,7 @@
       divider.className = 'page-divider';
       divider.id = `page-${page.page_pdf}`;
       const sig = page.sigel || '';
-      const label = (page.page_book != null && sig) ? `${sig}, S. ${page.page_book}` : (sig || (page.page_book != null ? `S. ${page.page_book}` : ''));
+      const label = (page.page_book != null && sig) ? `${sig}, ${page.page_book}` : (sig || (page.page_book != null ? String(page.page_book) : ''));
       divider.innerHTML = `<span class="page-sigel">${label}</span>`;
       frag.appendChild(divider);
 
@@ -1059,7 +1059,7 @@
               for (var j = 0; j < cards.length; j++) { if (cards[j] === current) { idx = j; break; } }
               var gwPage = '';
               var p = state.bodyPages[idx];
-              if (p && p.page_book != null) gwPage = ' · S. ' + p.page_book;
+              if (p && p.page_book != null) gwPage = ' · ' + p.page_book;
               posEl.textContent = (idx + 1) + ' / ' + state.bodyPages.length + gwPage;
               posEl.classList.add('visible');
               clearTimeout(hideTimer);

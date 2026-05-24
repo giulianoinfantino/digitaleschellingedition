@@ -16,20 +16,20 @@ OCR_ROOT = Path(__file__).parent / "ocr"
 SITE_ROOT = Path(__file__).parent / "digitalehegeledition" / "assets"
 
 VOLUME_META = [
-    ("sw-I-01",  "I",  "1",  "SW I, 1",  "Jugendschriften (1792–1797)"),
-    ("sw-I-02",  "I",  "2",  "SW I, 2",  "Naturphilosophie I (1797–1798)"),
-    ("sw-I-03",  "I",  "3",  "SW I, 3",  "Naturphilosophie II (1799–1800)"),
-    ("sw-I-04",  "I",  "4",  "SW I, 4",  "Identitätsphilosophie (1800–1802)"),
-    ("sw-I-05",  "I",  "5",  "SW I, 5",  "Schriften 1802–1803"),
-    ("sw-I-06",  "I",  "6",  "SW I, 6",  "Philosophie und Religion (1804)"),
-    ("sw-I-07",  "I",  "7",  "SW I, 7",  "Schriften 1805–1808"),
-    ("sw-I-08",  "I",  "8",  "SW I, 8",  "Schriften 1811–1815"),
-    ("sw-I-09",  "I",  "9",  "SW I, 9",  "Schriften 1815–1830"),
-    ("sw-I-10", "I", "10",  "SW I, 10", "Schriften 1830–1850"),
-    ("sw-II-01", "II",  "1",  "SW II, 1", "Philosophie der Mythologie I"),
-    ("sw-II-02", "II",  "2",  "SW II, 2", "Philosophie der Mythologie II"),
-    ("sw-II-03", "II",  "3",  "SW II, 3", "Philosophie der Offenbarung I"),
-    ("sw-II-04", "II",  "4",  "SW II, 4", "Philosophie der Offenbarung II"),
+    ("sw-I-01",  "I",  "1",  "SW I.1",  "Jugendschriften (1792–1797)"),
+    ("sw-I-02",  "I",  "2",  "SW I.2",  "Naturphilosophie I (1797–1798)"),
+    ("sw-I-03",  "I",  "3",  "SW I.3",  "Naturphilosophie II (1799–1800)"),
+    ("sw-I-04",  "I",  "4",  "SW I.4",  "Identitätsphilosophie (1800–1802)"),
+    ("sw-I-05",  "I",  "5",  "SW I.5",  "Schriften 1802–1803"),
+    ("sw-I-06",  "I",  "6",  "SW I.6",  "Philosophie und Religion (1804)"),
+    ("sw-I-07",  "I",  "7",  "SW I.7",  "Schriften 1805–1808"),
+    ("sw-I-08",  "I",  "8",  "SW I.8",  "Schriften 1811–1815"),
+    ("sw-I-09",  "I",  "9",  "SW I.9",  "Schriften 1815–1830"),
+    ("sw-I-10", "I", "10",  "SW I.10", "Schriften 1830–1850"),
+    ("sw-II-01", "II",  "1",  "SW II.1", "Philosophie der Mythologie I"),
+    ("sw-II-02", "II",  "2",  "SW II.2", "Philosophie der Mythologie II"),
+    ("sw-II-03", "II",  "3",  "SW II.3", "Philosophie der Offenbarung I"),
+    ("sw-II-04", "II",  "4",  "SW II.4", "Philosophie der Offenbarung II"),
 ]
 
 
