@@ -1,46 +1,142 @@
 [
   {
     "title": "Magisterdissertation: Antiquissimi de prima malorum humanorum origine philosophematis Genes. III explicandi tentamen criticum et philosophicum",
-    "page": 1
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Ueber Mythen, historische Sagen und Philosopheme der ältesten Welt",
-    "page": 41
+    "page": 41,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Ueber die Möglichkeit einer Form der Philosophie überhaupt",
-    "page": 85
+    "page": 85,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Theologische Examensdissertation: De Marcione Paullinarum epistolarum emendatore",
-    "page": 113
+    "page": 113,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
-    "title": "Vom Ich als Princip der Philosophie oder über das Unbedingte im menschlichen Wissen",
-    "page": 149
+    "title": "Vom Ich als Princip der Philosophie, oder über das Unbedingte im menschlichen Wissen",
+    "page": 149,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "Uebersicht",
+    "page": null,
+    "level": 1,
+    "kind": "other",
+    "label": "Uebersicht"
+  },
+  {
+    "title": "1. Deduktion eines letzten Realgrunds unseres Wissens überhaupt",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Bestimmung desselben durch den Begriff des Unbedingten",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Deduktion aller möglichen Ansichten des Unbedingten a priori",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "4. Deduktion der Urform des Ichs, der Identität, und des obersten Grundsatzes",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "4"
+  },
+  {
+    "title": "5. Deduktion der Form seines Gesetzseyns durch absolute Freiheit in intellektualer Anschauung",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "5"
+  },
+  {
+    "title": "6. Deduktion der untergeordneten Formen des Ichs",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "6"
   },
   {
     "title": "Neue Deduktion des Naturrechts",
-    "page": 247
+    "page": 245,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Philosophische Briefe über Dogmatismus und Kriticismus",
-    "page": 281
+    "page": 281,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Abhandlungen zur Erläuterung des Idealismus der Wissenschaftslehre",
-    "page": 343
+    "page": 343,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
-    "title": "Aus der „Allgemeinen Uebersicht der neuesten philosophischen Literatur“ (im Philosophischen Journal)",
-    "page": 453
+    "title": "Aus der „Allgemeinen Uebersicht der neuesten philosophischen Literatur\" (im Philosophischen Journal)",
+    "page": 453,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
-    "title": "A. Ueber die Preisfrage der Berliner Akademie (1795): Welche Fortschritte hat die Metaphysik seit Leibnizens und Wolfs Zeiten in Deutschland gemacht, und deren Lösungen. B. Abhandlung über die Frage, ob eine Philosophie der Erfahrung, insbesondere, ob eine Philosophie der Geschichte möglich sey. Ueber Offenbarung und Volksunterricht",
-    "page": 452
+    "title": "A. Ueber die Preisfrage der Berliner Akademie (1795): Welche Fortschritte hat die Metaphysik seit Leibnizens und Wolfs Zeiten in Deutschland gemacht, und deren Lösungen",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "A"
+  },
+  {
+    "title": "B. Abhandlung über die Frage, ob eine Philosophie der Erfahrung, insbesondere ob eine Philosophie der Geschichte möglich sey",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "Ueber Offenbarung und Volksunterricht",
+    "page": 474,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Recension",
-    "page": 482
+    "page": 483,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   }
 ]

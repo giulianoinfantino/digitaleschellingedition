@@ -1,22 +1,359 @@
 [
   {
-    "title": "Darlegung des wahren Verhältnisses der Naturphilosophie zu der verbesserten Fichteschen Lehre",
-    "page": 1
+    "title": "1. Darlegung des wahren Verhältnisses der Naturphilosophie zu der verbesserten Fichteschen Lehre",
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": "1"
   },
   {
-    "title": "Aus den Jahrbüchern der Medicin als Wissenschaft a) Vorrede zu den Jahrbüchern der Medicin als Wissenschaft",
-    "page": 131
+    "title": "2. Aus den Jahrbüchern der Medicin als Wissenschaft",
+    "page": 129,
+    "level": 0,
+    "kind": "work",
+    "label": "2"
   },
   {
-    "title": "b) Aphorismen zur Einleitung in die Naturphilosophie",
-    "page": 140
+    "title": "a. Vorrede zu den Jahrbüchern der Medicin als Wissenschaft",
+    "page": 131,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
   },
   {
-    "title": "c) Aphorismen über die Naturphilosophie",
-    "page": 198
+    "title": "b. Aphorismen zur Einleitung in die Naturphilosophie",
+    "page": 140,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
   },
   {
-    "title": "d) Kritische Fragmente",
-    "page": 245
+    "title": "Vorbegriffe",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "a. Von der Ein- und Allheit",
+    "page": 146,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Von der Vernunft als Erkenntniß des Absoluten",
+    "page": 148,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Von der Untheilbarkeit der Vernunfterkenntniß",
+    "page": 151,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Von der Art wie die Einheit Allheit und die Allheit Einheit ist, und dem ewigen Nichtseyn des Endlichen",
+    "page": 159,
+    "level": 3,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Von den Qualitätsunterschieden im Universum",
+    "page": 174,
+    "level": 3,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "Allgemeine Anmerkung, die Lehre vom Verhältniß des Endlichen zum Unendlichen betreffend",
+    "page": 192,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "c. Aphorismen über die Naturphilosophie",
+    "page": 198,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "Der Naturphilosophie erster oder allgemeiner Theil",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "a. Von dem Wesen der Natur, der Wirklichkeit der Dinge, der Materie und der Bewegung",
+    "page": 198,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Von der Unendlichkeit und Freiheit der Natur selbst in der Einzelheit und in der Verknüpfung der Dinge",
+    "page": 220,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "d. Kritische Fragmente",
+    "page": 245,
+    "level": 1,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Vorläufige Bezeichnung des Standpunktes der Medicin nach Grundsätzen der Naturphilosophie",
+    "page": 259,
+    "level": 1,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "3. Ueber das Verhältniß der bildenden Künste zu der Natur",
+    "page": 289,
+    "level": 0,
+    "kind": "work",
+    "label": "3"
+  },
+  {
+    "title": "4. Philosophische Untersuchungen über das Wesen der menschlichen Freiheit und die damit zusammenhängenden Gegenstände",
+    "page": 331,
+    "level": 0,
+    "kind": "work",
+    "label": "4"
+  },
+  {
+    "title": "5. Stuttgarter Privatvorlesungen (aus dem handschriftlichen Nachlaß)",
+    "page": 417,
+    "level": 0,
+    "kind": "work",
+    "label": "5"
+  },
+  {
+    "title": "I",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "I"
+  },
+  {
+    "title": "Das Princip des Systems als absolute Identität des Realen und Idealen",
+    "page": 421,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "a. Möglichkeit dieses Uebergangs (von der Identität zur Differenz)",
+    "page": 425,
+    "level": 2,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Wirklichkeit des Uebergangs oder der Scheidung in Gott",
+    "page": 428,
+    "level": 2,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "II",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "II"
+  },
+  {
+    "title": "Unterscheidung zwischen einem Höheren und einem Niederen in Gott",
+    "page": 431,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Bezeichnung des Verhältnisses der zwei Principien in Gott (Seyendes und Seyn, Seyendes und Nichtseyendes)",
+    "page": 436,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Weitere Deduktion der zwei Principien in Gott als Gegensatz der Selbstheit und der Liebe",
+    "page": 438,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Ableitung der Natur und ihres Verhältnisses zu Gott",
+    "page": 440,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Schema der neueren Philosophie",
+    "page": 443,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Abriß der Naturphilosophie",
+    "page": 446,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "III",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "III"
+  },
+  {
+    "title": "Begriff des Menschen und der menschlichen Freiheit; Ursprung des Bösen",
+    "page": 457,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Das Zurücksinken des Menschen in die Natur und dessen Folgen",
+    "page": 459,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Deduktion des Staats",
+    "page": 461,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Begriff der Offenbarung und der Kirche; Verhältniß von Staat und Kirche",
+    "page": 463,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "1. Der individuelle Menschengeist (Psychologie): Gemüth",
+    "page": 465,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Geist",
+    "page": 466,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Seele (Geisteskrankheit, Gut und Bös; Beziehung zur Kunst, Philosophie, Moral, Religion)",
+    "page": 468,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "Tod und Zustand nach dem Tod",
+    "page": 474,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Gedanken über eine Philosophie der Geisterwelt",
+    "page": 478,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Letzte Entwicklung der Dinge",
+    "page": 482,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "6. Aufsätze und Recensionen aus der Jenaer und Erlanger Literaturzeitung und dem Morgenblatt",
+    "page": 487,
+    "level": 0,
+    "kind": "work",
+    "label": "6"
+  },
+  {
+    "title": "a. Notiz von den neuen Versuchen über die Eigenschaften der Erz- und Wasserfühler",
+    "page": 487,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die Weihnachtsfeier. Ein Gespräch. Von Friedrich Schleiermacher (Halle 1806)",
+    "page": 498,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Der Streit des Philanthropinismus und Humanismus in der Theorie des Erziehungsunterrichts, dargestellt von Friedrich Immanuel Niethammer (Jena 1808)",
+    "page": 511,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Ehrenpforte und Triumphbogen für den Theaterpräsidenten von Kotzebue bei seiner Rückkehr ins Vaterland",
+    "page": 535,
+    "level": 1,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Einiges über die Schädellehre",
+    "page": 542,
+    "level": 1,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "f. Bild vom Zinsgroschen",
+    "page": 544,
+    "level": 1,
+    "kind": "section",
+    "label": "f"
+  },
+  {
+    "title": "g. Notiz über ein merkwürdiges Bild von Herrn Direktor Langer in München",
+    "page": 549,
+    "level": 1,
+    "kind": "section",
+    "label": "g"
+  },
+  {
+    "title": "h. Ueber die Verfassung der neuen königlichen Akademie der bildenden Künste in München",
+    "page": 553,
+    "level": 1,
+    "kind": "section",
+    "label": "h"
   }
 ]

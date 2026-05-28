@@ -1,10 +1,457 @@
 [
   {
     "title": "Ideen zu einer Philosophie der Natur",
-    "page": 1
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "Einleitung. Ueber die Probleme, welche eine Philosophie der Natur aufzulösen hat",
+    "page": 11,
+    "level": 1,
+    "kind": "einleitung",
+    "label": "Einleitung"
+  },
+  {
+    "title": "Zusatz. Darstellung der allgemeinen Idee der Philosophie überhaupt, und der Naturphilosophie insbesondere, als nothwendigen und integranten Theil der ersten",
+    "page": 57,
+    "level": 2,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Erstes Buch",
+    "page": null,
+    "level": 1,
+    "kind": "buch",
+    "label": "Erstes Buch"
+  },
+  {
+    "title": "Erstes Kapitel. Vom Verbrennen der Körper",
+    "page": 75,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Erstes Kapitel"
+  },
+  {
+    "title": "Zusatz. Neuere Ansicht des Verbrennungsprocesses",
+    "page": 82,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Zweites Kapitel. Vom Licht",
+    "page": 85,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Zweites Kapitel"
+  },
+  {
+    "title": "Zusatz. Ueber die Lehre der Naturphilosophie vom Licht",
+    "page": 106,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Drittes Kapitel. Von der Luft und den verschiedenen Luftarten",
+    "page": 111,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Drittes Kapitel"
+  },
+  {
+    "title": "Zusatz. Einiges zur Geschichte der Wasserzersetzung",
+    "page": 119,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Viertes Kapitel. Von der Elektricität",
+    "page": 122,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Viertes Kapitel"
+  },
+  {
+    "title": "Zusatz. Ueber die Konstruktion der elektrischen Erscheinungen in der Naturphilosophie",
+    "page": 146,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Fünftes Kapitel. Vom Magnet",
+    "page": 156,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Fünftes Kapitel"
+  },
+  {
+    "title": "Zusatz. Lehre der Naturphilosophie vom Magnetismus",
+    "page": 164,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Sechstes Kapitel. Allgemeine Betrachtungen als Resultate aus dem Vorigen",
+    "page": 167,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Sechstes Kapitel"
+  },
+  {
+    "title": "Zusatz. Das Allgemeine vom dynamischen Proceß",
+    "page": 174,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Zweites Buch",
+    "page": null,
+    "level": 1,
+    "kind": "buch",
+    "label": "Zweites Buch"
+  },
+  {
+    "title": "Erstes Kapitel. Von Attraktion und Repulsion überhaupt als Principien eines allgemeinen Natursystems",
+    "page": 178,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Erstes Kapitel"
+  },
+  {
+    "title": "Zusatz. Allgemeine Ansicht des Weltsystems",
+    "page": 187,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Zweites Kapitel. Vom Scheingebrauch beider Principien",
+    "page": 190,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Zweites Kapitel"
+  },
+  {
+    "title": "Zusatz. Ueber den Begriff der Kräfte überhaupt und im Newtonianismus insbesondere",
+    "page": 197,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Drittes Kapitel. Einige Bemerkungen über die mechanische Physik des Herrn le Sage",
+    "page": 200,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Drittes Kapitel"
+  },
+  {
+    "title": "Zusatz. Allgemeine Anmerkung über die Atomistik",
+    "page": 212,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Viertes Kapitel. Erster Ursprung des Begriffs der Materie aus der Natur der Anschauung und des menschlichen Geistes",
+    "page": 213,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Viertes Kapitel"
+  },
+  {
+    "title": "Zusatz. Die wahre Konstruktion der Materie",
+    "page": 223,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Fünftes Kapitel. Erste Grundsätze der Dynamik",
+    "page": 227,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Fünftes Kapitel"
+  },
+  {
+    "title": "Zusatz. Anmerkung über die voranstehende idealistische Konstruktion der Materie",
+    "page": 239,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Sechstes Kapitel. Von den zufälligen Bestimmungen der Materie",
+    "page": 241,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Sechstes Kapitel"
+  },
+  {
+    "title": "Zusatz. Von den Formbestimmungen und der specifischen Verschiedenheit der Materie",
+    "page": 253,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Siebentes Kapitel. Philosophie der Chemie",
+    "page": 257,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Siebentes Kapitel"
+  },
+  {
+    "title": "Zusatz. Ist Chemie als Wissenschaft möglich?",
+    "page": 272,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Achtes Kapitel. Anwendung derselben auf einzelne Gegenstände der Chemie",
+    "page": 275,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Achtes Kapitel"
+  },
+  {
+    "title": "Anhang zu diesem Abschnitt. Literarische Nachträge",
+    "page": 299,
+    "level": 2,
+    "kind": "anhang",
+    "label": "Anhang zu diesem Abschnitt"
+  },
+  {
+    "title": "Zusatz. Ueber die Stoffe der Chemie",
+    "page": 314,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Neuntes Kapitel. Versuch über die ersten Grundsätze der Chemie",
+    "page": 316,
+    "level": 2,
+    "kind": "kapitel",
+    "label": "Neuntes Kapitel"
+  },
+  {
+    "title": "Zusatz. Allgemeine Konstruktion des chemischen Processes",
+    "page": 338,
+    "level": 3,
+    "kind": "zusatz",
+    "label": "Zusatz"
+  },
+  {
+    "title": "Schlußanmerkung und Uebergang zum folgenden Theil",
+    "page": 342,
+    "level": 2,
+    "kind": "beschluss",
+    "label": "Schlußanmerkung und Uebergang zum folgenden Theil"
   },
   {
     "title": "Von der Weltseele",
-    "page": 345
+    "page": 345,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "Abhandlung über das Verhältniß des Realen und Idealen in der Natur",
+    "page": 357,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "Abhandlung über das Verhältniß des Realen und Idealen in der Natur"
+  },
+  {
+    "title": "Ueber die erste Kraft der Natur",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": ""
+  },
+  {
+    "title": "Die Natur führt auf ein organisirendes Princip = Weltseele",
+    "page": 381,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "I. Erste Stufe der Entfaltung der Duplicität des Lichts: Welche Phänomene zeigt das Licht an der Oberfläche der Körper?",
+    "page": 397,
+    "level": 2,
+    "kind": "section",
+    "label": "I"
+  },
+  {
+    "title": "II. Welche Wirkung zeigt das Licht auf der Körper selbst?",
+    "page": 401,
+    "level": 2,
+    "kind": "section",
+    "label": "II"
+  },
+  {
+    "title": "B. Theorie der Erwärmung",
+    "page": 405,
+    "level": 3,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "D. Construction der Begriffe der Wärmelehre",
+    "page": 406,
+    "level": 3,
+    "kind": "section",
+    "label": "D"
+  },
+  {
+    "title": "III. Der Dualismus der Luftarten",
+    "page": 430,
+    "level": 2,
+    "kind": "section",
+    "label": "III"
+  },
+  {
+    "title": "IV. Offenbarung des höheren Dualismus in der Elektricität",
+    "page": 432,
+    "level": 2,
+    "kind": "section",
+    "label": "IV"
+  },
+  {
+    "title": "V. Die Polarität in der Erdatmosphäre",
+    "page": 459,
+    "level": 2,
+    "kind": "section",
+    "label": "V"
+  },
+  {
+    "title": "VI. Bestimmung des Begriffs der Polarität",
+    "page": 476,
+    "level": 2,
+    "kind": "section",
+    "label": "VI"
+  },
+  {
+    "title": "Die magnetische Kraft keine absolut innere, ein Princip, das außer dem Magnet liegt",
+    "page": 481,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Ueber den Ursprung des allgemeinen Organismus",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": ""
+  },
+  {
+    "title": "I. Von ursprünglichem Gegensatz zwischen Pflanze und Thier",
+    "page": 490,
+    "level": 2,
+    "kind": "section",
+    "label": "I"
+  },
+  {
+    "title": "A. Der Grund des Lebens nicht einzig in der thierischen Materie",
+    "page": 496,
+    "level": 3,
+    "kind": "section",
+    "label": "A"
+  },
+  {
+    "title": "B. Der Grund des Lebens liegt ebensowenig ganz außerhalb der thierischen Materie",
+    "page": 502,
+    "level": 3,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "C. Der Grund des Lebens liegt in entgegengesetzten Principien (Corollarien)",
+    "page": 503,
+    "level": 3,
+    "kind": "section",
+    "label": "C"
+  },
+  {
+    "title": "III. Von den negativen Bedingungen des Lebensprocesses",
+    "page": 507,
+    "level": 2,
+    "kind": "section",
+    "label": "III"
+  },
+  {
+    "title": "Das (zufällige) Produkt des Processes",
+    "page": 514,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Der Begriff der unendlichen Individualisirung",
+    "page": 520,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "B. Die Vereinigung von Freiheit und (blinder) Gesetzmäßigkeit in der Organisation",
+    "page": 526,
+    "level": 3,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "C. Das beständige Individualisiren der Materie",
+    "page": 532,
+    "level": 3,
+    "kind": "section",
+    "label": "C"
+  },
+  {
+    "title": "Die Trennung der Geschlechter letzter Schritt zur Individualisirung",
+    "page": 535,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "IV. Von der positiven Ursache des Lebens",
+    "page": 546,
+    "level": 2,
+    "kind": "section",
+    "label": "IV"
+  },
+  {
+    "title": "Wie diese Principien bei der Irritabilität wirken",
+    "page": 552,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Schlußsatz: Nothwendigkeit Eines Naturprincips",
+    "page": 564,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Anhang",
+    "page": 570,
+    "level": 1,
+    "kind": "anhang",
+    "label": "Anhang"
   }
 ]

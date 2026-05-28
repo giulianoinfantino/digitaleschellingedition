@@ -196,23 +196,32 @@
       return 2;
     };
 
+    // Authoritative entries (Abt. I, from toc_src) carry a numeric level; keep
+    // them even if short (e.g. "I.", "II.") and never junk-filter them.
     const cleanedToc = (corpus.toc_printed || [])
       .map(e => ({ ...e, title: cleanTocTitle(e.title) }))
-      .filter(e => !isJunkTocEntry(e.title));
+      .filter(e => (typeof e.level === 'number') || !isJunkTocEntry(e.title));
 
-    // Merge structural dividers (Abschnitt, Buch) + following section name
+    // When authoritative levels are present the hierarchy is already correct,
+    // so keep entries verbatim. Otherwise (Abt. II legacy TOC) merge bare
+    // structural dividers (Buch/Abschnitt) with the following section name.
     const rawEntries = cleanedToc;
+    const hasAuthLevels = rawEntries.some(e => typeof e.level === 'number');
     const tocEntries = [];
-    for (let i = 0; i < rawEntries.length; i++) {
-      const e = rawEntries[i];
-      if (/\b(Abschnitt|Buch|Kapitel)\b/i.test(e.title) && e.page == null && i + 1 < rawEntries.length) {
-        const next = rawEntries[i + 1];
-        const merged = e.title.toUpperCase() + ': ' + next.title.toUpperCase();
-        const lvlHint = /\bBuch\b/i.test(e.title) ? 1 : /\bAbschnitt\b/i.test(e.title) ? 2 : 2;
-        tocEntries.push({ title: merged, page: next.page, _merged: lvlHint });
-        i++;
-      } else {
-        tocEntries.push(e);
+    if (hasAuthLevels) {
+      tocEntries.push(...rawEntries);
+    } else {
+      for (let i = 0; i < rawEntries.length; i++) {
+        const e = rawEntries[i];
+        if (/\b(Abschnitt|Buch|Kapitel)\b/i.test(e.title) && e.page == null && i + 1 < rawEntries.length) {
+          const next = rawEntries[i + 1];
+          const merged = e.title.toUpperCase() + ': ' + next.title.toUpperCase();
+          const lvlHint = /\bBuch\b/i.test(e.title) ? 1 : /\bAbschnitt\b/i.test(e.title) ? 2 : 2;
+          tocEntries.push({ title: merged, page: next.page, _merged: lvlHint });
+          i++;
+        } else {
+          tocEntries.push(e);
+        }
       }
     }
 
@@ -274,7 +283,7 @@
 
     document.getElementById('toc-list').innerHTML =
       tocEntries.map((e, i) => {
-          let lvl = e._merged ? e._merged : tocLevel(e.title);
+          let lvl = (typeof e.level === 'number') ? e.level : (e._merged ? e._merged : tocLevel(e.title));
           const displayTitle = e.title;
           const ha = e.page != null ? findBestAnchor(e.title, e.page) : null;
           const directPdf = bookToPdf[e.page];

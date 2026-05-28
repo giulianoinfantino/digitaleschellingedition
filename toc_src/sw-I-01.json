@@ -1,0 +1,31 @@
+{
+  "work_id": "sw-I-01",
+  "source_pdf_pages": [12, 104],
+  "note": "Volume Inhaltsverzeichniß on pdf 12 (tagged frontmatter, not toc): 11 Jugendschriften with pages. The §-indexed 'Uebersicht' on pdf 104 belongs to 'Vom Ich als Princip' and is nested under it (page-less, §-referenced).",
+  "entries": [
+    {"label": "", "title": "Magisterdissertation: Antiquissimi de prima malorum humanorum origine philosophematis Genes. III explicandi tentamen criticum et philosophicum", "kind": "work", "level": 0, "page": 1, "ref": null},
+    {"label": "", "title": "Ueber Mythen, historische Sagen und Philosopheme der ältesten Welt", "kind": "work", "level": 0, "page": 41, "ref": null},
+    {"label": "", "title": "Ueber die Möglichkeit einer Form der Philosophie überhaupt", "kind": "work", "level": 0, "page": 85, "ref": null},
+    {"label": "", "title": "Theologische Examensdissertation: De Marcione Paullinarum epistolarum emendatore", "kind": "work", "level": 0, "page": 113, "ref": null},
+
+    {"label": "", "title": "Vom Ich als Princip der Philosophie, oder über das Unbedingte im menschlichen Wissen", "kind": "work", "level": 0, "page": 149, "ref": null},
+    {"label": "Uebersicht", "title": "", "kind": "other", "level": 1, "page": null, "ref": null},
+    {"label": "1", "title": "Deduktion eines letzten Realgrunds unseres Wissens überhaupt", "kind": "section", "level": 2, "page": null, "ref": "§ 1"},
+    {"label": "2", "title": "Bestimmung desselben durch den Begriff des Unbedingten", "kind": "section", "level": 2, "page": null, "ref": "§ 2–3"},
+    {"label": "3", "title": "Deduktion aller möglichen Ansichten des Unbedingten a priori", "kind": "section", "level": 2, "page": null, "ref": "§ 4–6"},
+    {"label": "4", "title": "Deduktion der Urform des Ichs, der Identität, und des obersten Grundsatzes", "kind": "section", "level": 2, "page": null, "ref": "§ 7"},
+    {"label": "5", "title": "Deduktion der Form seines Gesetzseyns durch absolute Freiheit in intellektualer Anschauung", "kind": "section", "level": 2, "page": null, "ref": "§ 8"},
+    {"label": "6", "title": "Deduktion der untergeordneten Formen des Ichs", "kind": "section", "level": 2, "page": null, "ref": "§ 9–14"},
+
+    {"label": "", "title": "Neue Deduktion des Naturrechts", "kind": "work", "level": 0, "page": 245, "ref": null},
+    {"label": "", "title": "Philosophische Briefe über Dogmatismus und Kriticismus", "kind": "work", "level": 0, "page": 281, "ref": null},
+    {"label": "", "title": "Abhandlungen zur Erläuterung des Idealismus der Wissenschaftslehre", "kind": "work", "level": 0, "page": 343, "ref": null},
+
+    {"label": "", "title": "Aus der „Allgemeinen Uebersicht der neuesten philosophischen Literatur\" (im Philosophischen Journal)", "kind": "work", "level": 0, "page": 453, "ref": null},
+    {"label": "A", "title": "Ueber die Preisfrage der Berliner Akademie (1795): Welche Fortschritte hat die Metaphysik seit Leibnizens und Wolfs Zeiten in Deutschland gemacht, und deren Lösungen", "kind": "section", "level": 1, "page": null, "ref": null},
+    {"label": "B", "title": "Abhandlung über die Frage, ob eine Philosophie der Erfahrung, insbesondere ob eine Philosophie der Geschichte möglich sey", "kind": "section", "level": 1, "page": null, "ref": null},
+
+    {"label": "", "title": "Ueber Offenbarung und Volksunterricht", "kind": "work", "level": 0, "page": 474, "ref": null},
+    {"label": "", "title": "Recension", "kind": "work", "level": 0, "page": 483, "ref": null}
+  ]
+}

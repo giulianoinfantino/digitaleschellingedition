@@ -1,0 +1,17 @@
+{
+  "work_id": "sw-I-10",
+  "source_pdf_pages": [3043],
+  "note": "Single overview ToC page; flat list of 10 works, all page-referenced.",
+  "entries": [
+    {"label": "1", "title": "Zur Geschichte der neueren Philosophie (Münchener Vorlesungen, aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 1, "ref": null},
+    {"label": "2", "title": "Vorrede zu einer philosophischen Schrift des Hrn. Victor Cousin", "kind": "work", "level": 0, "page": 201, "ref": null},
+    {"label": "3", "title": "Darstellung des philosophischen Empirismus (aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 225, "ref": null},
+    {"label": "4", "title": "Anthropologisches Schema (aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 287, "ref": null},
+    {"label": "5", "title": "Worte zum Andenken des Freiherrn von Moll und Sylvestre de Sacys", "kind": "work", "level": 0, "page": 295, "ref": null},
+    {"label": "6", "title": "Darstellung des Naturprocesses (aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 301, "ref": null},
+    {"label": "7", "title": "Vorwort zu H. Steffens nachgelassenen Schriften", "kind": "work", "level": 0, "page": 391, "ref": null},
+    {"label": "8", "title": "Vorbemerkungen zu der Frage über den Ursprung der Sprache (aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 419, "ref": null},
+    {"label": "9", "title": "Epigrammata (aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 427, "ref": null},
+    {"label": "10", "title": "Gedichte und metrische Uebersetzungen (zum Theil aus dem handschriftlichen Nachlaß)", "kind": "work", "level": 0, "page": 429, "ref": null}
+  ]
+}

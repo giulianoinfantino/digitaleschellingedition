@@ -1,14 +1,506 @@
 [
   {
-    "title": "Abhandlungen, Recensionen etc. aus dem Kritischen Journal der Philosophie",
-    "page": 1
+    "title": "1. Abhandlungen, Recensionen etc. aus dem Kritischen Journal der Philosophie",
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": "1"
   },
   {
-    "title": "Vorlesungen über die Methode des akademischen Studiums",
-    "page": 207
+    "title": "a. Ueber das Wesen der philosophischen Kritik überhaupt und ihr Verhältniß zum gegenwärtigen Zustand der Philosophie insbesondere",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
   },
   {
-    "title": "Philosophie der Kunst (aus dem handschriftlichen Nachlaß)",
-    "page": 353
+    "title": "b. Ueber das absolute Identitätssystem und sein Verhältniß zu dem neuesten (Reinholdischen) Dualismus",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Rückert und Weiß, oder die Philosophie, zu der es keines Denkens und Wissens bedarf",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Ueber das Verhältniß der Naturphilosophie zur Philosophie überhaupt",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Ueber die Construktion in der Philosophie",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "f. Ueber Dante in philosophischer Beziehung",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "f"
+  },
+  {
+    "title": "g. Notizenblatt",
+    "page": null,
+    "level": 1,
+    "kind": "section",
+    "label": "g"
+  },
+  {
+    "title": "2. Vorlesungen über die Methode des akademischen Studiums",
+    "page": 207,
+    "level": 0,
+    "kind": "work",
+    "label": "2"
+  },
+  {
+    "title": "Erste Vorlesung. Ueber den absoluten Begriff der Wissenschaft",
+    "page": 211,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Erste Vorlesung"
+  },
+  {
+    "title": "Zweite Vorlesung. Ueber die wissenschaftliche und sittliche Bestimmung der Akademien",
+    "page": 223,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Zweite Vorlesung"
+  },
+  {
+    "title": "Dritte Vorlesung. Ueber die ersten Voraussetzungen des akademischen Studiums",
+    "page": 239,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Dritte Vorlesung"
+  },
+  {
+    "title": "Vierte Vorlesung. Ueber das Studium der reinen Vernunftwissenschaften: der Mathematik und Philosophie im Allgemeinen",
+    "page": 248,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Vierte Vorlesung"
+  },
+  {
+    "title": "Fünfte Vorlesung. Ueber die gewöhnlichen Einwendungen gegen das Studium der Philosophie",
+    "page": 257,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Fünfte Vorlesung"
+  },
+  {
+    "title": "Sechste Vorlesung. Ueber das Studium der Philosophie insbesondere",
+    "page": 266,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Sechste Vorlesung"
+  },
+  {
+    "title": "Siebente Vorlesung. Ueber einige äußere Gegensätze der Philosophie, namentlich der positiven Wissenschaften",
+    "page": 276,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Siebente Vorlesung"
+  },
+  {
+    "title": "Achte Vorlesung. Ueber die historische Construktion des Christenthums",
+    "page": 286,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Achte Vorlesung"
+  },
+  {
+    "title": "Neunte Vorlesung. Ueber das Studium der Theologie",
+    "page": 296,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Neunte Vorlesung"
+  },
+  {
+    "title": "Zehnte Vorlesung. Ueber das Studium der Historie und der Jurisprudenz",
+    "page": 306,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Zehnte Vorlesung"
+  },
+  {
+    "title": "Eilfte Vorlesung. Ueber die Naturwissenschaft im Allgemeinen",
+    "page": 317,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Eilfte Vorlesung"
+  },
+  {
+    "title": "Zwölfte Vorlesung. Ueber das Studium der Physik und Chemie",
+    "page": 327,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Zwölfte Vorlesung"
+  },
+  {
+    "title": "Dreizehnte Vorlesung. Ueber das Studium der Medicin und der organischen Naturlehre überhaupt",
+    "page": 335,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Dreizehnte Vorlesung"
+  },
+  {
+    "title": "Vierzehnte Vorlesung. Ueber die Wissenschaft der Kunst, in Bezug auf das akademische Studium",
+    "page": 344,
+    "level": 1,
+    "kind": "vorlesung",
+    "label": "Vierzehnte Vorlesung"
+  },
+  {
+    "title": "3. Philosophie der Kunst (aus dem handschriftlichen Nachlaß)",
+    "page": 353,
+    "level": 0,
+    "kind": "work",
+    "label": "3"
+  },
+  {
+    "title": "Einleitung",
+    "page": null,
+    "level": 1,
+    "kind": "einleitung",
+    "label": "Einleitung"
+  },
+  {
+    "title": "Beweggründe zur Bearbeitung der Wissenschaft der Kunst",
+    "page": 355,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Möglichkeit einer Philosophie der Kunst",
+    "page": 364,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Allgemeinste Deduktion der Philosophie der Kunst",
+    "page": 369,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "I. Allgemeiner Theil der Philosophie der Kunst",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "I"
+  },
+  {
+    "title": "A. Construktion der Kunst überhaupt und im Allgemeinen",
+    "page": 373,
+    "level": 2,
+    "kind": "section",
+    "label": "A"
+  },
+  {
+    "title": "B. Construktion des Stoffs der Kunst",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "1. Ableitung der Mythologie als Stoffs der Kunst",
+    "page": 388,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Gegensatz der antiken und modernen Poesie in Bezug auf Mythologie",
+    "page": 417,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "C. Construktion des Besonderen oder der Form der Kunst (des besonderen Kunstwerks)",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "C"
+  },
+  {
+    "title": "1. Theorie des Kunstwerks überhaupt (Erhabenheit und Schönheit, Naiv und Sentimental, Styl und Manier)",
+    "page": 458,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Spielarten der ästhetischen Idee in das concrete Kunstwerk",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Deduktion der Kunstwerk selbst",
+    "page": 480,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Deduktion der redenden Kunst",
+    "page": 482,
+    "level": 4,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "II. Besonderer Theil der Philosophie der Kunst",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "II"
+  },
+  {
+    "title": "D. Construktion der Kunstformen in der Entgegensetzung der realen und idealen Reihe",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "D"
+  },
+  {
+    "title": "1. Reale Seite der Kunstwelt oder die bildende Kunst",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "a. Construktion der Musik (Klang, Schall, Gehör)",
+    "page": 488,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Construktion der Malerei (Licht, Farben, Gesichtssinn)",
+    "page": 506,
+    "level": 4,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Construktion der Plastik und ihrer Formen",
+    "page": 569,
+    "level": 4,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "Architektur",
+    "page": 572,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Basrelief",
+    "page": 599,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Skulptur",
+    "page": 602,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Symbolische Bedeutung der menschlichen Gestalt",
+    "page": 604,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Allgemeine Anmerkungen über die bildende Kunst überhaupt",
+    "page": 628,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "2. Ideale Seite der Kunstwelt oder die redende Kunst (Poesie im engeren Sinn)",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Verhältniß der Poesie zur Kunst überhaupt",
+    "page": 630,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Wesen und Form der Poesie",
+    "page": 633,
+    "level": 4,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Construktion der einzelnen Dichtarten",
+    "page": null,
+    "level": 4,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "Die epische Poesie",
+    "page": 639,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "aa. Construktion des Epos nach seinen Hauptbestimmungen",
+    "page": 646,
+    "level": 6,
+    "kind": "section",
+    "label": "aa"
+  },
+  {
+    "title": "bb. Der epische Stoff (Vergleichung des Virgil mit Homer)",
+    "page": 654,
+    "level": 6,
+    "kind": "section",
+    "label": "bb"
+  },
+  {
+    "title": "cc. Die Charakteristik des Epos in besonderen Gattungen: Elegie und Idylle",
+    "page": 658,
+    "level": 6,
+    "kind": "section",
+    "label": "cc"
+  },
+  {
+    "title": "Lehrgedicht und Satyre (Lucretius)",
+    "page": 662,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Das romantische (moderne) Epos: Rittergedicht (Ariosto)",
+    "page": 669,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Roman (Cervantes, Goethe)",
+    "page": 673,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Epische Versuche mit neueren Stoffen (Voß, Goethe)",
+    "page": 684,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "ee. Die göttliche Komödie des Dante (eine epische Gattung für sich)",
+    "page": 686,
+    "level": 6,
+    "kind": "section",
+    "label": "ee"
+  },
+  {
+    "title": "Die dramatische Poesie: Begriff des dramatischen Gedichts überhaupt",
+    "page": 687,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "aaa. Das Wesen und der wahre Gegenstand der Tragödie",
+    "page": 694,
+    "level": 6,
+    "kind": "section",
+    "label": "aaa"
+  },
+  {
+    "title": "bbb. Die innere Construktion der Tragödie",
+    "page": 699,
+    "level": 6,
+    "kind": "section",
+    "label": "bbb"
+  },
+  {
+    "title": "ccc. Die äußere Form der Tragödie (Aeschylus, Sophokles, Euripides)",
+    "page": 704,
+    "level": 6,
+    "kind": "section",
+    "label": "ccc"
+  },
+  {
+    "title": "Von dem Wesen der Komödie (Aristophanes)",
+    "page": 711,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "cc. Die moderne dramatische Poesie (Shakespeare)",
+    "page": 718,
+    "level": 5,
+    "kind": "section",
+    "label": "cc"
+  },
+  {
+    "title": "Calderon",
+    "page": 726,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Goethes Faust",
+    "page": 731,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die moderne Komödie",
+    "page": 734,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Zurückstreben der redenden zur bildenden Kunst in Musik, Gesang, Tanz",
+    "page": 735,
+    "level": 4,
+    "kind": "section",
+    "label": ""
   }
 ]

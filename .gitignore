@@ -1,6 +1,7 @@
 schelling_werke.pdf
 ocr/
 out/
+toc_src/png/
 .DS_Store
 __pycache__/
 *.pyc

@@ -1,30 +1,758 @@
 [
   {
     "title": "Allgemeine Deduktion des dynamischen Processes",
-    "page": 1
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Ueber den wahren Begriff der Naturphilosophie",
-    "page": 79
+    "page": 79,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Darstellung meines Systems der Philosophie",
-    "page": 105
+    "page": 105,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
-    "title": "Bruno, ein Gespräch",
-    "page": 213
+    "title": "Bruno, oder über das göttliche und natürliche Princip der Dinge. Ein Gespräch",
+    "page": 213,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "A. Einleitung",
+    "page": 217,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "A"
+  },
+  {
+    "title": "I. Einsseyn der Wahrheit und der Schönheit",
+    "page": 218,
+    "level": 2,
+    "kind": "section",
+    "label": "I"
+  },
+  {
+    "title": "1. Idee der Wahrheit",
+    "page": 218,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "a. Unterschied des ewigen vom zeitlichen Erkennens überhaupt",
+    "page": 219,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "α. Das Unvollkommene bloß herkommend von der zeitlichen Betrachtung",
+    "page": 221,
+    "level": 5,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "β. Unterschied zwischen der urbildlichen und der hervorbringenden Natur",
+    "page": 223,
+    "level": 5,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "Anwendung des Bisherigen",
+    "page": 225,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "2. Idee der Schönheit; Schluß: die höchste Einheit der Wahrheit und Schönheit",
+    "page": 226,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "II. Analoges Verhältniß der Philosophie und der Poesie",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "II"
+  },
+  {
+    "title": "1. Begriff des schönen Produkts (\"dessen Seele ein ewiger Begriff\")",
+    "page": 228,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Unterschied des Philosophen und des Dichters",
+    "page": 231,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Anwendung dieses Unterschieds auf den der Mysterien und der Mythologie",
+    "page": 232,
+    "level": 3,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "B. Darstellung der Philosophie selbst",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "B"
+  },
+  {
+    "title": "1. Begriffsbestimmung der absoluten Identität",
+    "page": 236,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Anwendung dieser Begriffsbestimmung auf den Gegensatz des Idealen und Realen",
+    "page": 239,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "Einheit des Denkens und Anschauens = Einheit des Endlichen und Unendlichen",
+    "page": 242,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "3. Nähere Bestimmung der Vereinigung des Realen und Idealen im höchsten Begriff",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "a. Der Begriff der Einen (höchsten) Idee (der Idee aller Ideen)",
+    "page": 243,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Das ewige Seyn der Dinge = die Ideen",
+    "page": 246,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Der Begriff der zeitlosen (unendlichen) Endlichkeit im Absoluten",
+    "page": 248,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "4. Wiefern die höchste Einheit auch Princip des Wissens",
+    "page": 252,
+    "level": 2,
+    "kind": "section",
+    "label": "4"
+  },
+  {
+    "title": "a. Unterscheidung des absoluten und des begründeten (abgeleiteten) Bewußtseyns",
+    "page": 253,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die relative Einheit im Wissen eine andere relative Einheit im Seyn fordernd",
+    "page": 255,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Der Begriff der absoluten Idealismus",
+    "page": 256,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "5. Wie das Endliche aus dem Ewigen heraustritt",
+    "page": 257,
+    "level": 2,
+    "kind": "section",
+    "label": "5"
+  },
+  {
+    "title": "6. Das sichtbare Universum",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "6"
+  },
+  {
+    "title": "α. Deduktion der Weltkörper überhaupt",
+    "page": 260,
+    "level": 4,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "β. Die Dimensionen des Körperlichen",
+    "page": 263,
+    "level": 4,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "γ. Die drei Stufen des Unorganischen, Organischen, Vernünftigen",
+    "page": 266,
+    "level": 4,
+    "kind": "section",
+    "label": "γ"
+  },
+  {
+    "title": "aa. Die Weltkörper: ihre Bewegung",
+    "page": 267,
+    "level": 4,
+    "kind": "section",
+    "label": "aa"
+  },
+  {
+    "title": "bb. Ordnung, Zahl und Größe der Gestirne",
+    "page": 273,
+    "level": 4,
+    "kind": "section",
+    "label": "bb"
+  },
+  {
+    "title": "cc. Die Sonne",
+    "page": 276,
+    "level": 4,
+    "kind": "section",
+    "label": "cc"
+  },
+  {
+    "title": "β. Die organischen Wesen",
+    "page": 279,
+    "level": 4,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "γ. Deduktion des Bewußtseyns (\"aus der Idee des Ewigen selbst\")",
+    "page": 282,
+    "level": 4,
+    "kind": "section",
+    "label": "γ"
+  },
+  {
+    "title": "7. Die Erkenntnißwelt",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "7"
+  },
+  {
+    "title": "a. Verhältniß zwischen Anschauung und Denken im Ich; Ableitung der geometrischen Wissenschaft",
+    "page": 291,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Deduktion der logischen Formen; die Logik bloße Verstandeswissenschaft",
+    "page": 293,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Die höchste Erkenntnißart",
+    "page": 301,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "Rückkehr auf den Begriff der absoluten Erkenntniß und die Idee des Absoluten überhaupt",
+    "page": 303,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Anwendung des Gegensatzes der reellen und ideellen Welt auf den des natürlichen und göttlichen Princips",
+    "page": 305,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "C. Die (vier) Richtungen der Philosophie in ihrem Verhältniß zur absoluten (Identitäts-) Philosophie",
+    "page": 309,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "C"
   },
   {
     "title": "Fernere Darstellungen aus dem System der Philosophie",
-    "page": 333
+    "page": 333,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "§ I. Von der höchsten oder absoluten Erkenntnißart im Allgemeinen",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ I"
+  },
+  {
+    "title": "1. Die niederen Erkenntnißarten",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "a. Das gemeine Wissen",
+    "page": 339,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die Verstandeserkenntniß",
+    "page": 342,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "2. Die absolute Erkenntniß",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Die formell absolute der Mathematik",
+    "page": 345,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die schlechthin absolute der Philosophie",
+    "page": 347,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "α. Verhältniß des Dogmatismus und des Kriticismus zur absoluten Erkenntnißart",
+    "page": 348,
+    "level": 4,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "β. Das Fichtesche System im Verhältniß zur absoluten Erkenntnißart",
+    "page": 353,
+    "level": 4,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "§ II. Beweis, daß es einen Punkt gebe, wo das Wissen um das Absolute und das Absolute selbst eins sind",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ II"
+  },
+  {
+    "title": "1. Das Organ der Vernunft- (intellektuellen) Anschauung",
+    "page": 361,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Deduktion der absoluten Anschauung aus dem Grund aller Philosophie",
+    "page": 362,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Wiefern bei der gleichen Absolutheit des Wesens auf der Form im Absoluten",
+    "page": 366,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "4. Ueber den Ausdruck: intellektuelle Anschauung",
+    "page": 368,
+    "level": 2,
+    "kind": "section",
+    "label": "4"
+  },
+  {
+    "title": "5. Wiefern in der absoluten Erkenntnißart die Vereinigung von Idealismus und Realismus",
+    "page": 370,
+    "level": 2,
+    "kind": "section",
+    "label": "5"
+  },
+  {
+    "title": "§ III. Idee des Absoluten",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ III"
+  },
+  {
+    "title": "1. Die Idee des Absoluten bei Spinoza",
+    "page": 372,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Hauptsätze über die Idee des Absoluten",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Das Wesen des Absoluten lautere Identität",
+    "page": 374,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die Form des Absoluten = absolutes Erkennen",
+    "page": 376,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Die ewige Form, gleich dem Absoluten selbst, absolute Identität",
+    "page": 378,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Das ursprüngliche Verhältniß von Denken und Seyn",
+    "page": 381,
+    "level": 3,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Das Endliche, indem ideell endlich = reell unendlich",
+    "page": 385,
+    "level": 3,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "f. Folgesätze",
+    "page": 389,
+    "level": 3,
+    "kind": "section",
+    "label": "f"
+  },
+  {
+    "title": "§ IV. Von der philosophischen Construction, oder von der Art, alle Dinge im Absoluten darzustellen",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ IV"
+  },
+  {
+    "title": "1. Voraussetzung der philosophischen Construction in der Aufhebung der Antinomie des Allgemeinen und Besonderen",
+    "page": 392,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Das Besondere nur außer dem Ganzen als solches erscheinend",
+    "page": 394,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Wiefern hier kein Ableiten, kein Deduciren der Wirklichkeit stattfindet",
+    "page": 396,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "4. Verhältniß der analytischen und synthetischen Methode zur absoluten",
+    "page": 398,
+    "level": 2,
+    "kind": "section",
+    "label": "4"
+  },
+  {
+    "title": "5. Die Bedeutung der Ideen für die absolute Wissenschaft",
+    "page": 405,
+    "level": 2,
+    "kind": "section",
+    "label": "5"
+  },
+  {
+    "title": "6. Die wahre Methode der Philosophie die Demonstration",
+    "page": 407,
+    "level": 2,
+    "kind": "section",
+    "label": "6"
+  },
+  {
+    "title": "§ V. Von dem Gegensatz der reellen und ideellen Reihe und den Potenzen der Philosophie",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ V"
+  },
+  {
+    "title": "1. Zurückführung des Standpunkts dieser Betrachtungen auf die Idee der Philosophie",
+    "page": 412,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Allgemeinster Entwurf: die zwei Einheiten im Absoluten = Central- oder absoluter Indifferenzpunkt",
+    "page": 415,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Wiefern in jeder Einheit wieder alle Potenzen enthalten sind",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "a. In der ersten Einheit als Potenz der Reflexion",
+    "page": 418,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. In der zweiten Einheit als Potenz der Subsumtion",
+    "page": 420,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "§ VI. Construction der Materie",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ VI"
+  },
+  {
+    "title": "1. Beantwortung vorläufiger Fragen",
+    "page": 423,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Begriff der ewigen Materie (= Ureinheit) und deren Formen",
+    "page": 425,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Begriff der eigentlichen Materie (Natur im leiblichen Sinn) und deren Potenzen",
+    "page": 426,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "Uebergang zur Theorie vom Weltbau",
+    "page": 430,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "§ VII. Speculative Bedeutung der (Keplerischen) Gesetze des allgemeinen Weltbaus",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ VII"
+  },
+  {
+    "title": "1. Demonstration des ersten Gesetzes (Umlaufszeit und Umlauf)",
+    "page": 432,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Erklärung des zweiten und dritten Gesetzes",
+    "page": 442,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "Allgemeine Bemerkungen über das Eigenthümliche der hier entwickelten Theorie vom Weltbau",
+    "page": 444,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "§ VIII. Betrachtungen über die besondere Bildung und die inneren Verhältnisse unseres Planetensystems",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ VIII"
+  },
+  {
+    "title": "1. Festsetzung des Standpunkts dieser Betrachtungen",
+    "page": 450,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Anwendung dieser Bestimmungen auf die Weltkörper als besondere Dinge",
+    "page": 454,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Vorläufige Verdeutlichung der Verhältnisse im System der Planeten durch die Analogie der vier edlen Metalle und der edlen Planeten",
+    "page": 457,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die Hauptmomente der Erklärung des Systems der Planeten",
+    "page": 464,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Bestimmung der Weltgegenden; Planetentafel",
+    "page": 468,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Betrachtung der einzelnen Regionen des Planetensystems",
+    "page": 470,
+    "level": 3,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Das Kometensystem an sich und im Verhältniß zum Planetensystem",
+    "page": 484,
+    "level": 3,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "Andeutung über eine analoge Erklärung der Nutationsperiode der Erdaxe",
+    "page": 488,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "g. Ausdehnung dieses Verhältnisses auf das der Sonne zu den Weltkörpern ihres Systems",
+    "page": 493,
+    "level": 3,
+    "kind": "section",
+    "label": "g"
+  },
+  {
+    "title": "h. Erklärung der Abweichung der Magnetnadel",
+    "page": 498,
+    "level": 3,
+    "kind": "section",
+    "label": "h"
+  },
+  {
+    "title": "i. Gleicher Zusammenhang der meteorologischen Veränderungen",
+    "page": 500,
+    "level": 3,
+    "kind": "section",
+    "label": "i"
+  },
+  {
+    "title": "k. Endliche Entscheidung des Streits zwischen der Sonne und der Erde (allgemeiner Verbrennungsproceß)",
+    "page": 504,
+    "level": 3,
+    "kind": "section",
+    "label": "k"
+  },
+  {
+    "title": "Anhang. Anwendung von Steffens Abhandlung über den Oxydations- und Desoxydationsproceß der Erde",
+    "page": 508,
+    "level": 2,
+    "kind": "anhang",
+    "label": "Anhang"
   },
   {
     "title": "Die vier edlen Metalle",
-    "page": 511
+    "page": 511,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Miscellen",
-    "page": 525
+    "page": 525,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   }
 ]

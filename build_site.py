@@ -74,191 +74,19 @@ HEADING_PATTERNS = [
 ]
 
 
-def _norm(s: str) -> str:
-    return re.sub(r"[*\s.]+", " ", s).strip().upper()
+def mark_headings(pages: list[dict]):
+    """Deterministically promote paragraphs that match structural heading
+    patterns (Buch, Kapitel, Abschnitt, Vorrede, Einleitung, Zusatz, §, ...).
 
-
-def promote_headings(pages: list[dict], toc_entries: list[dict]):
-    """Promote paragraphs that match TOC titles or heading patterns to headings."""
-    page_by_book = {}
-    for p in pages:
-        pb = p.get("page_book")
-        if pb is not None:
-            page_by_book[pb] = p
-
-    SKIP_WORDS = {"DER", "DIE", "DAS", "DES", "DEM", "DEN", "UND", "ODER",
-                   "ALS", "WIE", "VON", "ZUR", "ZUM", "AUS", "AUF", "BEI",
-                   "MIT", "FÜR", "BIS", "ÜBER", "NACH", "SEIT", "VOM",
-                   "EINE", "EINEM", "EINEN", "EINER", "EINES"}
-
-    toc_words = {}
-    for entry in toc_entries:
-        target = entry.get("page")
-        if target is None:
-            continue
-        words = [w for w in _norm(entry["title"]).split()
-                 if len(w) > 2 and w not in SKIP_WORDS]
-        if len(words) >= 2:
-            toc_words[target] = words
-
-    for target, words in toc_words.items():
-        threshold = len(words) if len(words) <= 3 else max(3, int(len(words) * 0.6 + 0.99))
-        promoted = False
-        for delta in range(-1, 6):
-            if promoted:
-                break
-            pg = page_by_book.get(target + delta)
-            if not pg:
-                continue
-            paras = pg.get("paragraphs", [])
-            for i, para in enumerate(paras):
-                if para.get("kind") != "paragraph":
-                    continue
-                text = para["text"]
-                clean = re.sub(r"\*", "", text).strip()
-                if len(clean) > 120 or len(clean) < 3:
-                    continue
-                if re.search(r"\[?Anmerkung des Herausgeber", clean):
-                    continue
-                # Never start matching from a lowercase paragraph (sentence continuation)
-                if clean[0].islower():
-                    continue
-                normed = _norm(text)
-                matched = sum(1 for w in words if w in normed)
-                if matched >= threshold:
-                    para["kind"] = "heading"
-                    promoted = True
-                    break
-                # Try combining consecutive short paragraphs
-                combined = normed
-                run = [i]
-                found_run = False
-                for j in range(i + 1, min(i + 6, len(paras))):
-                    nxt = paras[j]
-                    if nxt.get("kind") != "paragraph":
-                        break
-                    nxt_clean = re.sub(r"\*", "", nxt["text"]).strip()
-                    if len(nxt_clean) > 120:
-                        break
-                    if re.search(r"\[?Anmerkung des Herausgeber", nxt_clean):
-                        break
-                    combined += " " + _norm(nxt["text"])
-                    run.append(j)
-                    m = sum(1 for w in words if w in combined)
-                    if m >= threshold and len(run) >= 2:
-                        found_run = True
-                if found_run:
-                    for idx in run:
-                        paras[idx]["kind"] = "heading"
-                    promoted = True
-                    break
-
-    # Structural pass: on TOC target pages, short paragraphs at the top
-    # (before body text) are title-page headings even if words don't match
-    toc_target_pages = set()
-    for entry in toc_entries:
-        target = entry.get("page")
-        if target is not None:
-            for delta in range(-2, 6):
-                toc_target_pages.add(target + delta)
-
-    for pb in toc_target_pages:
-        pg = page_by_book.get(pb)
-        if not pg:
-            continue
-        paras = pg.get("paragraphs", [])
-        # Pass A: promote short paragraphs at the top (before first body text)
-        prev_was_heading = False
-        for i, para in enumerate(paras):
-            if para.get("kind") == "footnote":
-                continue
-            if para.get("kind") in ("heading", "subheading"):
-                prev_was_heading = True
-                continue
-            clean = re.sub(r"\*", "", para.get("text", "")).strip()
-            if len(clean) > 80:
-                break
-            if len(clean) < 2:
-                continue
-            if re.search(r"\[?Anmerkung des Herausgeber", clean):
-                continue
-            if clean[0].islower():
-                if prev_was_heading:
-                    para["kind"] = "heading"
-                else:
-                    break
-                continue
-            para["kind"] = "heading"
-            prev_was_heading = True
-        # Pass B: find title blocks mid-page (2+ consecutive short paragraphs
-        # starting with uppercase, after body text)
-        i = 0
-        while i < len(paras):
-            para = paras[i]
-            if para.get("kind") != "paragraph":
-                i += 1
-                continue
-            clean = re.sub(r"\*", "", para.get("text", "")).strip()
-            if len(clean) > 80 or len(clean) < 2 or not clean[0].isupper():
-                i += 1
-                continue
-            if re.search(r"\[?Anmerkung des Herausgeber", clean):
-                i += 1
-                continue
-            # Found a short uppercase paragraph — check if it starts a cluster
-            cluster = [i]
-            for j in range(i + 1, min(i + 6, len(paras))):
-                nxt = paras[j]
-                if nxt.get("kind") == "footnote":
-                    cluster.append(j)
-                    continue
-                if nxt.get("kind") in ("heading", "subheading"):
-                    break
-                nxt_clean = re.sub(r"\*", "", nxt.get("text", "")).strip()
-                if len(nxt_clean) > 80:
-                    break
-                if len(nxt_clean) < 2:
-                    cluster.append(j)
-                    continue
-                cluster.append(j)
-            # Only promote if cluster has 2+ short paragraphs (not footnotes)
-            para_indices = [k for k in cluster
-                           if paras[k].get("kind") == "paragraph"
-                           and len(re.sub(r"\*", "", paras[k].get("text", "")).strip()) <= 80
-                           and len(re.sub(r"\*", "", paras[k].get("text", "")).strip()) >= 2]
-            if len(para_indices) >= 2:
-                for k in para_indices:
-                    pk = paras[k]
-                    pk_clean = re.sub(r"\*", "", pk.get("text", "")).strip()
-                    if re.search(r"\[?Anmerkung des Herausgeber", pk_clean):
-                        continue
-                    pk["kind"] = "heading"
-            i = cluster[-1] + 1 if cluster else i + 1
-
-    # First-body-page pass: promote short paragraphs at the very start of each
-    # volume (band titles like "*Philosophie der Offenbarung*")
-    body_pages = [p for p in pages if p.get("page_kind") == "body"
-                  and p.get("page_book") is not None]
-    first_body = min(body_pages, key=lambda p: p["page_book"]) if body_pages else None
-    if first_body and first_body.get("page_book") not in toc_target_pages:
-        for para in first_body.get("paragraphs", []):
-            if para.get("kind") == "footnote":
-                continue
-            if para.get("kind") in ("heading", "subheading"):
-                continue
-            clean = re.sub(r"\*", "", para.get("text", "")).strip()
-            if len(clean) > 80:
-                break
-            if len(clean) < 2:
-                continue
-            para["kind"] = "heading"
-
+    The OCR already marks most headings as kind=heading; this is a safety net
+    for any it missed. It performs NO fuzzy / probabilistic matching against the
+    TOC — section structure now comes from the hand-verified toc_src data, so
+    the old guesswork (which produced false and missing headings) is gone."""
     for p in pages:
         for para in p.get("paragraphs", []):
             if para.get("kind") != "paragraph":
                 continue
-            text = para["text"].strip()
-            clean = re.sub(r"\*", "", text)
+            clean = re.sub(r"\*", "", para["text"]).strip()
             if len(clean) > 150:
                 continue
             for pat in HEADING_PATTERNS:
@@ -285,14 +113,15 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
     _, abt, band, siglum, title = meta_tuple
     pages = load_volume_pages(work_id)
 
-    # Load authoritative TOC early so we can use it for heading promotion
+    # Load the authoritative TOC (toc_src-derived for Abt. I; legacy PDF parse
+    # for Abt. II). Abt. I entries additionally carry {level, kind}.
     toc_file = Path(__file__).parent / "toc" / f"{work_id}.json"
     if toc_file.exists():
         raw_toc = json.loads(toc_file.read_text(encoding="utf-8"))
     else:
         raw_toc = []
 
-    promote_headings(pages, raw_toc)
+    mark_headings(pages)
 
     web_pages = []
     headings_count = 0
@@ -322,46 +151,35 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
             "units": units,
         })
 
-    # Snap TOC page numbers to the nearest existing page_book value,
-    # since the PDF extraction has gaps in page numbering.
-    existing_pages = sorted(set(
+    # The OCR-recorded book page numbers are sparse (≈half are missing), so a
+    # TOC's printed page often has no exact body page_book. Snap each printed
+    # page to the nearest existing body page_book (preferring at-or-after the
+    # target) so the reader can always resolve an anchor. The reader still
+    # refines via heading-text matching within ±5 pages.
+    body_book_pages = sorted({
         p["page_book"] for p in web_pages
         if p.get("page_book") is not None and p["page_kind"] == "body"
-    ))
+    })
 
-    # Build index of actual heading positions for TOC snapping
-    heading_positions = {}
-    for p in web_pages:
-        pb = p.get("page_book")
-        if pb is None or p["page_kind"] != "body":
-            continue
-        for u in p["units"]:
-            if u["type"] == "heading":
-                norm_h = _norm(u["text"])
-                heading_positions[norm_h] = pb
+    def snap_page(pg):
+        if pg is None or not body_book_pages:
+            return pg
+        return min(body_book_pages, key=lambda x: (abs(x - pg), x < pg))
 
+    # Build TOC. Abt. I entries carry authoritative {level, kind} from toc_src;
+    # legacy entries (Abt. II, no level) keep the "N-te Vorlesung" truncation.
     toc = []
-    vorlesung_re = re.compile(
-        r"^(.+?Vorlesung)\.\s+.+", re.DOTALL
-    )
+    vorlesung_re = re.compile(r"^(.+?Vorlesung)\.\s+.+", re.DOTALL)
     for entry in raw_toc:
-        toc_title = entry["title"]
-        # Truncate Vorlesung entries to just "N-te Vorlesung"
-        vm = vorlesung_re.match(toc_title)
-        if vm:
-            toc_title = vm.group(1)
-        # Try to find actual heading position in text
-        norm_title = _norm(toc_title)
-        actual_page = heading_positions.get(norm_title)
-        if actual_page is not None:
-            toc.append({"title": toc_title, "page": actual_page})
+        out = {"title": entry["title"], "page": snap_page(entry.get("page"))}
+        if "level" in entry:
+            out["level"] = entry["level"]
+            out["kind"] = entry.get("kind", "section")
         else:
-            target = entry.get("page")
-            if target is not None and existing_pages:
-                best = min(existing_pages, key=lambda p: (abs(p - target), p < target))
-                toc.append({"title": toc_title, "page": best})
-            else:
-                toc.append({"title": toc_title, "page": entry.get("page")})
+            vm = vorlesung_re.match(entry["title"])
+            if vm:
+                out["title"] = vm.group(1)
+        toc.append(out)
 
     return {
         "metadata": {

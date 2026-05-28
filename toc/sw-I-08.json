@@ -1,46 +1,352 @@
 [
   {
-    "title": "Ueber das Wesen deutscher Wissenschaft (aus dem handschriftlichen Nachlaß)",
-    "page": 1
+    "title": "1. Ueber das Wesen deutscher Wissenschaft (aus dem handschriftlichen Nachlaß)",
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": "1"
   },
   {
-    "title": "F. W. J. Schellings Denkmal der Schrift von den göttlichen Dingen etc. des Herrn Friedrich Heinrich Jacobi u.s.w",
-    "page": 19
+    "title": "2. F. W. J. Schellings Denkmal der Schrift von den göttlichen Dingen etc. des Herrn Friedrich Heinrich Jacobi",
+    "page": 19,
+    "level": 0,
+    "kind": "work",
+    "label": "2"
   },
   {
-    "title": "Aus der Allgemeinen Zeitschrift von Deutschen für Deutsche a) Vorrede zur Allgemeinen Zeitschrift von Deutschen für Deutsche",
-    "page": 139
+    "title": "Vorläufige Erklärung über die in der Schrift des Hrn. F. H. Jacobi gegen mich enthaltenen Beschuldigungen",
+    "page": 23,
+    "level": 1,
+    "kind": "section",
+    "label": ""
   },
   {
-    "title": "b) Briefwechsel mit Eschenmayer bezüglich der Abhandlung \"Philosophische Untersuchungen über das Wesen der menschlichen Freiheit etc.\"",
-    "page": 145
+    "title": "1. Beiträge zur Beurtheilung der Jacobischen Polemik: Das Geschichtliche",
+    "page": 39,
+    "level": 1,
+    "kind": "section",
+    "label": "1"
   },
   {
-    "title": "c) Ludwig August Hülsen",
-    "page": 190
+    "title": "2. Das Wissenschaftliche",
+    "page": 54,
+    "level": 1,
+    "kind": "section",
+    "label": "2"
   },
   {
-    "title": "Die Weltalter. Erstes Buch (aus dem handschriftlichen Nachlaß)",
-    "page": 195
+    "title": "3. Das Allgemeine (eine allegorische Vision)",
+    "page": 83,
+    "level": 1,
+    "kind": "section",
+    "label": "3"
   },
   {
-    "title": "Ueber die Gottheiten von Samothrake",
-    "page": 345
+    "title": "3. Aus der Allgemeinen Zeitschrift von Deutschen für Deutsche",
+    "page": 139,
+    "level": 0,
+    "kind": "work",
+    "label": "3"
   },
   {
-    "title": "Kleinere Aufsätze (aus dem handschriftlichen Nachlaß) a) Ueber das sogenannte Wetterschießen",
-    "page": 427
+    "title": "a. Vorrede zur Allgemeinen Zeitschrift von Deutschen für Deutsche",
+    "page": 139,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
   },
   {
-    "title": "b) Bericht über den pasigraphischen Versuch des Professor Schmid in Dillingen",
-    "page": 438
+    "title": "b. Briefwechsel mit Eschenmayer bezüglich der Abhandlung über das Wesen der menschlichen Freiheit",
+    "page": 145,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
   },
   {
-    "title": "c) Vorschläge, die Beschäftigung der philologisch-philosophischen Klasse betreffend",
-    "page": 455
+    "title": "c. Ludwig August Hülsen",
+    "page": 190,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
   },
   {
-    "title": "d) Noch ein Wort über die Arbeiten der philologisch-philosophischen Klasse",
-    "page": 465
+    "title": "4. Die Weltalter. Erstes Buch (aus dem handschriftlichen Nachlaß)",
+    "page": 195,
+    "level": 0,
+    "kind": "work",
+    "label": "4"
+  },
+  {
+    "title": "Einleitung",
+    "page": 199,
+    "level": 1,
+    "kind": "einleitung",
+    "label": "Einleitung"
+  },
+  {
+    "title": "Erstes Buch. Die Vergangenheit",
+    "page": null,
+    "level": 1,
+    "kind": "buch",
+    "label": "Erstes Buch"
+  },
+  {
+    "title": "Ausgangspunkt: Unterscheidung der Nothwendigkeit und der Freiheit in Gott",
+    "page": 207,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "1. Das Nothwendige Gottes = Natur Gottes",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "a. Die Trias von Principien in dem Nothwendigen oder der Natur Gottes",
+    "page": 217,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Unvordenkliche Entscheidung in der Natur Gottes; der Begriff des Nichtseyenden",
+    "page": 220,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Vollständiger Begriff der ersten Natur (der Natur Gottes)",
+    "page": 229,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "2. Die Freiheit im Wesen Gottes; der Begriff des naturlosen Geistes = höchster Begriff der Gottheit",
+    "page": 233,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Verbindung des Nothwendigen in Gott mit dem Freien",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "a. Unmittelbare Wirkung des Höheren in Gott auf das Nothwendige; Herabsetzung der ewigen Natur zum All",
+    "page": 239,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Organisches Verhältniß der drei Principien in ihrer Unterordnung unter das Reingöttliche",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "Erste Potenz als mögliche Unterlage für die (äußere) Natur",
+    "page": 243,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Zweite Potenz als mögliche Unterlage der Geisterwelt",
+    "page": 248,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Dritte Potenz = die allgemeine Seele oder das Band zwischen Gott und der Welt",
+    "page": 252,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Dieser Organismus von Potenzen in Gott unter der Form der Vergangenheit gesetzt",
+    "page": 254,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Möglichkeit in der ewigen Natur, in ein eignes, von Gott unabhängiges Leben zurückzugehen",
+    "page": 265,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Kurze Begriffe über die Wichtigkeit des A.T. für Erinnerung des Gottesbegriffs",
+    "page": 269,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "B. Das Leben der einzelnen Potenz",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "a. Das Leben der ersten Potenz (der zum Anfang gesetzten oder äußeren Natur)",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "Die der äußeren Natur innewohnende, in ihr schaffende Seele",
+    "page": 275,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Begriff der ersten (geist-leiblichen) Materie (Formel); Erörterungen über den Begriff der ursprünglichen Materie (Alchemie)",
+    "page": 281,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "b. Das Wesen der zweiten Potenz oder die Unterlage der Geisterwelt",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "Unterschied in der Stellung der Principien zwischen der Natur und der Geisterwelt",
+    "page": 286,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Ähnlichkeit des Processes der Geisterwelt und Analogie mit dem magnetischen Zustand (Excurs über Magnetismus)",
+    "page": 288,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "c. Die allgemeine Seele in ihrem Bezug zu Gott und das Verhalten Gottes gegen das Leben der einzelnen Potenz",
+    "page": 297,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "C. Die wirkliche Seyns-Annahme (= Offenbarung = Geburt) Gottes",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "C"
+  },
+  {
+    "title": "a. Deren Möglichkeit",
+    "page": 300,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Deren Wirklichkeit",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "Vorausgehen des einschießenden Willens (Gott als Natur wirkend)",
+    "page": 305,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Construktion des Weltalls",
+    "page": 319,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die zugleich geschehende Aktivirung der Geisterwelt",
+    "page": 334,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Verhältniß dieser Aktivirung zum Seyenden selbst (der lauteren Gottheit)",
+    "page": 335,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Allgemeine Erörterung über die wirkliche Alleinheitslehre; Nothwendigkeit eines höheren Realismus (Spinoza, Fichte und die Naturphilosophie)",
+    "page": 339,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "5. Ueber die Gottheiten von Samothrace",
+    "page": 345,
+    "level": 0,
+    "kind": "work",
+    "label": "5"
+  },
+  {
+    "title": "6. Kleinere Aufsätze (aus dem handschriftlichen Nachlaß)",
+    "page": 427,
+    "level": 0,
+    "kind": "work",
+    "label": "6"
+  },
+  {
+    "title": "a. Ueber das sogenannte Wetterschießen",
+    "page": 427,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Bericht über den pasigraphischen Versuch des Professor Schmid in Dillingen",
+    "page": 438,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Vorschläge, die Beschäftigung der philologisch-philosophischen Klasse betreffend",
+    "page": 455,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Noch ein Wort über die Arbeiten der philologisch-philosophischen Klasse",
+    "page": 465,
+    "level": 1,
+    "kind": "section",
+    "label": "d"
   }
 ]

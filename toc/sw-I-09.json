@@ -1,34 +1,366 @@
 [
   {
-    "title": "Ueber den Zusammenhang der Natur mit der Geisterwelt. Ein Gespräch. (Aus dem handschriftlichen Nachlaß)",
-    "page": 1
+    "title": "1. Ueber den Zusammenhang der Natur mit der Geisterwelt. Ein Gespräch (aus dem handschriftlichen Nachlaß)",
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": "1"
   },
   {
-    "title": "Kunstgeschichtliche Anmerkungen zu Johann Martin Wagners Bericht über die äginetischen Bildwerke",
-    "page": 111
+    "title": "2. Kunstgeschichtliche Anmerkungen zu Johann Martin Wagners Bericht über die äginetischen Bildwerke",
+    "page": 111,
+    "level": 0,
+    "kind": "work",
+    "label": "2"
   },
   {
-    "title": "Erlanger Vorträge. (Aus dem handschriftlichen Nachlaß) a) Ueber die Natur der Philosophie als Wissenschaft",
-    "page": 209
+    "title": "Vorbericht des Herausgebers",
+    "page": 115,
+    "level": 1,
+    "kind": "section",
+    "label": ""
   },
   {
-    "title": "b) Ueber den Werth und die Bedeutung der Bibelgesellschaften",
-    "page": 247
+    "title": "Einleitung",
+    "page": 118,
+    "level": 1,
+    "kind": "einleitung",
+    "label": "Einleitung"
   },
   {
-    "title": "Spicilegium observationum in novissimam Arnobii editionem (Aus dem handschriftlichen Nachlaß)",
-    "page": 253
+    "title": "Anmerkungen des Herausgebers",
+    "page": 120,
+    "level": 1,
+    "kind": "section",
+    "label": ""
   },
   {
-    "title": "Abhandlungen philologischen und mythologischen Inhalts. (Zum Theil aus dem handschriftlichen Nachlaß.) a) Ueber eine Stelle des Lucretius",
-    "page": 303
+    "title": "§ I. Beschreibung der äginetischen Figuren nach ihrer Aufstellung",
+    "page": null,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ I"
   },
   {
-    "title": "b) Ueber eine Stelle Platons",
-    "page": 313
+    "title": "I. Ganz geradestehende (weibliche) Figuren",
+    "page": 128,
+    "level": 2,
+    "kind": "section",
+    "label": "I"
   },
   {
-    "title": "c) Ueber eine Stelle im Homerischen Hymnus an Demeter",
-    "page": 324
+    "title": "II. Vorschreitende, oder kämpfende Krieger",
+    "page": 132,
+    "level": 2,
+    "kind": "section",
+    "label": "II"
+  },
+  {
+    "title": "III. Kniende, oder Bogenschützen",
+    "page": 134,
+    "level": 2,
+    "kind": "section",
+    "label": "III"
+  },
+  {
+    "title": "IV. Liegende, oder Verwundete",
+    "page": 137,
+    "level": 2,
+    "kind": "section",
+    "label": "IV"
+  },
+  {
+    "title": "§ II. Bruchstücke, die an den äginetischen Figuren noch dem Tempel gehört haben",
+    "page": 141,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ II"
+  },
+  {
+    "title": "§ III. Ueber den Styl dieser Figuren",
+    "page": 147,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ III"
+  },
+  {
+    "title": "§ IV. Ueber den Widerspruch, in welchem die Köpfe mit den übrigen Theilen des Körpers in Ansehung ihrer Sculptur zu stehen scheinen",
+    "page": 163,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ IV"
+  },
+  {
+    "title": "§ V. Ueber den muthmaßlichen Inhalt der Bearbeitung des Marmors",
+    "page": 168,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ V"
+  },
+  {
+    "title": "§ VI. Ueber die Epoche, in welcher muthmaßlich diese Figuren verfertiget worden sind",
+    "page": 169,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ VI"
+  },
+  {
+    "title": "§ VII. Wie und wo diese Figuren ursprünglich aufgestellt gewesen",
+    "page": 183,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ VII"
+  },
+  {
+    "title": "§ VIII. Ueber die Bedeutung der Vorstellung dieser Figuren",
+    "page": 187,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ VIII"
+  },
+  {
+    "title": "§ IX. Ueber die Bemalung der Figuren und des Tempels",
+    "page": 192,
+    "level": 1,
+    "kind": "paragraph",
+    "label": "§ IX"
+  },
+  {
+    "title": "Schluß",
+    "page": 197,
+    "level": 1,
+    "kind": "beschluss",
+    "label": "Schluß"
+  },
+  {
+    "title": "3. Erlanger Vorträge (aus dem handschriftlichen Nachlaß)",
+    "page": 209,
+    "level": 0,
+    "kind": "work",
+    "label": "3"
+  },
+  {
+    "title": "a. Ueber die Natur der Philosophie als Wissenschaft",
+    "page": 209,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Ueber den Werth und die Bedeutung der Bibelgeschichte",
+    "page": 247,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "4. Spicilegium observationum in novissimam Arnobii editionem (aus dem handschriftlichen Nachlaß)",
+    "page": 253,
+    "level": 0,
+    "kind": "work",
+    "label": "4"
+  },
+  {
+    "title": "5. Abhandlungen philologischen und mythologischen Inhalts (zum Theil aus dem handschriftlichen Nachlaß)",
+    "page": 305,
+    "level": 0,
+    "kind": "work",
+    "label": "5"
+  },
+  {
+    "title": "a. Ueber eine Stelle des Lucretius",
+    "page": 305,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Ueber eine Stelle Platons",
+    "page": 313,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Ueber eine Stelle im Homerischen Hymnus an Demeter",
+    "page": 324,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Ueber die arabischen Namen des Dionysos",
+    "page": 328,
+    "level": 1,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Ueber das Alter kyklopischer Bauwerke in Griechenland",
+    "page": 336,
+    "level": 1,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "6. Erste Vorlesung in München (aus dem handschriftlichen Nachlaß)",
+    "page": 355,
+    "level": 0,
+    "kind": "work",
+    "label": "6"
+  },
+  {
+    "title": "7. Rede an die Studirenden der Ludwig-Maximilians-Universität, am Abend des 29. December 1830",
+    "page": 365,
+    "level": 0,
+    "kind": "work",
+    "label": "7"
+  },
+  {
+    "title": "8. Reden in den öffentlichen Sitzungen der Akademie der Wissenschaften in München (zum Theil aus dem handschriftlichen Nachlaß)",
+    "page": 379,
+    "level": 0,
+    "kind": "work",
+    "label": "8"
+  },
+  {
+    "title": "a. Antrittsrede als Vorstand der Akademie der Wissenschaften",
+    "page": 379,
+    "level": 1,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Eröffnungsworte in der öffentlichen Sitzung der Akademie am 29. März 1828",
+    "page": 401,
+    "level": 1,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Rede zum siebzigsten Jahrestag der Akademie am 27. März 1829",
+    "page": 404,
+    "level": 1,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "d. Aus einem Vortrag am Abend des Ludwigstages 1829",
+    "page": 418,
+    "level": 1,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "e. Aus dem Vortrag zum einundsiebzigsten Jahrestag der Akademie",
+    "page": 420,
+    "level": 1,
+    "kind": "section",
+    "label": "e"
+  },
+  {
+    "title": "f. Schlußwort zur öffentlichen Sitzung der Akademie am 25. August 1830",
+    "page": 423,
+    "level": 1,
+    "kind": "section",
+    "label": "f"
+  },
+  {
+    "title": "g. Rede zum zweiundsiebzigsten Jahrestag der Akademie am 28. März 1831",
+    "page": 425,
+    "level": 1,
+    "kind": "section",
+    "label": "g"
+  },
+  {
+    "title": "h. Ueber Faradays Entdeckung. Rede am 28. März 1832",
+    "page": 439,
+    "level": 1,
+    "kind": "section",
+    "label": "h"
+  },
+  {
+    "title": "i. Vorwort zur öffentlichen Sitzung am 25. August 1832",
+    "page": 453,
+    "level": 1,
+    "kind": "section",
+    "label": "i"
+  },
+  {
+    "title": "k. Rede zum fünfundsiebzigsten Jahrestag der Akademie am 26. März 1834",
+    "page": 456,
+    "level": 1,
+    "kind": "section",
+    "label": "k"
+  },
+  {
+    "title": "l. Worte in der öffentlichen Sitzung der Akademie am 25. August 1834",
+    "page": 467,
+    "level": 1,
+    "kind": "section",
+    "label": "l"
+  },
+  {
+    "title": "m. Aus dem Schlußvortrag am 77. Jahrestag der Akademie, 28. März 1836",
+    "page": 470,
+    "level": 1,
+    "kind": "section",
+    "label": "m"
+  },
+  {
+    "title": "n. Eröffnungsrede in der Sitzung der Akademie am 25. August 1836",
+    "page": 474,
+    "level": 1,
+    "kind": "section",
+    "label": "n"
+  },
+  {
+    "title": "o. Aus dem Vortrag am 78. Jahrestag der Akademie am 27. März 1837",
+    "page": 477,
+    "level": 1,
+    "kind": "section",
+    "label": "o"
+  },
+  {
+    "title": "p. Einleitungs- und Schlußworte zur öffentlichen Sitzung am 23. August 1838",
+    "page": 480,
+    "level": 1,
+    "kind": "section",
+    "label": "p"
+  },
+  {
+    "title": "q. Rede in der öffentlichen Sitzung am 27. März 1839",
+    "page": 484,
+    "level": 1,
+    "kind": "section",
+    "label": "q"
+  },
+  {
+    "title": "r. Vorwort zur öffentlichen Sitzung der Akademie am 24. August 1839",
+    "page": 487,
+    "level": 1,
+    "kind": "section",
+    "label": "r"
+  },
+  {
+    "title": "s. Worte in der öffentlichen Sitzung der Akademie am 27. März 1840",
+    "page": 494,
+    "level": 1,
+    "kind": "section",
+    "label": "s"
+  },
+  {
+    "title": "t. Eröffnungsrede zur Sitzung der Akademie am 24. August 1840",
+    "page": 494,
+    "level": 1,
+    "kind": "section",
+    "label": "t"
+  },
+  {
+    "title": "u. Vortrag in der öffentlichen Sitzung am 27. März 1841",
+    "page": 501,
+    "level": 1,
+    "kind": "section",
+    "label": "u"
   }
 ]

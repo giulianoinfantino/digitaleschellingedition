@@ -1,18 +1,562 @@
 [
   {
     "title": "Immanuel Kant",
-    "page": 1
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Philosophie und Religion",
-    "page": 11
+    "page": 11,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Propädeutik der Philosophie (aus dem handschriftlichen Nachlaß)",
-    "page": 71
+    "page": 71,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "System der gesammten Philosophie und der Naturphilosophie insbesondere (aus dem handschriftlichen Nachlaß)",
-    "page": 131
+    "page": 131,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "I. Erster Theil, oder die allgemeine Philosophie",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "I"
+  },
+  {
+    "title": "Von der höchsten Erkenntniß überhaupt",
+    "page": 137,
+    "level": 2,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "1. Die Idee des Absoluten oder Gottes",
+    "page": 148,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Allgemeines Verhältniß dessen, was ist, zum Absoluten",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Ableitung des Begriffs vom All aus der Idee des Absoluten",
+    "page": 168,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Verhältniß der Dinge zum All (= Gott)",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "Unterscheidung zwischen den Ideen (= Wesen der Dinge) und der Erscheinung (= Nichtwesen der Dinge)",
+    "page": 179,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Ableitung der Reflexionsbegriffe (= Bestimmungen des concreten Dings)",
+    "page": 192,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Das Reale am einzelnen Ding = Reflex des All",
+    "page": 197,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "3. Wie das Besondere der Art nach aus der Idee Gottes folge",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "a. Verdeutlichung dieser Aufgabe",
+    "page": 199,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Ableitung des realen und des idealen All; die Potenzen als Erscheinungsweise in der Differenz",
+    "page": 201,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "II. Zweiter oder besonderer Theil",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "II"
+  },
+  {
+    "title": "A. Allgemeine Naturphilosophie, oder Construktion der Natur oder des realen All",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "A"
+  },
+  {
+    "title": "1. Vorbegriffe. Das Verhältniß von Affirmirendem und Affirmirtem = Verhältniß von Seele und Leib (substantia completa)",
+    "page": 215,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Deduktion von Raum und Zeit als Formen des In-sich-selbst-Seyns der Dinge",
+    "page": 219,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "Genesis der Materie; die Dimensionen des Raums",
+    "page": 222,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Das Wesen oder das An-sich der Materie als eines actu Unendlichen",
+    "page": 231,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Ruhe und Bewegung als die zwei Attribute der Materie; Begriff der Masse, der Trägheit, der Schwere",
+    "page": 241,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Einheit des Lichts und der Schwere (= der vollkommene Begriff der Natur)",
+    "page": 265,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Genese der Potenzen innerhalb der Natur",
+    "page": 269,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Verhältniß der Zeit und Ewigkeit im Ding; Ursprung der Zahl",
+    "page": 270,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Dimensionen der Zeit",
+    "page": 275,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "B. Specielle Naturphilosophie, oder Construktion der einzelnen Potenzen der Natur",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "Die zwölf Axiome der Naturphilosophie",
+    "page": 278,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "1. Erste Potenz der Materie (Bewegung dem Seyn untergeordnet)",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "a. Erklärung des Gesetzes der Polarität und der Triplicität der Dimensionen als Typus der Differenzen in der Natur",
+    "page": 282,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "Die absolute Cohäsion (Starrheit, Cohäsion und Schwere; specifische Schwere)",
+    "page": 286,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die relative Cohäsion",
+    "page": 291,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Indifferenz der absoluten und relativen Cohäsion = dritte Dimension",
+    "page": 292,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die allgemeinen Grundsätze, die Qualitäten der Materie betreffend (Gesetze der Metamorphose)",
+    "page": 298,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Produkte der durch absolute Cohäsion gesetzten Metamorphose: die vier Urmetalle",
+    "page": 300,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Produkte der Metamorphose mit herrschender relativer Cohäsion: die vier Urstoffe der Natur",
+    "page": 305,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "2. Zweite Potenz der Materie (Formen der Bewegung als Formen der Thätigkeit)",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Das Grundgesetz der besonderen Bewegung (dynamische Bewegung)",
+    "page": 319,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "Magnetismus",
+    "page": 322,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Elektricität",
+    "page": 332,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Chemischer Proceß = Vernichtung aller Potenz; Verbrennungsproceß",
+    "page": 340,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Klang",
+    "page": 354,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Licht",
+    "page": 355,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Wärme",
+    "page": 364,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Feuer = das Auflösende aller Potenz",
+    "page": 369,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "3. Dritte Potenz, oder die organische Natur",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "a. Deduktion des Organismus nach seinem Wesen und seinen Bestimmungen",
+    "page": 371,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "Das Pflanzenreich, das Thierreich, die Infusionswelt",
+    "page": 392,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Erste Dimension (Magnetismus im Organischen) = Reproduktion",
+    "page": 397,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Zweite Dimension (Moment der Elektricität) = Irritabilität",
+    "page": 398,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Dritte Dimension (chemischer Proceß im Organischen) = Sensibilität oder Perceptivität",
+    "page": 399,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Begriff der Reproduktion",
+    "page": 400,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Reproduktion im Individuum (Resorption, Secretion, Assimilation)",
+    "page": 403,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Reproduktion des organischen Wesens als Gattung; Geschlechtsdifferenz",
+    "page": 406,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Begriff der Irritabilität",
+    "page": 418,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Triplicität der Dimensionen in der Irritabilität (Kreislauf, Respiration, willkürliche Bewegungen)",
+    "page": 422,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Irritabilitätsthiere",
+    "page": 427,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die innere Bedeutung der Sensibilität und die äußeren Bedingungen (Gehirnthätigkeit, Wachen und Schlafen)",
+    "page": 430,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Formen der Sensibilität; der Sinn; das System der Sinne",
+    "page": 442,
+    "level": 6,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Der Thierinstinkt = das relativ-Potenzlose",
+    "page": 457,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Construktion des Weltkörpers (Lehre vom Weltbau)",
+    "page": 471,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Der Mensch (der menschliche Organismus) = das absolut-Potenzlose = Vernunft",
+    "page": 486,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "C. Construktion der idealen Welt und ihrer Potenzen",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "C"
+  },
+  {
+    "title": "1. Erste Potenz = Wissen",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "a. Lehre von der Vernunft (dem Indifferenzpunkt der Philosophie); Einheit des Realen und Idealen",
+    "page": 495,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Die Formen des Idealen entsprechend den Dimensionen im Realen (Selbstbewußtseyn, Empfindung, Anschauung)",
+    "page": 499,
+    "level": 4,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Deduktion der Ichheit; Princip der Erkenntniß a priori",
+    "page": 509,
+    "level": 4,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "Die drei Sphären des Begriffs",
+    "page": 518,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Eintheilung des Urtheils",
+    "page": 525,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die Formen der Schlüsse",
+    "page": 526,
+    "level": 5,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "d. Deduktion der absoluten Erkenntniß = An-sich der ersten Potenz",
+    "page": 532,
+    "level": 4,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "2. Zweite Potenz = Handeln",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "a. Lehre von der Freiheit, dem Bösen, der Schuld etc.",
+    "page": 537,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Moral und Religion; Ewiges Leben",
+    "page": 546,
+    "level": 4,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Die absolute Substanz als das Handelnde = An-sich der zweiten Potenz",
+    "page": 568,
+    "level": 4,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "3. Dritte Potenz = Kunst",
+    "page": null,
+    "level": 3,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "a. Construktion der Kunst als Synthese von Wissen und Handeln",
+    "page": 569,
+    "level": 4,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Begriff des Kunstwerks und Begriff des Genies",
+    "page": 570,
+    "level": 4,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Einsseyn von Wahrheit und Schönheit; das absolut-Potenzlose = Staat (objektiv) = Philosophie (subjektiv)",
+    "page": 573,
+    "level": 4,
+    "kind": "section",
+    "label": "c"
   }
 ]

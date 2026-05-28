@@ -1,18 +1,485 @@
 [
   {
     "title": "Erster Entwurf eines Systems der Naturphilosophie",
-    "page": 1
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Einleitung zu dem Entwurf eines Systems der Naturphilosophie",
-    "page": 269
+    "page": 269,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "System des transscendentalen Idealismus",
-    "page": 327
+    "page": 327,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "Einleitung",
+    "page": null,
+    "level": 1,
+    "kind": "einleitung",
+    "label": "Einleitung"
+  },
+  {
+    "title": "§ 1. Begriff der Transscendental-Philosophie",
+    "page": 339,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 1"
+  },
+  {
+    "title": "§ 2. Folgesätze",
+    "page": 342,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 2"
+  },
+  {
+    "title": "§ 3. Vorläufige Eintheilung der Transscendental-Philosophie",
+    "page": 346,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 3"
+  },
+  {
+    "title": "§ 4. Organ der Transscendental-Philosophie",
+    "page": 350,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 4"
+  },
+  {
+    "title": "I. Vom Princip des transscendentalen Idealismus",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "I"
+  },
+  {
+    "title": "A. Von der Nothwendigkeit und Beschaffenheit eines höchsten Princips des Wissens",
+    "page": 353,
+    "level": 2,
+    "kind": "section",
+    "label": "A"
+  },
+  {
+    "title": "B. Deduktion des Princips selbst",
+    "page": 361,
+    "level": 2,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "Erläuterungen",
+    "page": 365,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Allgemeine Anmerkungen",
+    "page": 373,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "II. Allgemeine Deduktion des transscendentalen Idealismus (Vorerinnerung)",
+    "page": 377,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "II"
+  },
+  {
+    "title": "III. System des theoretischen Philosophie nach den Grundsätzen des transscendentalen Idealismus (Vorerinnerung)",
+    "page": 388,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "III"
+  },
+  {
+    "title": "A. Deduktion des absoluten, im Akt des Selbstbewußtseyns enthaltenen Synthesis",
+    "page": 389,
+    "level": 2,
+    "kind": "section",
+    "label": "A"
+  },
+  {
+    "title": "B. Deduktion der Mittelglieder der absoluten Synthesis",
+    "page": 395,
+    "level": 2,
+    "kind": "section",
+    "label": "B"
+  },
+  {
+    "title": "Erste Epoche. Von der ursprünglichen Empfindung bis zur produktiven Anschauung",
+    "page": null,
+    "level": 2,
+    "kind": "abschnitt",
+    "label": "Erste Epoche"
+  },
+  {
+    "title": "a. Wie das Ich dazu kommt sich als begrenzt anzuschauen",
+    "page": 399,
+    "level": 3,
+    "kind": "section",
+    "label": "a"
+  },
+  {
+    "title": "b. Wie das Ich sich selbst als empfindend anschaut",
+    "page": 411,
+    "level": 3,
+    "kind": "section",
+    "label": "b"
+  },
+  {
+    "title": "c. Theorie der produktiven Anschauung (Vorerinnerung)",
+    "page": 427,
+    "level": 3,
+    "kind": "section",
+    "label": "c"
+  },
+  {
+    "title": "α. Deduktion der produktiven Anschauung",
+    "page": 432,
+    "level": 4,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "β. Deduktion der Materie",
+    "page": 440,
+    "level": 4,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "Folgesätze",
+    "page": 444,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Allgemeine Anmerkungen zu der ersten Epoche",
+    "page": 450,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Zweite Epoche. Von der produktiven Anschauung bis zur Reflexion (Vorerinnerung)",
+    "page": 454,
+    "level": 2,
+    "kind": "abschnitt",
+    "label": "Zweite Epoche"
+  },
+  {
+    "title": "d. Wie das Ich dazu kommt sich selbst als produktiv anzuschauen",
+    "page": 456,
+    "level": 3,
+    "kind": "section",
+    "label": "d"
+  },
+  {
+    "title": "α. Construction des sinnlichen Objekts und des inneren Sinns (Zeit und Raum)",
+    "page": 462,
+    "level": 4,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "β. Deduktion des Causalitäts-Verhältnisses, als einer wechselseitigen Entstehung des Universums für das Ich",
+    "page": 467,
+    "level": 4,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "γ. Deduktion des Organischen",
+    "page": 491,
+    "level": 4,
+    "kind": "section",
+    "label": "γ"
+  },
+  {
+    "title": "Uebergang zur Sphäre der freien Reflexion",
+    "page": 500,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Allgemeine Anmerkungen zur zweiten Epoche",
+    "page": 502,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Dritte Epoche. Von der Reflexion bis zum absoluten Willensakt",
+    "page": 505,
+    "level": 2,
+    "kind": "abschnitt",
+    "label": "Dritte Epoche"
+  },
+  {
+    "title": "α. Empirische Abstraktion, erste Bedingung der Reflexion (Urtheil, empirischer Schematismus; Schema, Bild, Symbol)",
+    "page": 508,
+    "level": 4,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "β. Fortgang zur transscendentalen Abstraktion (apriorische Begriffe)",
+    "page": 511,
+    "level": 4,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "γ. Transscendentale Schematismus; der Mechanismus der Kategorien",
+    "page": 516,
+    "level": 4,
+    "kind": "section",
+    "label": "γ"
+  },
+  {
+    "title": "δ. Die absolute Erhebung des Ichs über das Objekt; das Postulat. Uebergang zur praktischen Philosophie",
+    "page": 523,
+    "level": 4,
+    "kind": "section",
+    "label": "δ"
+  },
+  {
+    "title": "Allgemeine Anmerkungen zur dritten Epoche (Begriffe a priori und a posteriori)",
+    "page": 527,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "IV. System der praktischen Philosophie nach Grundsätzen des transscendentalen Idealismus",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "IV"
+  },
+  {
+    "title": "Erster Satz. Die absolute Abstraktion nur erklärbar aus einem Selbstbestimmen der Intelligenz",
+    "page": 532,
+    "level": 2,
+    "kind": "section",
+    "label": "Erster Satz"
+  },
+  {
+    "title": "Folgesätze: das gemeinschaftliche Princip der theoretischen und praktischen Philosophie",
+    "page": 535,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Zweiter Satz. Der Akt der Selbstbestimmung nur erklärbar aus dem bestimmten Handeln einer Intelligenz außer ihr",
+    "page": 540,
+    "level": 2,
+    "kind": "section",
+    "label": "Zweiter Satz"
+  },
+  {
+    "title": "1. Daß dieses Handeln einer Intelligenz zur Bedingung habe",
+    "page": 541,
+    "level": 3,
+    "kind": "section",
+    "label": "1"
+  },
+  {
+    "title": "2. Wie ist das Verhältniß der beiden Intelligenzen zu denken?",
+    "page": 543,
+    "level": 3,
+    "kind": "section",
+    "label": "2"
+  },
+  {
+    "title": "3. Wie die Einwirkung von Intelligenzen auf mich als fortwährend zu denken sey",
+    "page": 550,
+    "level": 3,
+    "kind": "section",
+    "label": "3"
+  },
+  {
+    "title": "Zusätze",
+    "page": 552,
+    "level": 3,
+    "kind": "zusatz",
+    "label": ""
+  },
+  {
+    "title": "Dritter Satz",
+    "page": null,
+    "level": 2,
+    "kind": "section",
+    "label": "Dritter Satz"
+  },
+  {
+    "title": "α. Das Wollen richtet sich ursprünglich auf ein äußeres Objekt (Wollen/Freiheit und produktive Anschauung; Idee, Ideal, Trieb)",
+    "page": 557,
+    "level": 3,
+    "kind": "section",
+    "label": "α"
+  },
+  {
+    "title": "aa. Negative Bedingungen des Uebergangs aus dem Subjektiven ins Objektive",
+    "page": 560,
+    "level": 4,
+    "kind": "section",
+    "label": "aa"
+  },
+  {
+    "title": "bb. Positive Lösung dieses Uebergangs",
+    "page": 563,
+    "level": 4,
+    "kind": "section",
+    "label": "bb"
+  },
+  {
+    "title": "β. Deduktion des Sittengesetzes; Transscendentale Freiheit",
+    "page": 570,
+    "level": 3,
+    "kind": "section",
+    "label": "β"
+  },
+  {
+    "title": "Zusätze: Deduktion des Rechtsgesetzes und der allgemeinen Rechtsverfassung",
+    "page": 581,
+    "level": 3,
+    "kind": "zusatz",
+    "label": ""
+  },
+  {
+    "title": "Der Begriff der Geschichte",
+    "page": 587,
+    "level": 4,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Deduktion der Philosophie der Geschichte",
+    "page": 590,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Erklärung von Freiheit und Gesetzmäßigkeit als Hauptcharakter der Geschichte",
+    "page": 593,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Der Begriff der moralischen Weltordnung (Vorsehung) im transscendentalen Idealismus",
+    "page": 595,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Religion innerhalb des transscendentalen Idealismus",
+    "page": 601,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Die drei Perioden der Geschichte",
+    "page": 603,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "f. Wie das Ich der ursprünglichen Harmonie zwischen Subjektivem und Objektivem bewußt werden könne",
+    "page": 605,
+    "level": 3,
+    "kind": "section",
+    "label": "f"
+  },
+  {
+    "title": "V. Hauptsätze der Teleologie nach Grundsätzen des transscendentalen Idealismus",
+    "page": 607,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "V"
+  },
+  {
+    "title": "VI. Deduktion eines allgemeinen Organs der Philosophie, oder Hauptsätze der Philosophie der Kunst",
+    "page": null,
+    "level": 1,
+    "kind": "abschnitt",
+    "label": "VI"
+  },
+  {
+    "title": "§ 1. Deduktion des Kunstprodukts überhaupt",
+    "page": 612,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 1"
+  },
+  {
+    "title": "§ 2. Der Charakter des Kunstprodukts",
+    "page": 619,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 2"
+  },
+  {
+    "title": "Unterschied zwischen Schönheit des Kunstprodukts und der Naturschönheit",
+    "page": 621,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Unterschied des ästhetischen Produkts vom gemeinen Naturprodukt",
+    "page": 622,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "Verhältniß der Kunst zur Wissenschaft (Bedeutung des Genies in beiden)",
+    "page": 623,
+    "level": 3,
+    "kind": "section",
+    "label": ""
+  },
+  {
+    "title": "§ 3. Folgesätze (Verhältniß der Kunst zum ganzen System der Philosophie)",
+    "page": 624,
+    "level": 2,
+    "kind": "paragraph",
+    "label": "§ 3"
+  },
+  {
+    "title": "Allgemeine Anmerkungen zu dem ganzen System",
+    "page": 630,
+    "level": 2,
+    "kind": "section",
+    "label": ""
   },
   {
     "title": "Ueber die Jenaische Allgemeine Literaturzeitung",
-    "page": 635
+    "page": 635,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   }
 ]

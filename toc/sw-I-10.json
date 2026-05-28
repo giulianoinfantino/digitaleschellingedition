@@ -1,42 +1,72 @@
 [
   {
-    "title": "Zur Geschichte der neueren Philosophie. (Aus dem handschriftlichen Nachlaß)",
-    "page": 1
+    "title": "1. Zur Geschichte der neueren Philosophie (Münchener Vorlesungen, aus dem handschriftlichen Nachlaß)",
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": "1"
   },
   {
-    "title": "Vorrede zu einer philosophischen Schrift des Hrn. Victor Cousin",
-    "page": 201
+    "title": "2. Vorrede zu einer philosophischen Schrift des Hrn. Victor Cousin",
+    "page": 201,
+    "level": 0,
+    "kind": "work",
+    "label": "2"
   },
   {
-    "title": "Darstellung des philosophischen Empirismus. (Aus dem handschriftlichen Nachlaß)",
-    "page": 225
+    "title": "3. Darstellung des philosophischen Empirismus (aus dem handschriftlichen Nachlaß)",
+    "page": 225,
+    "level": 0,
+    "kind": "work",
+    "label": "3"
   },
   {
-    "title": "Anthropologisches Schema. (Aus dem handschriftlichen Nachlaß)",
-    "page": 287
+    "title": "4. Anthropologisches Schema (aus dem handschriftlichen Nachlaß)",
+    "page": 287,
+    "level": 0,
+    "kind": "work",
+    "label": "4"
   },
   {
-    "title": "Worte zum Andenken des Freiherrn von Moll und Sylvestre de Sacys",
-    "page": 295
+    "title": "5. Worte zum Andenken des Freiherrn von Moll und Sylvestre de Sacys",
+    "page": 295,
+    "level": 0,
+    "kind": "work",
+    "label": "5"
   },
   {
-    "title": "Darstellung des Naturprocesses. (Aus dem handschriftlichen Nachlaß)",
-    "page": 301
+    "title": "6. Darstellung des Naturprocesses (aus dem handschriftlichen Nachlaß)",
+    "page": 301,
+    "level": 0,
+    "kind": "work",
+    "label": "6"
   },
   {
-    "title": "Vorwort zu H. Steffens nachgelassenen Schriften",
-    "page": 391
+    "title": "7. Vorwort zu H. Steffens nachgelassenen Schriften",
+    "page": 391,
+    "level": 0,
+    "kind": "work",
+    "label": "7"
   },
   {
-    "title": "Vorbemerkungen zu der Frage über den Ursprung der Sprache. (Aus dem handschriftlichen Nachlaß)",
-    "page": 419
+    "title": "8. Vorbemerkungen zu der Frage über den Ursprung der Sprache (aus dem handschriftlichen Nachlaß)",
+    "page": 419,
+    "level": 0,
+    "kind": "work",
+    "label": "8"
   },
   {
-    "title": "Epigrammata. (Aus dem handschriftlichen Nachlaß)",
-    "page": 427
+    "title": "9. Epigrammata (aus dem handschriftlichen Nachlaß)",
+    "page": 427,
+    "level": 0,
+    "kind": "work",
+    "label": "9"
   },
   {
-    "title": "Gedichte und metrische Uebersetzungen. (Zum Theil aus dem handschriftlichen Nachlaß)",
-    "page": 429
+    "title": "10. Gedichte und metrische Uebersetzungen (zum Theil aus dem handschriftlichen Nachlaß)",
+    "page": 429,
+    "level": 0,
+    "kind": "work",
+    "label": "10"
   }
 ]
