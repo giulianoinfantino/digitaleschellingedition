@@ -1,54 +1,107 @@
 [
   {
-    "title": "Fünfundzwanzigste Vorlesung. Verhältniß der Philosophie der Offenbarung zu den bisherigen Methoden, die Offenbarung wissenschaftlich zu behandeln, der scholastischen, der äußerlich historischen, der mystischen",
-    "page": 30
+    "title": "Fünfundzwanzigste Vorlesung. Verhältniß der Philosophie der Offenbarung zu den bisherigen Methoden, die Offenbarung wissenschaftlich zu behandeln, der…",
+    "page": 29,
+    "level": 1,
+    "kind": "section",
+    "label": "Fünfundzwanzigste Vorlesung"
   },
   {
-    "title": "Sechsundzwanzigste Vorlesung. Fortsetzung der Entwicklung des Grundgedankens der Offenbarung: die Voraussetzung für das Werk Christi und für dessen Verständniß, a) die Realität des zu überwindenden Princips sowohl gegenüber vom Menschen als in seiner Beziehung auf Gott",
-    "page": 51
+    "title": "Sechsundzwanzigste Vorlesung. Fortsetzung der Entwicklung des Grundgedankens der Offenbarung: die Voraussetzung für das Werk Christi und für dessen…",
+    "page": 50,
+    "level": 1,
+    "kind": "section",
+    "label": "Sechsundzwanzigste Vorlesung"
   },
   {
     "title": "Siebenundzwanzigste Vorlesung. Näheres über die Bedeutung der von Christo schon im Heidenthum geübten Wirkung gegenüber von seiner späteren, persönlichen",
-    "page": 74
+    "page": 73,
+    "level": 1,
+    "kind": "section",
+    "label": "Siebenundzwanzigste Vorlesung"
   },
   {
-    "title": "Achtundzwanzigste Vorlesung. Uebergang zur Erklärung des Johanneischen Prologs durch allgemeine Bemerkungen über das Unzureichende a) einer auf bloßer Sprachkenntniß beruhenden Auslegung, S. 97, b) einer bloß philosophischen (Fichtes Erklärung des Johanneischen Logos)",
-    "page": 101
+    "title": "Achtundzwanzigste Vorlesung. Uebergang zur Erklärung des Johanneischen Prologs durch allgemeine Bemerkungen über das Unzureichende a) einer auf bloßer Sprachkenntniß beruhenden Auslegung",
+    "page": 98,
+    "level": 1,
+    "kind": "section",
+    "label": "Achtundzwanzigste Vorlesung"
   },
   {
-    "title": "Neunundzwanzigste Vorlesung. Die (persönliche) Wirkung der zweiten Potenz während der alttestamentlichen Oekonomie, - Bestimmung der Art und Weise der Offenbarung im A.T",
-    "page": 119
+    "title": "Neunundzwanzigste Vorlesung. Die (persönliche) Wirkung der zweiten Potenz während der alttestamentlichen Oekonomie, - Bestimmung der Art und Weise der…",
+    "page": 119,
+    "level": 1,
+    "kind": "section",
+    "label": "Neunundzwanzigste Vorlesung"
   },
   {
     "title": "Dreißigste Vorlesung. Das Römerthum das erklärte Ende des Heidenthums, ebendamit der Zeitpunkt der Geburt Christi",
-    "page": 152
+    "page": 151,
+    "level": 1,
+    "kind": "section",
+    "label": "Dreißigste Vorlesung"
   },
   {
-    "title": "Einunddreißigste Vorlesung. Weiteres über die (physische Seite der) II,4,VII Menschwerdung - die Mitwirkung des heil. Geistes bei derselben - mit Rücksicht auf neutestamentliche Ausdrücke",
-    "page": 176
+    "title": "Einunddreißigste Vorlesung. Weiteres über die (physische Seite der) Menschwerdung - die Mitwirkung des heil",
+    "page": 175,
+    "level": 1,
+    "kind": "section",
+    "label": "Einunddreißigste Vorlesung"
   },
   {
-    "title": "Zweiunddreißigste Vorlesung. Ueber die Veränderung, die mit Christo im Tode vorging, wobei zuerst über die Natur des Todes überhaupt (der Tod nicht sowohl Scheidung als eine Essentification)",
-    "page": 206
+    "title": "Zweiunddreißigste Vorlesung. Ueber die Veränderung, die mit Christo im Tode vorging, wobei zuerst über die Natur des Todes überhaupt (der Tod nicht sowohl…",
+    "page": 205,
+    "level": 1,
+    "kind": "section",
+    "label": "Zweiunddreißigste Vorlesung"
   },
   {
-    "title": "Dreiunddreißigste Vorlesung. Reflexion über diese ganze Erklärung der Offenbarung, insbesondere darüber, warum eben nur diese (eigentliche) Erklärung des Christenthums möglich ist, S. 228, warum namentlich keine mythische",
-    "page": 231
+    "title": "Dreiunddreißigste Vorlesung. Reflexion über diese ganze Erklärung der Offenbarung, insbesondere darüber, warum eben nur diese (eigentliche) Erklärung des Christenthums möglich ist",
+    "page": 228,
+    "level": 1,
+    "kind": "section",
+    "label": "Dreiunddreißigste Vorlesung"
   },
   {
     "title": "Vierunddreißigste Vorlesung. Die Genesis des Satan nach den Prämissen der Philosophie der Offenbarung",
-    "page": 256
+    "page": 256,
+    "level": 1,
+    "kind": "section",
+    "label": "Vierunddreißigste Vorlesung"
   },
   {
     "title": "Fünfunddreißigste Vorlesung. Der Begriff der Engel überhaupt, Analogie dieses Begriffs mit dem der Potenzen",
-    "page": 279
+    "page": 279,
+    "level": 1,
+    "kind": "section",
+    "label": "Fünfunddreißigste Vorlesung"
   },
   {
     "title": "Sechsunddreißigste Vorlesung. Das Christenthum den natürlichen Entwicklungsgesetzen unterworfen (Aufhören der geistlichen Gaben)",
-    "page": 294
+    "page": 294,
+    "level": 1,
+    "kind": "section",
+    "label": "Sechsunddreißigste Vorlesung"
   },
   {
     "title": "Siebenunddreißigste Vorlesung. Die Mission der Kirche der Reformation im Gegensatz der römischen",
-    "page": 313
+    "page": 312,
+    "level": 1,
+    "kind": "section",
+    "label": "Siebenunddreißigste Vorlesung"
+  },
+  {
+    "title": "Andere Deduktion der Principien der positiven Philosophie",
+    "page": 335,
+    "level": 0,
+    "kind": "work",
+    "label": ""
+  },
+  {
+    "title": "Erste Vorlesung in Berlin",
+    "page": 357,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   }
 ]

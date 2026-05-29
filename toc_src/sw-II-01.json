@@ -1,0 +1,243 @@
+{
+  "work_id": "sw-II-01",
+  "source_pdf_pages": [
+    3300,
+    3301,
+    3302
+  ],
+  "note": "Derived from the legacy discursive Uebersicht: each lecture promoted to a level-1 head with numbered sub-points lifted to level-2; Buch dividers / omitted lectures / appended works patched from the printed Uebersicht scans.",
+  "entries": [
+    {
+      "label": "",
+      "title": "Historisch-kritische Einleitung in die Philosophie der Mythologie (Erstes Buch)",
+      "kind": "work",
+      "level": 0,
+      "page": 1,
+      "ref": null
+    },
+    {
+      "label": "Erste Vorlesung",
+      "title": "Titel und Gegenstand dieser Vorlesungen",
+      "kind": "section",
+      "level": 1,
+      "page": 1,
+      "ref": null
+    },
+    {
+      "label": "Zweite Vorlesung",
+      "title": "Die allegorische Deutung der Mythologie (Wahrheit ist in der Mythologie, aber nicht in ihr als solcher): die verschiedenen Arten derselben, die euemeristische, moralische, physikalische",
+      "kind": "section",
+      "level": 1,
+      "page": 25,
+      "ref": null
+    },
+    {
+      "label": "Dritte Vorlesung",
+      "title": "Versuch einer Synthesis der poetischen und philosophischen Ansicht (Parallele zwischen der Mitwirkung von Poesie und Philosophie…",
+      "kind": "section",
+      "level": 1,
+      "page": 47,
+      "ref": null
+    },
+    {
+      "label": "Vierte Vorlesung",
+      "title": "Die religiösen Erklärungen der Mythologie (Wahrheit ist in der Mythologie als solcher)",
+      "kind": "section",
+      "level": 1,
+      "page": 66,
+      "ref": null
+    },
+    {
+      "label": "Fünfte Vorlesung",
+      "title": "Die physischen Hypothesen über Völkerentstehung",
+      "kind": "section",
+      "level": 1,
+      "page": 94,
+      "ref": null
+    },
+    {
+      "label": "Sechste Vorlesung",
+      "title": "Das Princip der ursprünglichen Einheit: ein allgemeiner, der Menschheit gemeinschaftlicher Gott",
+      "kind": "section",
+      "level": 1,
+      "page": 118,
+      "ref": null
+    },
+    {
+      "label": "Siebente Vorlesung",
+      "title": "Bestätigung des Bisherigen durch die mosaischen Schriften",
+      "kind": "section",
+      "level": 1,
+      "page": 143,
+      "ref": null
+    },
+    {
+      "label": "Achte Vorlesung",
+      "title": "Weitere Bestimmungen über den Gott der Vorzeit in seinem Verhältniß zum wahren Gott",
+      "kind": "section",
+      "level": 1,
+      "page": 175,
+      "ref": null
+    },
+    {
+      "label": "Neunte Vorlesung",
+      "title": "Ueber Ottfried Müllers scheinbar analoge Ansicht von der Mythologie",
+      "kind": "section",
+      "level": 1,
+      "page": 200,
+      "ref": null
+    },
+    {
+      "label": "Zehnte Vorlesung",
+      "title": "Zusammenhang der Philosophie der Mythologie mit anderen Wissenschaften und ihre Wichtigkeit für dieselben",
+      "kind": "section",
+      "level": 1,
+      "page": 227,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "für die Philosophie der Geschichte",
+      "kind": "section",
+      "level": 2,
+      "page": 228,
+      "ref": null
+    },
+    {
+      "label": "Eilfte Vorlesung",
+      "title": "Im Alterthum keine philosophische Religion möglich",
+      "kind": "section",
+      "level": 1,
+      "page": 253,
+      "ref": null
+    },
+    {
+      "label": "",
+      "title": "Philosophische Einleitung in die Philosophie der Mythologie (Zweites Buch)",
+      "kind": "work",
+      "level": 0,
+      "page": 257,
+      "ref": null
+    },
+    {
+      "label": "Zwölfte Vorlesung",
+      "title": "Historischer Fortgang durch Locke, Hume, Leibniz",
+      "kind": "section",
+      "level": 1,
+      "page": 277,
+      "ref": null
+    },
+    {
+      "label": "Dreizehnte Vorlesung",
+      "title": "Das Seyende selbst = Princip",
+      "kind": "section",
+      "level": 1,
+      "page": 294,
+      "ref": null
+    },
+    {
+      "label": "Vierzehnte Vorlesung",
+      "title": "Die inductive Methode, die den Stoff aus dem reinen Denken nimmt, entsprechend der dialektischen",
+      "kind": "section",
+      "level": 1,
+      "page": 321,
+      "ref": null
+    },
+    {
+      "label": "Fünfzehnte Vorlesung",
+      "title": "Die dialektische Methode nach Aristoteles",
+      "kind": "section",
+      "level": 1,
+      "page": 340,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "negativ in seinen Vorwürfen gegen die Dialektik und Sophistik",
+      "kind": "section",
+      "level": 2,
+      "page": 340,
+      "ref": null
+    },
+    {
+      "label": "Sechzehnte Vorlesung",
+      "title": "Allgemeine Erörterung über den höchsten Gegenstand",
+      "kind": "section",
+      "level": 1,
+      "page": 360,
+      "ref": null
+    },
+    {
+      "label": "Siebzehnte Vorlesung",
+      "title": "Fortgang zur Exposition der rationalen Philosophie; das Verhältniß der drei Ursachen (Potenzen) zu einander",
+      "kind": "section",
+      "level": 1,
+      "page": 384,
+      "ref": null
+    },
+    {
+      "label": "Achtzehnte Vorlesung",
+      "title": "Recapitulation der vier Principe als Ursachen des Entstehens von allem (der Ideenwelt)",
+      "kind": "section",
+      "level": 1,
+      "page": 407,
+      "ref": null
+    },
+    {
+      "label": "Neunzehnte Vorlesung",
+      "title": "Was zu einer Deduction der drei Dimensionen des Körperlichen auffordere",
+      "kind": "section",
+      "level": 1,
+      "page": 432,
+      "ref": null
+    },
+    {
+      "label": "Zwanzigste Vorlesung",
+      "title": "Ueber den Nus des Aristoteles",
+      "kind": "section",
+      "level": 1,
+      "page": 457,
+      "ref": null
+    },
+    {
+      "label": "Einundzwanzigste Vorlesung",
+      "title": "Lösung der Antinomie in Beziehung auf Begrenztheit und Unbegrenztheit des Weltalls",
+      "kind": "section",
+      "level": 1,
+      "page": 489,
+      "ref": null
+    },
+    {
+      "label": "Zweiundzwanzigste Vorlesung",
+      "title": "Die Erkenntnißtheorie (der Gegenstand der Seele nicht Gott, sondern das Seyende)",
+      "kind": "section",
+      "level": 1,
+      "page": 516,
+      "ref": null
+    },
+    {
+      "label": "Dreiundzwanzigste Vorlesung",
+      "title": "Der Staat nicht Produkt der Freiheit, weil vielmehr deren Urbedingung, also nicht durch Vertrag entstanden",
+      "kind": "section",
+      "level": 1,
+      "page": 533,
+      "ref": null
+    },
+    {
+      "label": "Vierundzwanzigste Vorlesung",
+      "title": "Verhältniß des Individuums zum Sittengesetz",
+      "kind": "section",
+      "level": 1,
+      "page": 553,
+      "ref": null
+    },
+    {
+      "label": "",
+      "title": "Ueber die Quelle der ewigen Wahrheiten (Abhandlung)",
+      "kind": "work",
+      "level": 0,
+      "page": 575,
+      "ref": null
+    }
+  ]
+}

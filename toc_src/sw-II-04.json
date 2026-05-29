@@ -1,0 +1,130 @@
+{
+  "work_id": "sw-II-04",
+  "source_pdf_pages": [
+    4349,
+    4350
+  ],
+  "note": "Derived from the legacy discursive Uebersicht: each lecture promoted to a level-1 head with numbered sub-points lifted to level-2; Buch dividers / omitted lectures / appended works patched from the printed Uebersicht scans.",
+  "entries": [
+    {
+      "label": "Fünfundzwanzigste Vorlesung",
+      "title": "Verhältniß der Philosophie der Offenbarung zu den bisherigen Methoden, die Offenbarung wissenschaftlich zu behandeln, der…",
+      "kind": "section",
+      "level": 1,
+      "page": 29,
+      "ref": null
+    },
+    {
+      "label": "Sechsundzwanzigste Vorlesung",
+      "title": "Fortsetzung der Entwicklung des Grundgedankens der Offenbarung: die Voraussetzung für das Werk Christi und für dessen…",
+      "kind": "section",
+      "level": 1,
+      "page": 50,
+      "ref": null
+    },
+    {
+      "label": "Siebenundzwanzigste Vorlesung",
+      "title": "Näheres über die Bedeutung der von Christo schon im Heidenthum geübten Wirkung gegenüber von seiner späteren, persönlichen",
+      "kind": "section",
+      "level": 1,
+      "page": 73,
+      "ref": null
+    },
+    {
+      "label": "Achtundzwanzigste Vorlesung",
+      "title": "Uebergang zur Erklärung des Johanneischen Prologs durch allgemeine Bemerkungen über das Unzureichende a) einer auf bloßer Sprachkenntniß beruhenden Auslegung",
+      "kind": "section",
+      "level": 1,
+      "page": 98,
+      "ref": null
+    },
+    {
+      "label": "Neunundzwanzigste Vorlesung",
+      "title": "Die (persönliche) Wirkung der zweiten Potenz während der alttestamentlichen Oekonomie, - Bestimmung der Art und Weise der…",
+      "kind": "section",
+      "level": 1,
+      "page": 119,
+      "ref": null
+    },
+    {
+      "label": "Dreißigste Vorlesung",
+      "title": "Das Römerthum das erklärte Ende des Heidenthums, ebendamit der Zeitpunkt der Geburt Christi",
+      "kind": "section",
+      "level": 1,
+      "page": 151,
+      "ref": null
+    },
+    {
+      "label": "Einunddreißigste Vorlesung",
+      "title": "Weiteres über die (physische Seite der) Menschwerdung - die Mitwirkung des heil",
+      "kind": "section",
+      "level": 1,
+      "page": 175,
+      "ref": null
+    },
+    {
+      "label": "Zweiunddreißigste Vorlesung",
+      "title": "Ueber die Veränderung, die mit Christo im Tode vorging, wobei zuerst über die Natur des Todes überhaupt (der Tod nicht sowohl…",
+      "kind": "section",
+      "level": 1,
+      "page": 205,
+      "ref": null
+    },
+    {
+      "label": "Dreiunddreißigste Vorlesung",
+      "title": "Reflexion über diese ganze Erklärung der Offenbarung, insbesondere darüber, warum eben nur diese (eigentliche) Erklärung des Christenthums möglich ist",
+      "kind": "section",
+      "level": 1,
+      "page": 228,
+      "ref": null
+    },
+    {
+      "label": "Vierunddreißigste Vorlesung",
+      "title": "Die Genesis des Satan nach den Prämissen der Philosophie der Offenbarung",
+      "kind": "section",
+      "level": 1,
+      "page": 256,
+      "ref": null
+    },
+    {
+      "label": "Fünfunddreißigste Vorlesung",
+      "title": "Der Begriff der Engel überhaupt, Analogie dieses Begriffs mit dem der Potenzen",
+      "kind": "section",
+      "level": 1,
+      "page": 279,
+      "ref": null
+    },
+    {
+      "label": "Sechsunddreißigste Vorlesung",
+      "title": "Das Christenthum den natürlichen Entwicklungsgesetzen unterworfen (Aufhören der geistlichen Gaben)",
+      "kind": "section",
+      "level": 1,
+      "page": 294,
+      "ref": null
+    },
+    {
+      "label": "Siebenunddreißigste Vorlesung",
+      "title": "Die Mission der Kirche der Reformation im Gegensatz der römischen",
+      "kind": "section",
+      "level": 1,
+      "page": 312,
+      "ref": null
+    },
+    {
+      "label": "",
+      "title": "Andere Deduktion der Principien der positiven Philosophie",
+      "kind": "work",
+      "level": 0,
+      "page": 335,
+      "ref": null
+    },
+    {
+      "label": "",
+      "title": "Erste Vorlesung in Berlin",
+      "kind": "work",
+      "level": 0,
+      "page": 357,
+      "ref": null
+    }
+  ]
+}

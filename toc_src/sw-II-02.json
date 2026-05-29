@@ -1,0 +1,293 @@
+{
+  "work_id": "sw-II-02",
+  "source_pdf_pages": [
+    3645,
+    3646,
+    3647,
+    3648,
+    3649
+  ],
+  "note": "Derived from the legacy discursive Uebersicht: each lecture promoted to a level-1 head with numbered sub-points lifted to level-2; Buch dividers / omitted lectures / appended works patched from the printed Uebersicht scans.",
+  "entries": [
+    {
+      "label": "",
+      "title": "Der Monotheismus (Erstes Buch)",
+      "kind": "work",
+      "level": 0,
+      "page": 1,
+      "ref": null
+    },
+    {
+      "label": "Erste Vorlesung",
+      "title": "Gegenstand und Art der folgenden Untersuchung",
+      "kind": "section",
+      "level": 1,
+      "page": 3,
+      "ref": null
+    },
+    {
+      "label": "Zweite Vorlesung",
+      "title": "Ausgangspunkt: der Unterschied zwischen der absoluten Einzigkeit Gottes und zwischen der Einzigkeit Gottes als solchen",
+      "kind": "section",
+      "level": 1,
+      "page": 24,
+      "ref": null
+    },
+    {
+      "label": "Dritte Vorlesung",
+      "title": "Nähere Bestimmung über das Verhältniß des nicht seyenden (als der ersten Form) zum rein seyenden (als der zweiten Form)",
+      "kind": "section",
+      "level": 1,
+      "page": 47,
+      "ref": null
+    },
+    {
+      "label": "Vierte Vorlesung",
+      "title": "Das Verhältniß der Mehrheit zur Einheit im Begriff des Monotheismus",
+      "kind": "section",
+      "level": 1,
+      "page": 66,
+      "ref": null
+    },
+    {
+      "label": "Fünfte Vorlesung",
+      "title": "Fortgang vom potentiellen (begrifflichen) Seyn Gottes zum actuellen (von dem in den drei Formen seyn könnenden zu dem in…",
+      "kind": "section",
+      "level": 1,
+      "page": 80,
+      "ref": null
+    },
+    {
+      "label": "Sechste Vorlesung",
+      "title": "Explication des theogonischen Processes als Processes der ursprünglichen Schöpfung, wobei Charakterisirung der Potenzen als…",
+      "kind": "section",
+      "level": 1,
+      "page": 108,
+      "ref": null
+    },
+    {
+      "label": "",
+      "title": "Die Mythologie (Zweites Buch)",
+      "kind": "work",
+      "level": 0,
+      "page": 135,
+      "ref": null
+    },
+    {
+      "label": "Siebente Vorlesung",
+      "title": "Einleitende Bemerkungen über die Philosophie der Mythologie",
+      "kind": "section",
+      "level": 1,
+      "page": 136,
+      "ref": null
+    },
+    {
+      "label": "Achte Vorlesung",
+      "title": "Die wirkliche Alteration des Menschen = Urzufall (Fortuna primigenia)",
+      "kind": "section",
+      "level": 1,
+      "page": 151,
+      "ref": null
+    },
+    {
+      "label": "Neunte Vorlesung",
+      "title": "Einleitung des Processes im menschlichen Bewußtseyn",
+      "kind": "section",
+      "level": 1,
+      "page": 169,
+      "ref": null
+    },
+    {
+      "label": "Zehnte Vorlesung",
+      "title": "Uebergang zum nächsten Moment",
+      "kind": "section",
+      "level": 1,
+      "page": 189,
+      "ref": null
+    },
+    {
+      "label": "Eilfte Vorlesung",
+      "title": "Die persische Religion als beim Moment der ersten Materialisirung stehen bleibend",
+      "kind": "section",
+      "level": 1,
+      "page": 204,
+      "ref": null
+    },
+    {
+      "label": "Zwölfte Vorlesung",
+      "title": "Der Fortschritt zur wirklichen Vielgötterei, und zwar",
+      "kind": "section",
+      "level": 1,
+      "page": 237,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "durch den Uebergang zum entschiedenen Cultus der weiblichen Gottheit. - Dieser zeigt sich a) im Mylittadienst…",
+      "kind": "section",
+      "level": 2,
+      "page": 236,
+      "ref": null
+    },
+    {
+      "label": "Dreizehnte Vorlesung",
+      "title": "Bestimmtere Fixirung des gegenwärtigen Punkts der wissenschaftlichen Entwicklung",
+      "kind": "section",
+      "level": 1,
+      "page": 258,
+      "ref": null
+    },
+    {
+      "label": "Vierzehnte Vorlesung",
+      "title": "Moment des Kronos, die Religion der Phönikier",
+      "kind": "section",
+      "level": 1,
+      "page": 284,
+      "ref": null
+    },
+    {
+      "label": "Fünfzehnte Vorlesung",
+      "title": "Episode über den griechischen Herakles",
+      "kind": "section",
+      "level": 1,
+      "page": 326,
+      "ref": null
+    },
+    {
+      "label": "Sechzehnte Vorlesung",
+      "title": "Der Eintritt der zweiten (vollkommenen) Materialisirung (Katabole) des realen Princips",
+      "kind": "section",
+      "level": 1,
+      "page": 350,
+      "ref": null
+    },
+    {
+      "label": "Siebzehnte Vorlesung",
+      "title": "Moment der Coëxistenz der zwei Potenzen oder Götter im Bewußtseyn: der Osiris-Typhon der Aegypter",
+      "kind": "section",
+      "level": 1,
+      "page": 364,
+      "ref": null
+    },
+    {
+      "label": "Achtzehnte Vorlesung",
+      "title": "Schluß der Erörterung über die einzelnen Gestalten der ägyptischen Mythologie mit dem Begriff der Bubastis",
+      "kind": "section",
+      "level": 1,
+      "page": 379,
+      "ref": null
+    },
+    {
+      "label": "Neunzehnte Vorlesung",
+      "title": "Uebereinstimmung der bisherigen Deduktion der ägyptischen Mythologie und Theologie mit Herodotos und dessen ägyptischen Götterordnungen",
+      "kind": "section",
+      "level": 1,
+      "page": 407,
+      "ref": null
+    },
+    {
+      "label": "Zwanzigste Vorlesung",
+      "title": "Uebergang zur indischen Mythologie",
+      "kind": "section",
+      "level": 1,
+      "page": 432,
+      "ref": null
+    },
+    {
+      "label": "Einundzwanzigste Vorlesung",
+      "title": "Ableitung und Bedeutung der Incarnationsmythen",
+      "kind": "section",
+      "level": 1,
+      "page": 460,
+      "ref": null
+    },
+    {
+      "label": "Zweiundzwanzigste Vorlesung",
+      "title": "",
+      "kind": "section",
+      "level": 1,
+      "page": 485,
+      "ref": null
+    },
+    {
+      "label": "3",
+      "title": "Die Lehre der Bhagwadgita. Ihre Yogalehre und deren Verhältniß zu der mystischen Lehre der Vedas",
+      "kind": "section",
+      "level": 2,
+      "page": 486,
+      "ref": null
+    },
+    {
+      "label": "Dreiundzwanzigste Vorlesung",
+      "title": "Uebergang zu China",
+      "kind": "section",
+      "level": 1,
+      "page": 521,
+      "ref": null
+    },
+    {
+      "label": "Vierundzwanzigste Vorlesung",
+      "title": "Das Absolute (Unmythologische) des chinesischen Princips zeigt sich",
+      "kind": "section",
+      "level": 1,
+      "page": 540,
+      "ref": null
+    },
+    {
+      "label": "3",
+      "title": "in der Sprache Chinas - Bemerkungen gegen Abel Remusats Leugnung der Einsylbigkeit der chinesischen Sprache",
+      "kind": "section",
+      "level": 2,
+      "page": 541,
+      "ref": null
+    },
+    {
+      "label": "Fünfundzwanzigste Vorlesung",
+      "title": "Recapitulation",
+      "kind": "section",
+      "level": 1,
+      "page": 569,
+      "ref": null
+    },
+    {
+      "label": "Sechsundzwanzigste Vorlesung",
+      "title": "Charakter der griechischen Mythologie als allgemeiner Mythologie (als Göttersystems)",
+      "kind": "section",
+      "level": 1,
+      "page": 591,
+      "ref": null
+    },
+    {
+      "label": "Siebenundzwanzigste Vorlesung",
+      "title": "Die erste Periode der Theogonie",
+      "kind": "section",
+      "level": 1,
+      "page": 615,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "der Moment der für sich seyenden Gäa = Moment der ersten Materialisirung des Urprincips, Moment des noch…",
+      "kind": "section",
+      "level": 2,
+      "page": 615,
+      "ref": null
+    },
+    {
+      "label": "Achtundzwanzigste Vorlesung",
+      "title": "Qualitativer Unterschied zwischen dem Charakter der griechischen Religion und dem der früheren Religionen",
+      "kind": "section",
+      "level": 1,
+      "page": 644,
+      "ref": null
+    },
+    {
+      "label": "Neunundzwanzigste Vorlesung",
+      "title": "Verhältniß der gesammten griechischen Götterwelt zu Zeus",
+      "kind": "section",
+      "level": 1,
+      "page": 660,
+      "ref": null
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "work_id": "sw-II-03",
+  "source_pdf_pages": [
+    4043,
+    4044,
+    4045,
+    4046,
+    4047,
+    4048
+  ],
+  "note": "Derived from the legacy discursive Uebersicht: each lecture promoted to a level-1 head with numbered sub-points lifted to level-2; Buch dividers / omitted lectures / appended works patched from the printed Uebersicht scans.",
+  "entries": [
+    {
+      "label": "",
+      "title": "Einleitung in die Philosophie der Offenbarung (Erstes Buch)",
+      "kind": "work",
+      "level": 0,
+      "page": 1,
+      "ref": null
+    },
+    {
+      "label": "Erste Vorlesung",
+      "title": "Allgemeines über Philosophie",
+      "kind": "section",
+      "level": 1,
+      "page": 3,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "Philosophie überhaupt die begehrenswertheste Wissenschaft",
+      "kind": "section",
+      "level": 2,
+      "page": 1,
+      "ref": null
+    },
+    {
+      "label": "2",
+      "title": "besonderes Bedürfniß derselben in der jetzigen Zeit (nicht etwa durch Poesie zu ersetzen)",
+      "kind": "section",
+      "level": 2,
+      "page": 8,
+      "ref": null
+    },
+    {
+      "label": "3",
+      "title": "abschreckende Seite der Philosophie, Wechsel der Systeme",
+      "kind": "section",
+      "level": 2,
+      "page": 13,
+      "ref": null
+    },
+    {
+      "label": "Zweite Vorlesung",
+      "title": "Fortsetzung der allgemeinen Erörterung über Philosophie: über das Hören philosophischer Vorträge, über die Anforderung der Deutlichkeit an die Philosophie",
+      "kind": "section",
+      "level": 1,
+      "page": 17,
+      "ref": null
+    },
+    {
+      "label": "Dritte Vorlesung",
+      "title": "Darstellung der vorkantischen Metaphysik: ihre Grundlage",
+      "kind": "section",
+      "level": 1,
+      "page": 33,
+      "ref": null
+    },
+    {
+      "label": "Vierte Vorlesung",
+      "title": "Wiefern Kant und Fichte unmittelbar auf die reine Vernunftwissenschaft (im Identitätssystem) geführt haben",
+      "kind": "section",
+      "level": 1,
+      "page": 55,
+      "ref": null
+    },
+    {
+      "label": "Fünfte Vorlesung",
+      "title": "Beantwortung eines Einwurfs, wovon Gelegenheit genommen wird, die Idee der Vernunftwissenschaft nochmals vorzustellen",
+      "kind": "section",
+      "level": 1,
+      "page": 73,
+      "ref": null
+    },
+    {
+      "label": "Sechste Vorlesung",
+      "title": "Nachweis, daß beide Richtungen, die negative (rationale) und die positive, von jeher in der Philosophie existirten",
+      "kind": "section",
+      "level": 1,
+      "page": 93,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "an der griechischen Philosophie. Die rationale Seite durch die jonischen Physiker repräsentirt, besonders…",
+      "kind": "section",
+      "level": 2,
+      "page": 94,
+      "ref": null
+    },
+    {
+      "label": "Siebente Vorlesung",
+      "title": "Ueber das Verhalten des höheren Empirismus und sein Verhältniß zur positiven Philosophie",
+      "kind": "section",
+      "level": 1,
+      "page": 114,
+      "ref": null
+    },
+    {
+      "label": "Achte Vorlesung",
+      "title": "Beweis, daß die Philosophie jenes Gegensatzes ohngeachtet nur Eine, ihren Kreislauf in jenen beiden (der negativen und positiven…",
+      "kind": "section",
+      "level": 1,
+      "page": 146,
+      "ref": null
+    },
+    {
+      "label": "",
+      "title": "Der Philosophie der Offenbarung erster Theil (Zweites Buch)",
+      "kind": "work",
+      "level": 0,
+      "page": 177,
+      "ref": null
+    },
+    {
+      "label": "Neunte Vorlesung",
+      "title": "Bedeutung einer Philosophie der Offenbarung, insbesondere für das öffentliche Leben",
+      "kind": "section",
+      "level": 1,
+      "page": 178,
+      "ref": null
+    },
+    {
+      "label": "Zehnte Vorlesung",
+      "title": "Uebergang zu den ersten philosophischen Begriffen, wobei allgemeine Erörterung über das bestimmte Ziel der Philosophie",
+      "kind": "section",
+      "level": 1,
+      "page": 197,
+      "ref": null
+    },
+    {
+      "label": "Eilfte Vorlesung",
+      "title": "Wie die Philosophie gleich anfangs vom Begriff des abstrakt Einen (dem eleatischen Princip) sich frei erhalten müsse",
+      "kind": "section",
+      "level": 1,
+      "page": 224,
+      "ref": null
+    },
+    {
+      "label": "Zwölfte Vorlesung",
+      "title": "Wendepunkt der Entwicklung",
+      "kind": "section",
+      "level": 1,
+      "page": 240,
+      "ref": null
+    },
+    {
+      "label": "Dreizehnte Vorlesung",
+      "title": "Wie im vollkommenen Geist die Möglichkeit eines anderen, von seinem ewigen Seyn verschiedenen Seyns gegeben ist",
+      "kind": "section",
+      "level": 1,
+      "page": 261,
+      "ref": null
+    },
+    {
+      "label": "Vierzehnte Vorlesung",
+      "title": "Was zum Begriff der freien Schöpfung gehört",
+      "kind": "section",
+      "level": 1,
+      "page": 290,
+      "ref": null
+    },
+    {
+      "label": "Fünfzehnte Vorlesung",
+      "title": "Uebergang zur Lehre von der Dreieinheit Gottes durch Deduktion des Begriffs von der Zeugung des Sohns",
+      "kind": "section",
+      "level": 1,
+      "page": 310,
+      "ref": null
+    },
+    {
+      "label": "Sechzehnte Vorlesung",
+      "title": "Verhältniß des Monotheismus zur Dreieinheitslehre",
+      "kind": "section",
+      "level": 1,
+      "page": 337,
+      "ref": null
+    },
+    {
+      "label": "Siebzehnte Vorlesung",
+      "title": "Wiederholte Erklärung über die Bedeutung des Menschen in der Schöpfung",
+      "kind": "section",
+      "level": 1,
+      "page": 355,
+      "ref": null
+    },
+    {
+      "label": "Achtzehnte Vorlesung",
+      "title": "Kurze Darstellung der Philosophie der Mythologie nach dem folgenden Schema (",
+      "kind": "section",
+      "level": 1,
+      "page": 382,
+      "ref": null
+    },
+    {
+      "label": "Neunzehnte Vorlesung",
+      "title": "Fortgang zu den Mysterien; die Stellung der Demeter im Moment ihrer Versöhnung",
+      "kind": "section",
+      "level": 1,
+      "page": 410,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "Das reale Princip noch immer für sein Daseyn kämpfend als Typhon: ägyptische Mythologie. Die drei Potenzen,…",
+      "kind": "section",
+      "level": 2,
+      "page": 411,
+      "ref": null
+    },
+    {
+      "label": "2",
+      "title": "Das reale Princip ganz außer dem Kampf (bewältigt), aber ohne daß die Einheit wieder hergestellt wäre, diese…",
+      "kind": "section",
+      "level": 2,
+      "page": 411,
+      "ref": null
+    },
+    {
+      "label": "3",
+      "title": "Wiederherstellung der Einheit, wobei das in seine Latenz zurückgegangene reale Princip als Grund des…",
+      "kind": "section",
+      "level": 2,
+      "page": 411,
+      "ref": null
+    },
+    {
+      "label": "Zwanzigste Vorlesung",
+      "title": "Entwicklung des eigentlichen Inhalts der Mysterien",
+      "kind": "section",
+      "level": 1,
+      "page": 443,
+      "ref": null
+    },
+    {
+      "label": "1",
+      "title": "sofern sie Erlebnisse waren",
+      "kind": "section",
+      "level": 2,
+      "page": 442,
+      "ref": null
+    },
+    {
+      "label": "Einundzwanzigste Vorlesung",
+      "title": "Erklärung der Mysterien",
+      "kind": "section",
+      "level": 1,
+      "page": 459,
+      "ref": null
+    },
+    {
+      "label": "2",
+      "title": "sofern sie eine (übrigens scenisch mitgetheilte) Lehre waren, 4047 E.Hahn: CD-ROM Schelling Werke/ © TOTAL…",
+      "kind": "section",
+      "level": 2,
+      "page": 460,
+      "ref": null
+    },
+    {
+      "label": "Zweiundzwanzigste Vorlesung",
+      "title": "Allgemeine Erörterung über die Art der Erkenntniß in den Mysterien",
+      "kind": "section",
+      "level": 1,
+      "page": 490,
+      "ref": null
+    },
+    {
+      "label": "Dreiundzwanzigste Vorlesung",
+      "title": "Wie die (unausgesprochene) Ahndung eines einstigen Verschwindens der Götterwelt - das Geheimniß der Mysterien - die…",
+      "kind": "section",
+      "level": 1,
+      "page": 512,
+      "ref": null
+    }
+  ]
+}

@@ -1,118 +1,247 @@
 [
   {
-    "title": "Erste Vorlesung. Gegenstand und Art der folgenden Untersuchung",
-    "page": 1
+    "title": "Der Monotheismus (Erstes Buch)",
+    "page": 1,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
-    "title": "Zweite Vorlesung. Ausgangspunkt: der Unterschied zwischen der absoluten Einzigkeit Gottes und zwischen der Einzigkeit Gottes als solchen. Entwicklung des ersteren Begriffs: Der Begriff des Seyenden selbst",
-    "page": 24
+    "title": "Erste Vorlesung. Gegenstand und Art der folgenden Untersuchung",
+    "page": 3,
+    "level": 1,
+    "kind": "section",
+    "label": "Erste Vorlesung"
+  },
+  {
+    "title": "Zweite Vorlesung. Ausgangspunkt: der Unterschied zwischen der absoluten Einzigkeit Gottes und zwischen der Einzigkeit Gottes als solchen",
+    "page": 24,
+    "level": 1,
+    "kind": "section",
+    "label": "Zweite Vorlesung"
   },
   {
     "title": "Dritte Vorlesung. Nähere Bestimmung über das Verhältniß des nicht seyenden (als der ersten Form) zum rein seyenden (als der zweiten Form)",
-    "page": 49
+    "page": 47,
+    "level": 1,
+    "kind": "section",
+    "label": "Dritte Vorlesung"
   },
   {
     "title": "Vierte Vorlesung. Das Verhältniß der Mehrheit zur Einheit im Begriff des Monotheismus",
-    "page": 66
+    "page": 66,
+    "level": 1,
+    "kind": "section",
+    "label": "Vierte Vorlesung"
   },
   {
-    "title": "Fünfte Vorlesung. Fortgang vom potentiellen (begrifflichen) Seyn Gottes zum actuellen (von dem in den drei Formen seyn könnenden zu dem in denselben actu seyenden Gott). Die Scheidung (Spannung) der Potenzen in Folge des göttlichen Willens",
-    "page": 80
+    "title": "Fünfte Vorlesung. Fortgang vom potentiellen (begrifflichen) Seyn Gottes zum actuellen (von dem in den drei Formen seyn könnenden zu dem in…",
+    "page": 80,
+    "level": 1,
+    "kind": "section",
+    "label": "Fünfte Vorlesung"
   },
   {
-    "title": "Sechste Vorlesung. Explication des theogonischen Processes als Processes der ursprünglichen Schöpfung, wobei Charakterisirung der Potenzen als Schöpfungsursachen",
-    "page": 108
+    "title": "Sechste Vorlesung. Explication des theogonischen Processes als Processes der ursprünglichen Schöpfung, wobei Charakterisirung der Potenzen als…",
+    "page": 108,
+    "level": 1,
+    "kind": "section",
+    "label": "Sechste Vorlesung"
+  },
+  {
+    "title": "Die Mythologie (Zweites Buch)",
+    "page": 135,
+    "level": 0,
+    "kind": "work",
+    "label": ""
   },
   {
     "title": "Siebente Vorlesung. Einleitende Bemerkungen über die Philosophie der Mythologie",
-    "page": 135
+    "page": 136,
+    "level": 1,
+    "kind": "section",
+    "label": "Siebente Vorlesung"
   },
   {
     "title": "Achte Vorlesung. Die wirkliche Alteration des Menschen = Urzufall (Fortuna primigenia)",
-    "page": 152
+    "page": 151,
+    "level": 1,
+    "kind": "section",
+    "label": "Achte Vorlesung"
   },
   {
-    "title": "Neunte Vorlesung. Einleitung des Processes im menschlichen Bewußtseyn. Erster Moment: Widerstand des einseitig im Menschen gesetzten Princips (B) gegen die Ueberwindung durch die höhere Potenz (A²)",
-    "page": 170
+    "title": "Neunte Vorlesung. Einleitung des Processes im menschlichen Bewußtseyn",
+    "page": 169,
+    "level": 1,
+    "kind": "section",
+    "label": "Neunte Vorlesung"
   },
   {
     "title": "Zehnte Vorlesung. Uebergang zum nächsten Moment",
-    "page": 189
+    "page": 189,
+    "level": 1,
+    "kind": "section",
+    "label": "Zehnte Vorlesung"
   },
   {
-    "title": "Eilfte Vorlesung. Die persische Religion als beim Moment der ersten Materialisirung stehen bleibend. Daraus Erklärung des Verhältnisses der Mitra zum Mithras",
-    "page": 205
+    "title": "Eilfte Vorlesung. Die persische Religion als beim Moment der ersten Materialisirung stehen bleibend",
+    "page": 204,
+    "level": 1,
+    "kind": "section",
+    "label": "Eilfte Vorlesung"
   },
   {
-    "title": "Zwölfte Vorlesung. Der Fortschritt zur wirklichen Vielgötterei, und zwar 1) durch den Uebergang zum entschiedenen Cultus der weiblichen Gottheit. - Dieser zeigt sich a) im Mylittadienst der Babylonier",
-    "page": 236
+    "title": "Zwölfte Vorlesung. Der Fortschritt zur wirklichen Vielgötterei, und zwar",
+    "page": 237,
+    "level": 1,
+    "kind": "section",
+    "label": "Zwölfte Vorlesung"
+  },
+  {
+    "title": "1. durch den Uebergang zum entschiedenen Cultus der weiblichen Gottheit. - Dieser zeigt sich a) im Mylittadienst…",
+    "page": 236,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
   },
   {
     "title": "Dreizehnte Vorlesung. Bestimmtere Fixirung des gegenwärtigen Punkts der wissenschaftlichen Entwicklung",
-    "page": 258
+    "page": 258,
+    "level": 1,
+    "kind": "section",
+    "label": "Dreizehnte Vorlesung"
   },
   {
     "title": "Vierzehnte Vorlesung. Moment des Kronos, die Religion der Phönikier",
-    "page": 286
+    "page": 284,
+    "level": 1,
+    "kind": "section",
+    "label": "Vierzehnte Vorlesung"
   },
   {
-    "title": "Fünfzehnte Vorlesung. Episode über den griechischen Herakles. - Vorausgehende Erklärung über den ägyptischen Herakles",
-    "page": 327
+    "title": "Fünfzehnte Vorlesung. Episode über den griechischen Herakles",
+    "page": 326,
+    "level": 1,
+    "kind": "section",
+    "label": "Fünfzehnte Vorlesung"
   },
   {
-    "title": "Sechzehnte Vorlesung. Der Eintritt der zweiten (vollkommenen) Materialisirung (Katabole) des realen Princips. Ankündigung derselben durch den Orgiasmus",
-    "page": 350
+    "title": "Sechzehnte Vorlesung. Der Eintritt der zweiten (vollkommenen) Materialisirung (Katabole) des realen Princips",
+    "page": 350,
+    "level": 1,
+    "kind": "section",
+    "label": "Sechzehnte Vorlesung"
   },
   {
     "title": "Siebzehnte Vorlesung. Moment der Coëxistenz der zwei Potenzen oder Götter im Bewußtseyn: der Osiris-Typhon der Aegypter",
-    "page": 364
+    "page": 364,
+    "level": 1,
+    "kind": "section",
+    "label": "Siebzehnte Vorlesung"
   },
   {
     "title": "Achtzehnte Vorlesung. Schluß der Erörterung über die einzelnen Gestalten der ägyptischen Mythologie mit dem Begriff der Bubastis",
-    "page": 380
+    "page": 379,
+    "level": 1,
+    "kind": "section",
+    "label": "Achtzehnte Vorlesung"
   },
   {
-    "title": "Neunzehnte Vorlesung. Uebereinstimmung der bisherigen Deduktion der ägyptischen Mythologie und Theologie mit Herodotos und dessen ägyptischen Götterordnungen. Ueber die erste dieser Ordnungen: die acht ältesten Götter. Besondere Erörterung über das Verhältniß des Amun zum Pan, und des Pan-Cultus zu dem des Phtha",
-    "page": 408
+    "title": "Neunzehnte Vorlesung. Uebereinstimmung der bisherigen Deduktion der ägyptischen Mythologie und Theologie mit Herodotos und dessen ägyptischen Götterordnungen",
+    "page": 407,
+    "level": 1,
+    "kind": "section",
+    "label": "Neunzehnte Vorlesung"
   },
   {
-    "title": "Zwanzigste Vorlesung. Uebergang zur indischen Mythologie. Rechtfertigung der derselben gegebenen Stellung",
-    "page": 431
+    "title": "Zwanzigste Vorlesung. Uebergang zur indischen Mythologie",
+    "page": 432,
+    "level": 1,
+    "kind": "section",
+    "label": "Zwanzigste Vorlesung"
   },
   {
-    "title": "Einundzwanzigste Vorlesung. Ableitung und Bedeutung der Incarnationsmythen. Die Incarnationen des Wischnu",
-    "page": 460
+    "title": "Einundzwanzigste Vorlesung. Ableitung und Bedeutung der Incarnationsmythen",
+    "page": 460,
+    "level": 1,
+    "kind": "section",
+    "label": "Einundzwanzigste Vorlesung"
   },
   {
-    "title": "Zweiundzwanzigste Vorlesung. 3) Die Lehre der Bhagwadgita. Ihre Yogalehre und deren Verhältniß zu der mystischen Lehre der Vedas",
-    "page": 486
+    "title": "Zweiundzwanzigste Vorlesung",
+    "page": 485,
+    "level": 1,
+    "kind": "section",
+    "label": "Zweiundzwanzigste Vorlesung"
   },
   {
-    "title": "Dreiundzwanzigste Vorlesung. Uebergang zu China. Bestimmung der eigenthümlichen Aufgabe bei der Erklärung des chinesischen Wesens",
-    "page": 521
+    "title": "3. Die Lehre der Bhagwadgita. Ihre Yogalehre und deren Verhältniß zu der mystischen Lehre der Vedas",
+    "page": 486,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
   },
   {
-    "title": "Vierundzwanzigste Vorlesung. Das Absolute (Unmythologische) des chinesischen Princips zeigt sich 3) in der Sprache Chinas - Bemerkungen gegen Abel Remusats Leugnung der Einsylbigkeit der chinesischen Sprache -",
-    "page": 541
+    "title": "Dreiundzwanzigste Vorlesung. Uebergang zu China",
+    "page": 521,
+    "level": 1,
+    "kind": "section",
+    "label": "Dreiundzwanzigste Vorlesung"
   },
   {
-    "title": "Fünfundzwanzigste Vorlesung. Recapitulation. Nochmalige Charakterisirung des Indischen. Die Präponderanz des Seelischen im Indier; dieser entsprechend seine physische Beschaffenheit und das Seelenvolle seiner Poesie (Sakontala)",
-    "page": 569
+    "title": "Vierundzwanzigste Vorlesung. Das Absolute (Unmythologische) des chinesischen Princips zeigt sich",
+    "page": 540,
+    "level": 1,
+    "kind": "section",
+    "label": "Vierundzwanzigste Vorlesung"
   },
   {
-    "title": "Sechsundzwanzigste Vorlesung. Charakter der griechischen Mythologie als allgemeiner Mythologie (als Göttersystems). Homer und Hesiod in ihrer verschiedenen Stellung zur griechischen Mythologie",
-    "page": 591
+    "title": "3. in der Sprache Chinas - Bemerkungen gegen Abel Remusats Leugnung der Einsylbigkeit der chinesischen Sprache",
+    "page": 541,
+    "level": 2,
+    "kind": "section",
+    "label": "3"
   },
   {
-    "title": "Siebenundzwanzigste Vorlesung. Die erste Periode der Theogonie: 1) der Moment der für sich seyenden Gäa = Moment der ersten Materialisirung des Urprincips, Moment des noch unmythologischen Zabismus",
-    "page": 615
+    "title": "Fünfundzwanzigste Vorlesung. Recapitulation",
+    "page": 569,
+    "level": 1,
+    "kind": "section",
+    "label": "Fünfundzwanzigste Vorlesung"
+  },
+  {
+    "title": "Sechsundzwanzigste Vorlesung. Charakter der griechischen Mythologie als allgemeiner Mythologie (als Göttersystems)",
+    "page": 591,
+    "level": 1,
+    "kind": "section",
+    "label": "Sechsundzwanzigste Vorlesung"
+  },
+  {
+    "title": "Siebenundzwanzigste Vorlesung. Die erste Periode der Theogonie",
+    "page": 615,
+    "level": 1,
+    "kind": "section",
+    "label": "Siebenundzwanzigste Vorlesung"
+  },
+  {
+    "title": "1. der Moment der für sich seyenden Gäa = Moment der ersten Materialisirung des Urprincips, Moment des noch…",
+    "page": 615,
+    "level": 2,
+    "kind": "section",
+    "label": "1"
   },
   {
     "title": "Achtundzwanzigste Vorlesung. Qualitativer Unterschied zwischen dem Charakter der griechischen Religion und dem der früheren Religionen",
-    "page": 645
+    "page": 644,
+    "level": 1,
+    "kind": "section",
+    "label": "Achtundzwanzigste Vorlesung"
   },
   {
     "title": "Neunundzwanzigste Vorlesung. Verhältniß der gesammten griechischen Götterwelt zu Zeus",
-    "page": 661
+    "page": 660,
+    "level": 1,
+    "kind": "section",
+    "label": "Neunundzwanzigste Vorlesung"
   }
 ]
