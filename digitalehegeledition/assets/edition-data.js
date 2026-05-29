@@ -2,7 +2,7 @@ window.SCHELLING_EDITION = {
   "metadata": {
     "title": "Digitale Schelling-Edition",
     "collection_title": "Friedrich Wilhelm Joseph von Schelling · Sämmtliche Werke",
-    "generated_at": "2026-05-28T21:38:49Z",
+    "generated_at": "2026-05-29T06:08:58Z",
     "works_count": 14,
     "default_work_id": "sw-I-01",
     "stats": {
