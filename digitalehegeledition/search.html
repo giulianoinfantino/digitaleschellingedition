@@ -110,23 +110,11 @@
 </footer>
 
 <script src="assets/edition-data.js"></script>
+<script src="assets/ortho.js"></script>
 <script src="assets/search-data.js" defer></script>
 <script>
-  // ── Orthographie-Normalisierung ────────────────────────────
-  var ORTHO_MAP = [
-    [/ey/g, 'ei'], [/ay/g, 'ai'],
-    [/ß/g, 'ss'],
-    [/th(?=[aeiouäöü])/g, 't'],
-    [/ct/g, 'kt'],
-    [/ph/g, 'f'],
-    [/ü(?=ck)/g, 'ü'],
-    [/iren\b/g, 'ieren'],
-  ];
-  function normalizeOrtho(s) {
-    var r = s;
-    for (var i = 0; i < ORTHO_MAP.length; i++) r = r.replace(ORTHO_MAP[i][0], ORTHO_MAP[i][1]);
-    return r;
-  }
+  // Orthographic normalisation (normalizeOrtho) is loaded from assets/ortho.js
+  // and shared with the in-reader search in text.html.
 
   // ── Section-type Klassifikation ───────────────────────────
   function classifySection(entry) {

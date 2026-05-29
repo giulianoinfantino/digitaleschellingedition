@@ -151,18 +151,19 @@ def build_work_data(work_id: str, meta_tuple: tuple) -> dict:
             "units": units,
         })
 
-    # The OCR-recorded book page numbers are sparse (≈half are missing), so a
-    # TOC's printed page often has no exact body page_book. Snap each printed
-    # page to the nearest existing body page_book (preferring at-or-after the
-    # target) so the reader can always resolve an anchor. The reader still
-    # refines via heading-text matching within ±5 pages.
+    # Book page numbers are now ~99% complete, so a TOC's printed page almost
+    # always has an exact body page_book. Keep exact matches verbatim; only when
+    # a page is genuinely missing do we snap to the nearest existing body
+    # page_book (preferring at-or-after the target). The reader still refines via
+    # heading-text matching within ±5 pages.
     body_book_pages = sorted({
         p["page_book"] for p in web_pages
         if p.get("page_book") is not None and p["page_kind"] == "body"
     })
+    body_book_set = set(body_book_pages)
 
     def snap_page(pg):
-        if pg is None or not body_book_pages:
+        if pg is None or not body_book_pages or pg in body_book_set:
             return pg
         return min(body_book_pages, key=lambda x: (abs(x - pg), x < pg))
 

@@ -80,7 +80,6 @@
       </div>
       <div class="toolbar-group toolbar-end">
         <div class="view-toggle" id="view-toggle">
-          <button data-view="dipl" onclick="setView('dipl')">Druckbild</button>
           <button data-view="normal" class="active" onclick="setView('normal')">Normal</button>
           <button data-view="breit" onclick="setView('breit')">Breit</button>
         </div>
@@ -104,6 +103,7 @@
 </footer>
 
 <script src="assets/edition-data.js"></script>
+<script src="assets/ortho.js"></script>
 <script>
   const state = { corpus: null, selectedWork: null };
 
@@ -438,7 +438,6 @@
   function renderPageContent(page) {
     const units = prepareUnits(page.units || []);
     if (!units.length) return '';
-    let lineNum = 0;
     let hIdx = 0;
     const isEnz = (state.selectedWork?.work_id || '') === '__none__';
     const enzInit = isEnz && state._enzPageState ? state._enzPageState[page.page_pdf] : null;
@@ -491,39 +490,7 @@
         }
         hIdx++;
       }
-      const gwLines = u.metadata && u.metadata.gw_lines;
-      if (gwLines && gwLines.length > 0) {
-        var sperrOpen = false;
-        const linesHTML = gwLines.map(entry => {
-          var lineText = entry.text;
-          if (sperrOpen) lineText = '*' + lineText;
-          var stars = (lineText.match(/\*/g) || []).length;
-          sperrOpen = stars % 2 !== 0;
-          if (sperrOpen) lineText = lineText + '*';
-          const n = entry.gw_line;
-          const showNumber = (n === 1) || (n % 5 === 0);
-          const lineId = `line-${page.page_pdf}-${n}`;
-          const numEl = showNumber ? `<span class="dipl-line-no">${n}</span>` : '';
-          return `<span class="dipl-line" id="${lineId}" data-gw-line="${n}">${numEl}<span class="dipl-line-text">${renderInline(lineText)}</span></span>`;
-        }).join('');
-        const reflowText = renderInline(u.text);
-        return `<div class="text-unit type-${type}${anmClass} dipl-mode" data-level="${level}"${headingIdAttr}>
-                  <div class="dipl-content">${linesHTML}</div>
-                  <div class="reflow-content">${reflowText}</div>
-                </div>`;
-      }
-      if (u.lines && u.lines.length > 0) {
-        const linesHTML = u.lines.map(l => {
-          lineNum++;
-          const no = (lineNum % 5 === 0) ? ` data-lineno="${lineNum}"` : '';
-          return `<span class="dipl-line"${no}>${l}</span>`;
-        }).join('');
-        return `<div class="text-unit type-${type}${anmClass} dipl-mode" data-level="${level}"${headingIdAttr}>${linesHTML}</div>`;
-      }
-      lineNum++;
-      const startLine = u.metadata && u.metadata.gw_line_start;
-      const lineAttr = startLine ? ` data-gw-line="${startLine}"` : '';
-      return `<div class="text-unit type-${type}${anmClass}" data-level="${level}"${lineAttr}${headingIdAttr}>${liftFnRefs(renderInline(u.text))}</div>`;
+      return `<div class="text-unit type-${type}${anmClass}" data-level="${level}"${headingIdAttr}>${liftFnRefs(renderInline(u.text))}</div>`;
     }).join('');
 
     if (!footnotes.length) return bodyHtml;
@@ -674,41 +641,6 @@
   }
 
   // ── Citation copy ────────────────────────────────────────────────
-  function siglumForCitation() {
-    const w = state.selectedWork;
-    if (w?.siglum) return w.siglum;
-    return state.corpus?.metadata?.siglum || 'SW';
-  }
-
-  function showToast(msg) {
-    let toast = document.getElementById('reader-toast');
-    if (!toast) {
-      toast = document.createElement('div');
-      toast.id = 'reader-toast';
-      toast.className = 'reader-toast';
-      document.body.appendChild(toast);
-    }
-    toast.textContent = msg;
-    toast.classList.add('show');
-    clearTimeout(toast._t);
-    toast._t = setTimeout(() => toast.classList.remove('show'), 1800);
-  }
-
-  function copyCitation(pagePdf, gwPage, gwLine) {
-    const citation = `${siglumForCitation()}, ${gwPage}.${gwLine}`;
-    const fallback = () => {
-      const ta = document.createElement('textarea');
-      ta.value = citation; document.body.appendChild(ta);
-      ta.select(); document.execCommand('copy'); ta.remove();
-    };
-    if (navigator.clipboard?.writeText) {
-      navigator.clipboard.writeText(citation).catch(fallback);
-    } else { fallback(); }
-    history.replaceState(null, '', `#line-${pagePdf}-${gwLine}`);
-    showToast(`Zitat kopiert: ${citation}`);
-  }
-
-
   // ── Auto-citation on copy ────────────────────────────────────────
   document.addEventListener('copy', (e) => {
     const sel = window.getSelection();
@@ -726,59 +658,31 @@
       if (!card || !sel.containsNode(card, true)) return;
       const pdfId = div.id.replace('page-', '');
       const sigel = div.querySelector('.page-sigel')?.textContent?.trim();
-      const lines = card.querySelectorAll('.dipl-line');
-      let minLine = Infinity, maxLine = -Infinity;
-      lines.forEach(ln => {
-        if (!sel.containsNode(ln, true)) return;
-        const textEl = ln.querySelector('.dipl-line-text') || ln;
-        const r = document.createRange();
-        r.selectNodeContents(textEl);
-        if (range.compareBoundaryPoints(Range.END_TO_START, r) >= 0) return;
-        if (range.compareBoundaryPoints(Range.START_TO_END, r) <= 0) return;
-        const overlap = r.cloneContents().textContent.trim();
-        if (!overlap) return;
-        const n = parseInt(ln.dataset.gwLine);
-        if (!isNaN(n)) { minLine = Math.min(minLine, n); maxLine = Math.max(maxLine, n); }
-      });
-      if (sigel) pages.set(pdfId, { sigel, minLine, maxLine });
+      if (sigel) pages.set(pdfId, { sigel });
     });
 
     if (pages.size === 0) return;
 
-    const isDipl = document.body.classList.contains('dipl-mode');
     const entries = Array.from(pages.values());
     const band = entries[0].sigel.replace(/,\s*\d+$/, '');
     const gwPages = entries.map(e => {
       const m = e.sigel.match(/(\d+)\s*$/);
-      return { page: m ? m[1] : e.sigel, min: e.minLine, max: e.maxLine };
+      return { page: m ? m[1] : e.sigel };
     });
 
-    let cite, htmlCite;
+    // SW is cited by page only (no marginal line numbers).
+    let cite;
     if (gwPages.length === 1) {
-      const p = gwPages[0];
-      if (isDipl && p.min <= p.max) {
-        cite = `(${band}, ${p.page}.${p.min}–${p.max})`;
-        htmlCite = `(${band}, ${p.page}<sup>${p.min}–${p.max}</sup>)`;
-      } else {
-        cite = `(${band}, ${p.page})`;
-        htmlCite = cite;
-      }
+      cite = `(${band}, ${gwPages[0].page})`;
     } else {
-      const first = gwPages[0], last = gwPages[gwPages.length - 1];
-      if (isDipl && first.min <= first.max && last.min <= last.max) {
-        cite = `(${band}, ${first.page}.${first.min}–${last.page}.${last.max})`;
-        htmlCite = `(${band}, ${first.page}<sup>${first.min}</sup>–${last.page}<sup>${last.max}</sup>)`;
-      } else {
-        cite = `(${band}, ${first.page}–${last.page})`;
-        htmlCite = cite;
-      }
+      cite = `(${band}, ${gwPages[0].page}–${gwPages[gwPages.length - 1].page})`;
     }
+    const htmlCite = cite;
 
     const frag = range.cloneContents();
     const wrapper = document.createElement('div');
     wrapper.appendChild(frag);
-    const hiddenView = isDipl ? '.reflow-content' : '.dipl-content';
-    wrapper.querySelectorAll(`.dipl-line-no, .page-sigel, .page-divider, ${hiddenView}`).forEach(el => el.remove());
+    wrapper.querySelectorAll('.page-sigel, .page-divider').forEach(el => el.remove());
 
     const walk = (node) => {
       if (node.nodeType === 3) return node.textContent;
@@ -801,14 +705,11 @@
     e.preventDefault();
   });
 
-  // ── View toggle: Druckbild | Normal | Breit ─────────────────────
+  // ── View toggle: Normal | Breit ─────────────────────────────────
+  // (SW prints no marginal line numbers, so there is no diplomatic line view.)
   function setView(mode) {
-    const body = document.body;
     const tc = document.querySelector('.text-content');
-    body.classList.remove('dipl-mode');
-    tc.classList.remove('wide-mode');
-    if (mode === 'dipl') body.classList.add('dipl-mode');
-    if (mode === 'breit') tc.classList.add('wide-mode');
+    tc.classList.toggle('wide-mode', mode === 'breit');
     document.querySelectorAll('#view-toggle button').forEach(b => {
       b.classList.toggle('active', b.dataset.view === mode);
     });
@@ -817,8 +718,7 @@
 
   (function restoreView() {
     try {
-      var v = localStorage.getItem('schelling-reader-view');
-      if (v === 'dipl' || v === 'breit') setView(v);
+      if (localStorage.getItem('schelling-reader-view') === 'breit') setView('breit');
     } catch (_) {}
   })();
 
@@ -848,8 +748,12 @@
 
   function textMatchesTerms(text, terms) {
     var lower = text.toLowerCase();
+    var folded = (typeof normalizeOrtho === 'function') ? normalizeOrtho(text) : lower;
     for (var i = 0; i < terms.length; i++) {
       if (lower.indexOf(terms[i]) !== -1) return true;
+      // Orthographic fallback: "Sein" matches "Seyn", "Teil" matches "Theil", …
+      if (typeof normalizeOrtho === 'function' &&
+          folded.indexOf(normalizeOrtho(terms[i])) !== -1) return true;
     }
     return false;
   }
@@ -866,31 +770,51 @@
   function highlightTermsInCard(card, terms) {
     var body = card.querySelector('.page-body');
     if (!body || !body.innerHTML.trim()) return;
+    var canFold = typeof normalizeOrtho === 'function';
     terms.forEach(function(term) {
+      var foldedTerm = canFold ? normalizeOrtho(term) : term;
       var walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT, null);
-      var hits = [];
       var node;
       while ((node = walker.nextNode())) {
         var el = node.parentElement;
         if (!el) continue;
         if (el.closest('.dipl-content, .dipl-line-no, mark.search-hit')) continue;
-        var lower = node.textContent.toLowerCase();
+        var text = node.textContent;
+        var lower = text.toLowerCase();
+        var hits = [];
+        // Exact substring hits.
         var idx = 0;
         while ((idx = lower.indexOf(term, idx)) !== -1) {
-          hits.push({ node: node, idx: idx, len: term.length });
+          hits.push({ idx: idx, len: term.length });
           idx += term.length;
         }
-      }
-      for (var i = hits.length - 1; i >= 0; i--) {
-        var h = hits[i];
-        try {
-          var range = document.createRange();
-          range.setStart(h.node, h.idx);
-          range.setEnd(h.node, h.idx + h.len);
-          var mark = document.createElement('mark');
-          mark.className = 'search-hit';
-          range.surroundContents(mark);
-        } catch (_) {}
+        // Orthographic-variant hits: whole word whose folded form contains the
+        // folded term (e.g. "Seyn" for "sein"). Highlights the entire word.
+        if (canFold && foldedTerm) {
+          var wre = /[A-Za-zÄÖÜäöüß]+/g, wm;
+          while ((wm = wre.exec(text)) !== null) {
+            if (normalizeOrtho(wm[0]).indexOf(foldedTerm) !== -1) {
+              hits.push({ idx: wm.index, len: wm[0].length });
+            }
+          }
+        }
+        if (!hits.length) continue;
+        // Sort and drop overlaps so surroundContents never straddles a hit.
+        hits.sort(function(a, b) { return a.idx - b.idx || b.len - a.len; });
+        var kept = [], end = -1;
+        hits.forEach(function(h) {
+          if (h.idx >= end) { kept.push(h); end = h.idx + h.len; }
+        });
+        for (var i = kept.length - 1; i >= 0; i--) {
+          try {
+            var range = document.createRange();
+            range.setStart(node, kept[i].idx);
+            range.setEnd(node, kept[i].idx + kept[i].len);
+            var mark = document.createElement('mark');
+            mark.className = 'search-hit';
+            range.surroundContents(mark);
+          } catch (_) {}
+        }
       }
     });
   }
